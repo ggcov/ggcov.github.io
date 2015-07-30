@@ -8,11 +8,10 @@
 <!-- Copyright (c) 2001-2011 Greg Banks. All Rights Reserved.
  -->
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>ggcov</title>
+<title>ggcov - ggcov Screenshot Data</title>
 <link REL="SHORTCUT ICON" HREF="favicon.ico">
 <LINK href="ggcov.css" rel="stylesheet" type="text/css">
 
-<meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, greg banks">
 </head>
 
 
@@ -20,7 +19,7 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="5">
   <tr style="background:#afafcf;">
-    <td colspan="2" valign="top" class="logo">ggcov</td>
+    <td colspan="2" valign="top" class="logo">ggcov - ggcov Screenshot Data</td>
   </tr>
   <tr>
     <td align="center" valign="top" width="1">
@@ -33,8 +32,8 @@
 
 <table border=0 cellspacing=0 cellpadding=0>
   <tr>
-  <td class="tocthis">
-    Home
+  <td class="tocother">
+    <a href="index.html">Home</a>
   </td>
   
 </tr>
@@ -211,34 +210,80 @@
 
 
 <p>
-<span class="program">ggcov</span> is a GTK+ GUI for exploring test coverage
-data produced by C and C++ programs compiled with
-<a href="http://www.gnu.org/software/gcc/gcc.html">gcc</a>
-<a href="http://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Debugging-Options.html#index-coverage-510">--coverage</a>.
-So it's basically a GUI replacement for the
-<a href="http://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Gcov.html#Gcov">gcov</a>
-program that comes with <span class="program">gcc</span>.
-Please note: <span class="program">ggcov</span> is not a frontend for
-<span class="program">gcov</span>; instead it reads the same data
-files directly and does various extra processing on them.
+The <span class="program">ggcov</span>
+<a href="screenshots.html">screenshots</a> show coverage data based on
+the following program:
 </p>
 
-<p>
-<span class="program">ggcov</span> also has a web interface which provides a large fraction
-of the functionality of the GTK+ GUI.  <a href="/example/">Try it out</a>.
-</p>
+<pre class="source">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int function_one(int x);
+
+int
+function_two(int x)
+{
+    return function_one(x&gt;&gt;1);
+}
+
+int
+function_three(int x)
+{
+    x += 4;
+    x -= 5;
+    x++;
+    return x&gt;&gt;1;
+}
+
+int
+function_one(int x)
+{
+    if (x &amp; 1)
+    	x += function_two(x);
+    else
+    	x += function_three(x);
+    return x;
+}
+
+int
+unused_function(int x)
+{
+    x += 24;
+    x -= 56;
+    return x;
+}
+
+int
+main(int argc, char **argv)
+{
+    int x, y;
+    int i;
+
+    for (i = 1 ; i &lt; argc ; i++)
+    {
+    	x = atoi(argv[i]);
+    	y = function_one(x);
+	printf("%d -&gt; %d\n", x, y);
+    }
+    return 0;
+}
+</pre>
 
 <p>
-<span class="program">ggcov</span> also has a commandline interface which is useful for nightly
-builds and Continuous Integration servers.
+This program was compiled to the executable <span class="program">foo</span>
+using the
+<span class="option">--coverage</span> options 
+ and run with the
+following arguments:
 </p>
 
-<p>
-<span class="program">ggcov</span> is released under the
-<a href="http://www.gnu.org/">GNU</a> General Public License (GPL) version 2
-with <b>no warranty</b>.  See the file COPYING in the distribution or
-<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">here</a>
-</p>
+<pre class="source">
+./foo 1
+./foo 2
+./foo 23 423
+</pre>
+
 
 </td>
   </tr>

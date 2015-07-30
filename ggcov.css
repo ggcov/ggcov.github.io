@@ -1,0 +1,69 @@
+BODY { color: #000000; background: #ffffff }
+H1 { font: bold 24pt verdana,arial,helvetica,sans-serif; }
+H2 { font: bold 18pt verdana,arial,helvetica,sans-serif; }
+H3 { font: bold 14pt verdana,arial,helvetica,sans-serif; }
+UL { font: 12pt verdana,arial,helvetica,sans-serif; }
+P { font: 12pt verdana,arial,helvetica,sans-serif; }
+P.small { font: 8pt verdana,arial,helvetica,sans-serif; }
+P B { font: bold 12pt verdana,arial,helvetica,sans-serif; }
+P EM { font: italic 12pt verdana,arial,helvetica,sans-serif; }
+TD { font: 12pt verdana,arial,helvetica,sans-serif; }
+TD B { font: bold 12pt verdana,arial,helvetica,sans-serif; }
+PRE { font: 12pt lucidatypewriter,lucidasanstypewriter,courier,monospace; }
+all.program { font: bold 12pt verdana,arial,helvetica,sans-serif; }
+all.option { font: bold 12pt verdana,arial,helvetica,sans-serif; }
+all.function { font: bold 12pt verdana,arial,helvetica,sans-serif; }
+PRE.example {
+  font: 12pt lucidatypewriter,lucidasanstypewriter,courier,monospace;
+  color: #000000;
+  background-color: #d0d0f6;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1pt;
+  padding: 8pt;
+  white-space: pre;
+}
+PRE.source {
+  font: 12pt lucidatypewriter,lucidasanstypewriter,courier,monospace;
+  color: #000000;
+  background-color: #d0d0f6;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1pt;
+  padding: 8pt;
+  white-space: pre;
+}
+TD.hilite {
+  color: #000000;
+  background-color: #d0d0f6;
+}
+TR.hilite {
+  color: #000000;
+  background-color: #d0d0f6;
+}
+TD.tocthis {
+  font: bold 12pt verdana,arial,helvetica,sans-serif;
+  color: #000000;
+  background-color: #d0d0f6;
+  text-align: right;
+}
+TD.tocother {
+  text-align: right;
+}
+TD.tocother A {
+  font: bold 12pt verdana,arial,helvetica,sans-serif;
+  color: #000000;
+  text-decoration: none;
+}
+TD.tocsmall {
+  font: 8pt verdana,arial,helvetica,sans-serif;
+  color: #000000;
+  text-align: right;
+}
+TD.tocimg {
+  text-align: center;
+}
+TD.logo {
+  font: 32pt verdana,arial,helvetica,sans-serif;
+}
+/* vim:set ft=css: */
