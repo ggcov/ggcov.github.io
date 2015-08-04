@@ -3,7 +3,7 @@
 <head>
   <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <title>ggcov Requirements</title>
+  <title>ggcov Support</title>
   <link REL="SHORTCUT ICON" HREF="favicon.ico">
   <link href="ggcov.css" rel="stylesheet" type="text/css">
   <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
@@ -37,41 +37,25 @@
 
 <div id="column" class="column">
 
-<h2>Requirements</h2>
-
-<p>
-<span class="program">ggcov</span> requires the following, which
-should be available on any modern Linux distro or commercial Unix:
-</p>
-<ul>
-  <li><i>libglade</i> library with GNOME support
-  <li>GNOME <i>libgnomeui</i> library
-  <li>GNOME <i>gtk+</i> library
-  <li>Optionally, the <i>popt</i> library
-  <li>GNU <i>libbfd</i> from the <i>binutils</i> package
-</ul>
-
-<p>
-<span class="program">ggcov</span> uses GTK 2.x but will fall back to
-using GTK 1.2 for older platforms.  A configure-time option can be
-used to disable the GUI entirely and only build the text mode program,
-which requires only <i>glib</i> and <i>libbfd</i>.
-</p>
-
-<p>
-The <span class="program">ggcov-web</span> package doesn't require
-GNOME but does require the following:
-</p>
+<h2>Support</h2>
 
 <ul>
-  <li>Apache 2.0 or 1.3 (tested on 2.0.52)
-  <li>PHP 4.3 or 5.x (tested on 4.3.9)
-  <li>the dba PHP extension with the db4 provider (this
-      is built into most PHP packages)
-  <li>the gd PHP extension
+<li><a href="https://github.com/ggcov/ggcov/issues">Bugs</a>
+<li><a href="https://sourceforge.net/p/ggcov/discussion/">Forums</a>
 </ul>
+
+<h2>Contributing</h2>
+
+<p>
+If you fix a bug or port <span class="program">ggcov</span> to a new platform, please
+mail me <a href="mailto:gnb@fastmail.fm?Subject=ggcov">gnb@fastmail.fm</a>
+ either a patch (unified diff format preferred) or a git pull request. I will
+try to incorporate them into the next release.
+</p>
 
 </div>
+
+
 
 <div id="footer">
 <p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.

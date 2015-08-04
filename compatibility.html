@@ -1,216 +1,43 @@
-
-
-
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head>
-<!-- Copyright (c) 2001-2011 Greg Banks. All Rights Reserved.
- -->
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>ggcov - Compatibility</title>
-<link REL="SHORTCUT ICON" HREF="favicon.ico">
-<LINK href="ggcov.css" rel="stylesheet" type="text/css">
-
-<meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage">
+<html>
+<head>
+  <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>ggcov Compatibility</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <script type="text/javascript">
+    /* image preloads */
+    loc = window.location
+    baseurl = loc.protocol + "//" + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, "") + "/"
+  </script>
 </head>
-
-
 <body>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="5">
-  <tr style="background:#afafcf;">
-    <td colspan="2" valign="top" class="logo">ggcov - Compatibility</td>
-  </tr>
-  <tr>
-    <td align="center" valign="top" width="1">
-      <!-- TOC -->
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
 
+<div id="wrap">
 
+<div id="nav">
+<ul>
+<li><a href="index.html">Home</a>
+<li><a href="features.html">Features</a>
+<li><a href="documents.html">Documents</a>
+<li><a href="/example/">Online&nbsp;Example</a>
+<li><a href="support.html">Support</a>
+<li><a href="download.html">Download</a>
+</ul>
+</div>
 
+<!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved. -->
 
+<div id="column" class="column">
 
-
-<table border=0 cellspacing=0 cellpadding=0>
-  <tr>
-  <td class="tocother">
-    <a href="index.html">Home</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="features.html">Features</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="requirements.html">Requirements</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocthis">
-    Compatibility
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="screenshots.html">Screenshots</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="documents.html">Documents</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="/example/">Online&nbsp;Example</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="http://sourceforge.net/project/showfiles.php?group_id=107843">Download</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="http://www.sourceforge.net/projects/ggcov/">Project&nbsp;Page</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="https://sourceforge.net/scm/?type=git&amp;group_id=107843">Git</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="changelog.html">Change Log</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="credits.html">Credits</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-
-  <tr>
-    <td class="tocsmall">
-	<a href="http://sourceforge.net/projects/ggcov"><img
-	src="http://sflogo.sourceforge.net/sflogo.php?group_id=107843&amp;type=13"
-	width="120" height="30" border="0"
-	alt="Get ggcov at SourceForge.net. Fast, secure and Free Open Source software downloads"></a>
-    </td>
-  </tr>
-
-  <tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-    <td class="tocimg">
-      <!-- HTML copied from http://www.gimp.org/about/linking.html 20061202 -->
-      <a href="http://www.gimp.org/"><img alt="Graphics by GIMP"
-      src="http://www.gimp.org/images/gfx_by_gimp.png" border="0"
-      width="90" height="36"></a>
-    </td>
-  </tr>
-
-  <tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-    <td class="tocimg">
-      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
-      <!-- and added border="0" -->
-      <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-html40" border="0"
-      alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
-    </td>
-  </tr>
-</table>
-
-
-    </td>
-    <td style="background:#ffffff;" valign="top" align="left">
-      <!-- MAIN BODY -->
-
-
-
+<h2>Compatibility Matrix</h2>
 
 <table border="0" cellspacing="0" cellpadding="5">
 
@@ -229,8 +56,6 @@
     <td>0.8.3</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>Ubuntu Karmic</td>
@@ -239,8 +64,6 @@
     <td>0.8.2</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Ubuntu Jaunty</td>
@@ -249,8 +72,6 @@
     <td>0.8.1</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>Ubuntu Dapper</td>
@@ -259,8 +80,6 @@
     <td>0.8</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Ubuntu Dapper</td>
@@ -269,8 +88,6 @@
     <td>0.8</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>Ubuntu Dapper</td>
@@ -279,8 +96,6 @@
     <td>0.8</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Mandrake 10.2</td>
@@ -289,8 +104,6 @@
     <td>0.8</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>Fedora Core 4</td>
@@ -299,8 +112,6 @@
     <td>0.7</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Fedora Core 3</td>
@@ -309,8 +120,6 @@
     <td>0.8</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>Fedora Core 3</td>
@@ -319,8 +128,6 @@
     <td>0.8</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Fedora Core 3</td>
@@ -329,8 +136,6 @@
     <td>0.4</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>SLES 9</td>
@@ -339,8 +144,6 @@
     <td>0.4</td>
     <td>Works, with the exception of call graph data.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Mandrake 10.0</td>
@@ -349,8 +152,6 @@
     <td>0.4</td>
     <td>Mostly works.  Some call coverage data appears to be wrong</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>Red Hat Linux 7.3 (Valhalla)</td>
@@ -360,8 +161,6 @@
     <td>Mostly works, but call coverage data is wrong due to broken data
     files written by gcc 2.96 (gcov also misreports calls).</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>Red Hat Linux 9 (Shrike)</td>
@@ -370,8 +169,6 @@
     <td>0.2</td>
     <td>Works.</td>
   </tr>
-  
-
 
   <tr valign="top" >
     <td>SuSE Linux 8.2</td>
@@ -385,8 +182,6 @@
     <span class="program">version 0.1.5</span> on SuSE 8.2, the new file format
     causes it to eat all your RAM and crash on startup.  Try version 0.1.6.</td>
   </tr>
-  
-
 
   <tr valign="top" class="hilite">
     <td>SGI Irix 6.5.20</td>
@@ -398,29 +193,29 @@
     because the bfd library is missing from the Irix freeware
     gcc package.</td>
   </tr>
-  
-
 
 </table>
 
+</div>
 
-<p>
-If you port <span class="program">ggcov</span> to a new platform, please
-mail me <a href="mailto:gnb@users.sourceforge.com?Subject=ggcov">gnb@users.sourceforge.com</a>
- the patches (unified diff format preferred). I will
-try to incorporate them into the next release.
+<div id="footer">
+<p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
 </p>
 
+<p>
+      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
+      <!-- and added border="0" -->
+      <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-html40" border="0"
+      alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
+</p>
+</div>
 
-</td>
-  </tr>
-</table>
-<!-- <HR NOSHADE SIZE=4> -->
-<br><br>
-<center>
-<p class="small">Updated: 29 Jul 2015
-. Copyright &copy; 2001-2011 Greg Banks. All Rights Reserved.
-.</p>
-</center>
-</body></html>
+</div>
 
+</body>
+</html>

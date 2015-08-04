@@ -1,254 +1,145 @@
-
-
-
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head>
-<!-- Copyright (c) 2001-2011 Greg Banks. All Rights Reserved.
- -->
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>ggcov</title>
-<link REL="SHORTCUT ICON" HREF="favicon.ico">
-<LINK href="ggcov.css" rel="stylesheet" type="text/css">
-
-<meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, greg banks">
+<html>
+<head>
+  <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>ggcov</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="front.js"></script>
+  <script type="text/javascript">
+    /* image preloads */
+    loc = window.location
+    baseurl = loc.protocol + "//" + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, "") + "/"
+    new Image().src = baseurl + "download-333x333.png";
+    new Image().src = baseurl + "firefox.png";
+    new Image().src = baseurl + "gnome-logo.png";
+    new Image().src = baseurl + "goto-333x333.png";
+    new Image().src = baseurl + "logo-ubuntu_cof-white_orange-hex.png";
+    new Image().src = baseurl + "utilities-terminal.png";
+  </script>
 </head>
-
-
 <body>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="5">
-  <tr style="background:#afafcf;">
-    <td colspan="2" valign="top" class="logo">ggcov</td>
-  </tr>
-  <tr>
-    <td align="center" valign="top" width="1">
-      <!-- TOC -->
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
 
+<div id="wrap">
 
+<div id="nav">
+<ul>
+<li><a href="index.html">Home</a>
+<li><a href="features.html">Features</a>
+<li><a href="documents.html">Documents</a>
+<li><a href="/example/">Online&nbsp;Example</a>
+<li><a href="support.html">Support</a>
+<li><a href="download.html">Download</a>
+</ul>
+</div>
 
+<!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved. -->
 
+<div id="front" class="column">
 
+<div id="toprow">
 
-<table border=0 cellspacing=0 cellpadding=0>
-  <tr>
-  <td class="tocthis">
-    Home
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
+<div id="gotcode">
+<h2>Got code?</h2>
+</div>
 
+<p>
+Sure you do.  Lots and lots of code.
+And tests...not so much? Not <i>enough</i>?
+</p>
 
-  <tr>
-  <td class="tocother">
-    <a href="features.html">Features</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
+<p>
+So you know you need more tests, because <i>everyone</i> needs more tests...
+but how are you supposed to know which parts of your code
+to test next?
+</p>
+<p>
+Easy: <b>ggcov</b> tells you which parts of your software are well tested,
+and which parts...need a little lovin'.
+<b>ggcov</b> is a set of tools for exploring test coverage
+data produced by C and C++ programs compiled with
+<a href="http://www.gnu.org/software/gcc/gcc.html">gcc</a>
+<a href="http://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Debugging-Options.html#index-coverage-510">--coverage</a>.
+So it's basically a replacement for the
+<a href="http://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Gcov.html#Gcov">gcov</a>
+program that comes with <span class="program">gcc</span>.
+<b>ggcov</b> has a tool for your workflow.
+</p>
+<!--
+<p>
+Please note: <span class="program">ggcov</span> is not a frontend for
+<span class="program">gcov</span>; instead it reads the same data
+files directly and does various extra processing on them.
+</p>
+-->
 
+</div><!-- toprow -->
 
-  <tr>
-  <td class="tocother">
-    <a href="requirements.html">Requirements</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
+<div id="columns">
 
+<div id="gnomecont" class="columncont">
+<div id="gnome" class="cloud">
+<img src="gnome-logo.png" alt="GNOME"><h2>Got Desktop?</h2>
+<p class="gotblurb">
+<b>ggcov</b> has a <a href="http://www.gnome.org/">Gnome GUI</a> for
+exploring test coverage with visualisations.
+</p>
+<p><a id="seescreenshots" class="button suggested_action" href="features.html"><span class="icon"></span>See the pics</a></p>
+</div><!-- gnome -->
+</div><!-- gnomecont -->
 
-  <tr>
-  <td class="tocother">
-    <a href="compatibility.html">Compatibility</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
+<div id="webcont" class="columncont">
+<div id="web" class="cloud">
+<img src="firefox.png" alt="Firefox"><h2>Got Web?</h2>
+<p class="gotblurb">
+<b>ggcov</b> has a web interface which provides much
+of the functionality of the Gnome GUI.
+</p>
+<p><a id="tryitout" class="button suggested_action" href="example/"><span class="icon"></span>Try it out</a></p>
+</div><!-- web -->
+</div><!-- webcont -->
 
+<div id="termcont" class="columncont">
+<div id="term" class="cloud">
+<img src="utilities-terminal.png" alt="Terminal"><h2>Got Terminal?</h2>
+<p class="gotblurb">
+<b>ggcov</b> has a commandline interface, useful for
+Continuous Integration.
+</p>
+<p><a id="tellmemore" class="button suggested_action" href="features.html"><span class="icon"></span>Tell me more</a></p>
+</div><!-- term -->
+</div><!-- termcont -->
 
-  <tr>
-  <td class="tocother">
-    <a href="screenshots.html">Screenshots</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
+</div><!-- columns -->
 
+</div><!-- front -->
 
-  <tr>
-  <td class="tocother">
-    <a href="documents.html">Documents</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
+<div id="footer">
+<p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
+</p>
 
-
-  <tr>
-  <td class="tocother">
-    <a href="/example/">Online&nbsp;Example</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="http://sourceforge.net/project/showfiles.php?group_id=107843">Download</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="http://www.sourceforge.net/projects/ggcov/">Project&nbsp;Page</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="https://sourceforge.net/scm/?type=git&amp;group_id=107843">Git</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="changelog.html">Change Log</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="credits.html">Credits</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-
-  <tr>
-    <td class="tocsmall">
-	<a href="http://sourceforge.net/projects/ggcov"><img
-	src="http://sflogo.sourceforge.net/sflogo.php?group_id=107843&amp;type=13"
-	width="120" height="30" border="0"
-	alt="Get ggcov at SourceForge.net. Fast, secure and Free Open Source software downloads"></a>
-    </td>
-  </tr>
-
-  <tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-    <td class="tocimg">
-      <!-- HTML copied from http://www.gimp.org/about/linking.html 20061202 -->
-      <a href="http://www.gimp.org/"><img alt="Graphics by GIMP"
-      src="http://www.gimp.org/images/gfx_by_gimp.png" border="0"
-      width="90" height="36"></a>
-    </td>
-  </tr>
-
-  <tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-    <td class="tocimg">
+<p>
       <!-- HTML copied from http://validator.w3.org/ 20061202 -->
       <!-- and added border="0" -->
       <a href="http://validator.w3.org/check?uri=referer"><img
       src="http://www.w3.org/Icons/valid-html40" border="0"
       alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
-    </td>
-  </tr>
-</table>
-
-
-    </td>
-    <td style="background:#ffffff;" valign="top" align="left">
-      <!-- MAIN BODY -->
-
-
-<p>
-<span class="program">ggcov</span> is a GTK+ GUI for exploring test coverage
-data produced by C and C++ programs compiled with
-<a href="http://www.gnu.org/software/gcc/gcc.html">gcc</a>
-<a href="http://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Debugging-Options.html#index-coverage-510">--coverage</a>.
-So it's basically a GUI replacement for the
-<a href="http://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Gcov.html#Gcov">gcov</a>
-program that comes with <span class="program">gcc</span>.
-Please note: <span class="program">ggcov</span> is not a frontend for
-<span class="program">gcov</span>; instead it reads the same data
-files directly and does various extra processing on them.
 </p>
+</div>
 
-<p>
-<span class="program">ggcov</span> also has a web interface which provides a large fraction
-of the functionality of the GTK+ GUI.  <a href="/example/">Try it out</a>.
-</p>
+</div>
 
-<p>
-<span class="program">ggcov</span> also has a commandline interface which is useful for nightly
-builds and Continuous Integration servers.
-</p>
-
-<p>
-<span class="program">ggcov</span> is released under the
-<a href="http://www.gnu.org/">GNU</a> General Public License (GPL) version 2
-with <b>no warranty</b>.  See the file COPYING in the distribution or
-<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">here</a>
-</p>
-
-</td>
-  </tr>
-</table>
-<!-- <HR NOSHADE SIZE=4> -->
-<br><br>
-<center>
-<p class="small">Updated: 29 Jul 2015
-. Copyright &copy; 2001-2011 Greg Banks. All Rights Reserved.
-.</p>
-</center>
-</body></html>
-
+</body>
+</html>

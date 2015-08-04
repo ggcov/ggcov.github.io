@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>ggcov Download</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+    /* image preloads */
+    loc = window.location
+    baseurl = loc.protocol + "//" + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, "") + "/"
+  </script>
+</head>
+<body>
+
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
+
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Home</a>
+<li><a href="features.html">Features</a>
+<li><a href="documents.html">Documents</a>
+<li><a href="/example/">Online&nbsp;Example</a>
+<li><a href="support.html">Support</a>
+<li><a href="download.html">Download</a>
+</ul>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function()
+{
+    var insts = $('#download h3');
+    insts.click(function() {
+	$(this).next().toggle('medium');
+	location.hash = '#' + $('a', this).prop('name');
+	return false;
+    });
+    insts.next().hide();
+    if (location.hash)
+    {
+	$('#download h3 a[href="' + location.hash + '"]').parent().next().show();
+    }
+});
+//]]>
+</script>
+<!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved. -->
+
+<div id="download" class="column">
+
+<h2>Install Binary Packages</h2>
+
+
+<h3><a href="#ubuntu" name="ubuntu">Ubuntu from ubuntu.com</a></h3>
+<ol>
+<li><a href="apt://ggcov">Install in Software Center</a>
+</ol>
+
+
+
+
+<h3><a href="#Fedora_18" name="Fedora_18">Fedora 18 from build.opensuse.org</a></h3>
+<ol>
+<li>Download <a
+href="http://download.opensuse.org/repositories/home:/gnb:/ggcov/Fedora_18/home:gnb:ggcov.repo">this .repo file</a>.
+<li>Become <code>root</code>.
+<li>Copy the <code>.repo</code> file into the <code>/etc/yum.repos.d/</code> directory.
+<li>Run <code>yum install ggcov</code>
+</ol>
+
+
+
+<h3><a href="#Fedora_19" name="Fedora_19">Fedora 19 from build.opensuse.org</a></h3>
+<ol>
+<li>Download <a
+href="http://download.opensuse.org/repositories/home:/gnb:/ggcov/Fedora_19/home:gnb:ggcov.repo">this .repo file</a>.
+<li>Become <code>root</code>.
+<li>Copy the <code>.repo</code> file into the <code>/etc/yum.repos.d/</code> directory.
+<li>Run <code>yum install ggcov</code>
+</ol>
+
+
+
+<h3><a href="#Fedora_20" name="Fedora_20">Fedora 20 from build.opensuse.org</a></h3>
+<ol>
+<li>Download <a
+href="http://download.opensuse.org/repositories/home:/gnb:/ggcov/Fedora_20/home:gnb:ggcov.repo">this .repo file</a>.
+<li>Become <code>root</code>.
+<li>Copy the <code>.repo</code> file into the <code>/etc/yum.repos.d/</code> directory.
+<li>Run <code>yum install ggcov</code>
+</ol>
+
+
+<h2>Install from Source</h2>
+
+<p>
+<a
+href="http://sourceforge.net/project/showfiles.php?group_id=107843">Download a release tarball</a>
+or <a href="https://github.com/ggcov/ggcov">clone the git repo</a>
+</p>
+
+</div>
+
+<div id="footer">
+<p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
+</p>
+
+<p>
+      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
+      <!-- and added border="0" -->
+      <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-html40" border="0"
+      alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
+</p>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,229 +1,1357 @@
-
-
-
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head>
-<!-- Copyright (c) 2001-2011 Greg Banks. All Rights Reserved.
- -->
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>ggcov - Change Log</title>
-<link REL="SHORTCUT ICON" HREF="favicon.ico">
-<LINK href="ggcov.css" rel="stylesheet" type="text/css">
-
+<html>
+<head>
+  <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Change Log</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <script type="text/javascript">
+    /* image preloads */
+    loc = window.location
+    baseurl = loc.protocol + "//" + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, "") + "/"
+  </script>
 </head>
-
-
 <body>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="5">
-  <tr style="background:#afafcf;">
-    <td colspan="2" valign="top" class="logo">ggcov - Change Log</td>
-  </tr>
-  <tr>
-    <td align="center" valign="top" width="1">
-      <!-- TOC -->
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
 
+<div id="wrap">
 
+<div id="nav">
+<ul>
+<li><a href="index.html">Home</a>
+<li><a href="features.html">Features</a>
+<li><a href="documents.html">Documents</a>
+<li><a href="/example/">Online&nbsp;Example</a>
+<li><a href="support.html">Support</a>
+<li><a href="download.html">Download</a>
+</ul>
+</div>
 
+<!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved. -->
 
-
-
-<table border=0 cellspacing=0 cellpadding=0>
-  <tr>
-  <td class="tocother">
-    <a href="index.html">Home</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="features.html">Features</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="requirements.html">Requirements</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="compatibility.html">Compatibility</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="screenshots.html">Screenshots</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="documents.html">Documents</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="/example/">Online&nbsp;Example</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="http://sourceforge.net/project/showfiles.php?group_id=107843">Download</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="http://www.sourceforge.net/projects/ggcov/">Project&nbsp;Page</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="https://sourceforge.net/scm/?type=git&amp;group_id=107843">Git</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocthis">
-    Change Log
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-  <td class="tocother">
-    <a href="credits.html">Credits</a>
-  </td>
-  
-</tr>
-<tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-
-  <tr>
-    <td class="tocsmall">
-	<a href="http://sourceforge.net/projects/ggcov"><img
-	src="http://sflogo.sourceforge.net/sflogo.php?group_id=107843&amp;type=13"
-	width="120" height="30" border="0"
-	alt="Get ggcov at SourceForge.net. Fast, secure and Free Open Source software downloads"></a>
-    </td>
-  </tr>
-
-  <tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-    <td class="tocimg">
-      <!-- HTML copied from http://www.gimp.org/about/linking.html 20061202 -->
-      <a href="http://www.gimp.org/"><img alt="Graphics by GIMP"
-      src="http://www.gimp.org/images/gfx_by_gimp.png" border="0"
-      width="90" height="36"></a>
-    </td>
-  </tr>
-
-  <tr>
-  <td class="toc" height="5"><img width="1" height="1" src="1x1t.gif" alt=""></td>
-</tr>
-
-
-  <tr>
-    <td class="tocimg">
-      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
-      <!-- and added border="0" -->
-      <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-html40" border="0"
-      alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
-    </td>
-  </tr>
-</table>
-
-
-    </td>
-    <td style="background:#ffffff;" valign="top" align="left">
-      <!-- MAIN BODY -->
-
+<div id="column" class="column">
 
 <p>
 This listing is also available as the file ChangeLog in the source tarball.
 </p>
 
+</div>
 
+<p><b>Thu Mar 13 07:44:17 2014 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.9
+<li style="list-style-type:none;">&nbsp;
+<li>
+Handle gcc 4.7 (generic)
+<li>
+Update RPM spec to distribute ggcov-run
+<li>
+Work around bfd dynamic library linking issues on Ubuntu
+<li>
+Support call scanning on x86-64.
+<li>
+Work around a gcc/bfd filename bug with yacc files
+<li style="list-style-type:none;">&nbsp;
+<li>
+Find object files with a .os extension
+<li>
+Find .gcda files buried in libtool .libs/ dirs
+<li>
+Don't recurse into toplevel debian/ or .git/ directories
+<li style="list-style-type:none;">&nbsp;
+<li>
+Automatically suppress blocks which call abort() and blocks
+which represent the failure case of assert() statements; now
+your assert() statements don't drag down the coverage stats.
+<li>
+Add the --suppress-call option to allow you to suppress
+any block which calls a given function.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Remember various user interface state between ggcov runs:
+window size and position, checkboxes in menus, Source window
+column state.
+<li>
+Lists of files now trees with filename and directory icons.
+<li>
+Update several windows to use the newer GtkComboBox widget.
+<li>
+Tooltips on flow diagram show block info and suppressions
+<li>
+Add a Save As button to the Report window.
+<li>
+Don't show the Cobertura XML in the Report window
+<li>
+Make the Summary text columns fixed width so the window
+doesn't resize unexpectedly.
+<li>
+Fix scroll preservation on the Source window
+<li>
+Grey out menu items in the Source window
+<li>
+Show abbreviated common path in Files window
+<li>
+Improved error message for missing files, bogus tags.
+<li>
+Minor performance improvements
+<li>
+Improvements to data structures, code, build and unit tests.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Jul 24 13:59:04 2011 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.8.4
+<li style="list-style-type:none;">&nbsp;
+<li>
+Add the ggcov-run program, which can be used to run a test program in
+such a way that the runtime generated coverage data files are stored in
+a chosen location rather than being written to the source directory.
+Added corresponding --gcda-prefix option to ggcov, tggcov and
+git-history-coverage.  This feature is useful for those testing
+scenarios where the source directory is not available or not writable.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Reorganise compiler version handling to make it easier to add support
+for new compiler versions, especially ones that are identical in
+behaviour to gcc 4.0 except for the reported version string.  Also some
+code cleanliness improvements including const correctness and fixing
+compile warnings with newer versions of gcc.
+<li>
+Support for gcc 4.6, including:
+- gcc 4.6.x in Ubuntu Oneiric -- thanks to Jim Huang.
+- gcc 4.6(prelease) in Debian Wheezy.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Usability improvements:
+- tggcov will annotate yacc and lex input files
+- don't complain about source filename "&lt;stdout&gt;"
+- fuzzy function solving is always enabled
+- disable "failed to reconcile calls" warning.
+- turn off compiledir warnings entirely
+- handle filename clashes with yacc-produced .c
+- detect more recent compiler millicode functions
+- handle un-normalised source filenames in .gcno
+- useful errors when detecting that data files were produced by an
+unrecognised compiler version.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Improve .gitignore -- thanks to Jim Huang.
+<li>
+Some improvements to utility classes
+<li>
+Better errors when tggcov fails in tests
+<li>
+Use --coverage option in testing.
+<li>
+Fix racy loop in test015 make check due to UMR
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Fri Apr 22 16:39:00 2011 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.8.3
+<li style="list-style-type:none;">&nbsp;
+<li>
+Handle gcc 4.5.
+<li>
+Work around Ubuntu libbfd b0rkages
+<li>
+Add a report which emits a Cobertura coverage.xml
+<li>
+Add git-history-coverage which reports coverage by git commit
+<li>
+Add -o option to tggcov
+<li>
+Silently treat missing .gcda files as zero counts
+<li>
+Automatically suppress some glibc inline functions
+<li>
+Split ggcov RPM packages into three.
+<li>
+Fix a really old bug with minimal_name()
+<li>
+Add hashtable_iter_t to iterate a hashtable
+<li>
+Provide a package: target in the top level
+<li>
+Don't link (t)ggcov against Sleepycat DB
+<li>
+Fix dist: target again
+<li>
+Modernise RPC spec file.
+<li>
+Use PKG_PROG_PKG_CONFIG in configure.in
+<li>
+Converted .cvsignore files to .gitignore
+<li>
+Use git to generate ChangeLog not CVS.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun May  9 15:55:03 2010 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.8.2
+<li style="list-style-type:none;">&nbsp;
+<li>
+Support for gcc 4.4.1 (Ubuntu 9.10), patch from Ken McDonell.
+<li>
+Removed the ability to read files produced by gcc -db.  This
+feature was always too fragile as it depended too closely on
+undocumented and volatile gcc internals.  Removed test018
+which exercised this feature and has been broken for some time.
+<li>
+Char* constness fixes from Ken McDonell.
+<li>
+Other minor compilation fixes.
+<li>
+Fixed a number of complaints from automake 1.11 about gmake
+specific features in Makefile.am files.
+<li>
+Update CVS ignore files.
+<li>
+Update my email address.
+<li>
+Update the release procedure document.
+<li>
+Fix wrong test name in test022 error message
+<li>
+Improve the existing estring unit test and add test023 to
+actually run it for "make check".
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Fri Jan  8 19:29:58 2010 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.8.1
+<li style="list-style-type:none;">&nbsp;
+<li>
+Support gcc 4.3 file formats.
+<li>
+Fix various compile warnings.
+<li>
+Make test 018 failure message clearer.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Jul  2 19:04:17 2006 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.8
+<li style="list-style-type:none;">&nbsp;
+<li>
+Significant improvements to the callgraph diagram layout algorithm,
+which now generates more visually pleasing results for a wider range
+of possible callgraphs.
+<li>
+When mousing over callgraph nodes in the gtk gui, show a popup
+containing the same information as the node box but actually large
+enough to be visible on nontrivial diagrams.
+<li>
+Add to the gtk gui a -w option to specify window(s) to open initially.
+<li>
+Support file format from gcc 3.4 on Mandrake 10.2.
+<li>
+Handle gcc 4.1.1 data file formats.
+<li>
+Handle file format from the gcc 4.0.3 in Ubuntu Dapper.
+<li>
+Patch by Jim Huang to support gcc 3.4 and gcc 4.1 on Ubuntu.
+<li>
+Automatically detect when ggcov is being run from it's source
+directory and adjust the libglade search path to find the
+uninstalled glade file first.  This avoids the need to build
+with UI_DEBUG=1 in order to run ggcov before install.
+<li>
+Reduce memory usage in various ways, including keeping some
+strings uniquely in a hashtable, and using u64 instead of string
+for gcc4.0 function id.
+<li>
+Don't rely on the build system providing -Wl,--export-dynamic for
+libglade to work after the ggcov executable is stripped, instead
+use a Perl script to generate a C array which maps names to function
+pointers.  This is needed for Ubuntu, and also makes the exe smaller.
+<li>
+Centralise the common parts of commandline option processing and
+interpretation in cov.C.  Instead of one `recursive' flag in each
+source file containing a main(), there's now exactly one.
+<li>
+Combine "graph2win" and "legowin" into "diagwin"
+<li>
+Rationalise debug tokens.
+<li>
+Reorganise covio_t code.
+<li>
+Centralise the dbounds_t structure and some defines in a new header.
+Move various code from the callgraph diagram to methods of dbounds_t.
+<li>
+Add a scene generator which generates no output but performs various
+geometrical checks for poor diagram layout; particularly useful for
+objective testing of the callgraph diagram layout code.
+<li>
+Add a --dump-callgraph option to tggcov to dump the callgraph in an
+ASCII form suitable for checking in tests.
+<li>
+Add test 15, which exercises the callgraph diagram layout algorithm
+using a Perl script to generate C code from simple graph descriptions.
+<li>
+Running a runtest script with ENABLE_DB_FLAG in the enviroment will
+enable the -db gcc flag, generating a foo.c.12.bp file.
+<li>
+Add test018 which exercises the 12bp callgraph reading code.
+<li>
+Fix logic bug: when accounting coverage status of branches,
+branches cannot ever be partially covered.
+<li>
+Fixed compile warnings from gcc 4.1.1.
+<li>
+Don't complain about R_386_GOT32 relocs in i386 code.
+<li>
+Fix an invalid free in test018 (thanks to Jim Huang for the report)
+<li>
+Callgraph handles calls to functions with attribute(pure)
+<li>
+Improve filtering of line coverage results in test cases, to avoid
+spurious test failures due to differing algorithms for counting
+multi-block lines (the for(;;) problem) and for lone "catch" statements.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Mon Sep 12 00:21:42 2005 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.7
+<li style="list-style-type:none;">&nbsp;
+<li>
+Handle the gcc 4.0.0 and Fedora Core 4 compiler file formats.
+<li>
+Add suppress by comment.  New -Y commandline option allows
+suppressing source lines with a single-line comment containing
+the specified word.  New -Z option suppresses a range of lines
+starting and ending with the given words.
+<li>
+Rejig block graph solving algorithm to handle calls to functions
+which return a different number of times than they're called, such
+as exit() or fork() or any function which might eventually call
+longjmp().
+<li>
+Source files in /usr/include and /usr/lib are not counted towards
+the common path for source files.
+<li>
+Handle relative paths to source files in .gcno and .o files.
+<li>
+Handle compiling with version 3 of DB, found on some distros.
+<li>
+Handle calls to functions marked with attribute((pure)) gracefully.
+<li>
+Remove the unhelpful Arc column from the Calls window
+<li>
+Remove the long-redundant HAVE_BBG_FAKE_FLAG define and all the code
+that depended on it.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fix compile warnings from gcc 4.0.0.
+<li>
+Fix memory buffer addressing bugs in the code to scan i386 object
+files for call graph information.
+<li>
+Fix assert failure when built against GTK2 library and the
+^W accelerator to close a window is used before the File menu
+is manually shown.
+<li>
+Don't complain about R_386_GOT32 relocs in i386 code.
+<li>
+Fix a Free Memory Read found when trying coverage samba4 code.
+<li>
+Fix a corner case in the formatting of block lists.
+<li>
+Add --version options to tggcov and ggcov-webdb (ggcov itself already
+has this option via GNOME's popt table).
+<li>
+When built against recent libgnome, ggcov's --help output failed to
+describe the ggcov-specific options.  Fix this by pushing the popt
+options table to gnome_program_init().
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fix ambiguity in function's file scope on summary page.
+<li>
+Hyperlinks to source page use URLs cleaned of extraneous query
+strings.
+<li>
+Change the View links on the summary page to buttons, so they
+show the right page without clicking Update first.
+<li>
+Make web interface windows 100% wide.
+<li>
+Web interface handles missing or empty tests dir more gracefully.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Add --disable-web option to configure
+<li>
+Enforce --disable-gui more strictly
+<li>
+Remove a superfluous AC_ARG_PROGRAM, as AM_INIT calls it too.
+<li>
+Handle quirks of older automakes.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Loosen expected file comparison test to ignore line counts for
+function variable lines, to avoid pointless compiler variation
+in tests.
+<li>
+Convert test007 to use expected output rather than compare to gcov
+output, which miscounts the block which checks the return of setjmp().
+<li>
+Add test016 to configure.in
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Jun 19 17:09:27 2005 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.6 (big jump reflects lots of changes)
+<li style="list-style-type:none;">&nbsp;
+<li>
+Ported to Fedora Core 3, SUSE Enterprise Linux 9.
+<li>
+Support new gcc 3.4 .bbg and .da format (actually 2 formats each,
+bigendian and littleendian).
+<li>
+First attempt at supporting the file format generated by gcc 3.3.3
+on Mandrake 10.x.
+<li>
+Add a new window to ggcov to show a Lego diagram.
+<li>
+Added a simple PHP web interface for navigating coverage data
+<li>
+Add a second package ggcov-web and package all the web bits there.
+<li>
+Scan executables to find required shared libraries, and recursively
+scan shared libraries to find their required libraries, and scan
+all of those for coveraged source.
+<li>
+Added --solve-fuzzy flag to ggcov, tggcov and ggcov-webdb to ignore
+inconsistencies in arc counts on a per-function basis.  Useful for
+samples from kernel coverage on multiprocessor machines.
+<li>
+Hide the Arc column in the Calls window by default, to match the
+initial state of the check menu item.
+<li>
+When scanning object files for calls, don't record magic calls
+to __cxa_throw() et al that g++ inserts.
+<li>
+In the Calls window, don't show calls from blocks that have no
+source associated with them; this hides the magic calls to
+__cxa_throw() et al that g++ inserts.
+<li>
+cov_arc_t::finalise() suppresses arcs which are calls to any of
+the g++ internal exception handling functions like __cxa_throw().
+<li>
+Handle PIC code relocs when scanning objects to build the callgraph.
+<li>
+Grey out the View buttons on the Calls window when appropriate.
+<li>
+Package the tggcov executable
+<li>
+Small improvement to the formatting of block listings in the Source window.
+<li>
+Icon looks marginally prettier
+<li style="list-style-type:none;">&nbsp;
+<li>
+Convert cov_function_t::list_all() to use the templated C++
+list wrapper
+<li>
+Added status() method to cov_block_t, cov_arc_t, cov_function_t,
+cov_file_t.  Calls calc_stats().
+<li>
+portability: use /usr/bin/env to find bash for shell scripts
+<li>
+Abstract differences between GTK1 and GTK2 ways of setting tree/list
+column visibility into ui_list_set_column_visibility().
+<li>
+Centralise two copies of nearly identical code to populate a combobox
+with names of functions.
+<li>
+Check for gnome_program_init() in -lgnome-2 as well as -lgnome.
+<li>
+Calculate the GUIPROG variable in configure instead of Makefile.am
+<li>
+Moved the status_t enum from class cov_line_t to a new global class cov.
+<li>
+Converted low-level cov file IO code to C++, mostly to enable
+run-time switching between bigendian and littleendian via C++
+virtual functions, for the gcc 3.4 format.
+<li>
+Replace Lego and Callgraph windows with a unified Diagram window which
+uses the diagram_t abstraction.  No user-visible differences.
+<li>
+Change from gnome_config_*() API to gconf, when detected by autoconf
+<li>
+Added a schema file for gconf.
+<li>
+ggcov.desktop no longer needs full path to icon
+<li>
+Drop -Wmissing-prototypes as gcc3.4 complains when given it in C++ mode
+<li>
+Added --without-bfd configure option to make life easier for the PLD guys.
+<li>
+Combine GTK1 and GTK2 functions for getting double-click data.
+<li>
+Check whether the old gtk1.2 automake macros exist before using them
+<li>
+Rationalised icon formats: PNG to install. XPM to #include
+<li>
+Detect the name of the raw size field in bfd's asection struct, as it changed.
+<li>
+Removed unnecessary #includes of covio.h
+<li>
+Also remove configure for the buildrpm --force option.
+<li>
+Make finalise() calls descend all the way to cov_arc_t level.
+<li>
+Use EXTRA_PROGRAMS so the source tarball builds properly
+<li style="list-style-type:none;">&nbsp;
+<li>
+In tests, when comparing tggcov output vs expected, filter out
+line counts for the { and } lines at the start &amp; end of functions.
+<li>
+Test code handles slightly different text output from gcov
+<li>
+Test feature: if $RPLATFORM is set when running tests, use all
+the compiled programs, .bbg and .da files from a remote platform.
+<li>
+runtest doesn't use a logfile anymore
+<li>
+Added --disable-gui configure option to allow for headless testing
+<li>
+Added test for coveraged code in shared libraries.
+<li>
+portability fixes to enable platform.sh to work on Solaris
+<li>
+Added support for using the standard automake "check" target.
+<li>
+reordered platform string to put version last
+<li>
+Add the test/ hierarchy to the source tarball.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fix a memory leak in the scanning of object files.
+<li>
+Portability fix: on some platforms, getc() and ungetc() are macros.
+Rename member functions of cpp_parser_t to avoid trouble.
+<li>
+In configure, calculate variables CPU_DEFINES and OS_DEFINES
+to enable CPU-specific and OS-specific code respectively.
+Doesn't support cross-compile.
+<li>
+valgrind-run supports valgrind version 2.
+<li>
+Fix the dist: target yet again.
+<li>
+Fix bug where estring::truncate_to() could not handle a new
+length longer than the old length.
+<li>
+Fix bug where expanding an estring by a large amount fails
+to allocate enough space and overruns the buffer.
+<li>
+Add append_vprintf(), insert_vprintf() and replace_vprintf() to estring.
+<li>
+Fix UMR in estring const constructor.
+<li style="list-style-type:none;">&nbsp;
+<li style="list-style-type:none;">&nbsp;
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Sep 26 20:48:49 2004 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.3
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added a number of text reports to ggcov, tggcov.
+<li>
+Added -o option to ggcov, tggcov (same as gcov's -o option).
+<li>
+Summary window shows percentages of partially covered entities.
+<li>
+Split Summary window numeric display into separate columns for
+proportion and percentage, to get better visual alignment.
+<li>
+Added Blocks column to the Functions window.
+<li>
+Added Blocks and Functions columns to the Files window.
+<li>
+Added support for yet another .bbg/.bb/.da file format, this time
+emitted by gcc 3.3.2 in Fedora Core 1.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Source lines which depend on any of the cpp symbols in the
+suppression set, are suppressed.  The -X commandline option
+<li>
+adds a cpp symbol to the suppression set.
+<li>
+Arcs from suppressed lines are suppressed; functions are
+suppressed if they contain no unsuppressed lines.
+<li>
+Suppressed source lines are shown in a different colour.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Reorganised BFD and platform-specific call scanning code.
+<li>
+Various minor bug fixes.
+<li>
+Checked in a bunch of tests which have been sitting around.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Tue Nov  4 23:55:52 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.2.2
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added simple man page to document commandline usage.
+<li>
+Fixed bug where callgraph scanning found no calls ever.
+<li>
+Replaced most #ifdef DEBUG debugging prints with runtime prints.
+with commandline selection of debug features.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Aug  3 18:37:40 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.2.1
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed bug where stabs32 filename scanning code was never linked in,
+so ggcov couldn't be given an executable as an argument.
+<li>
+Added a warning when configure falls back from GNOME v2 to v1.2.
+<li>
+configure check for the popt library works on platforms where
+libpopt.so is not in /usr/lib but in the same nonstandard
+location as the GNOME libraries.
+<li>
+Removed acconfig.h.  We can do without it on autoconf 2.13 and it
+makes autoconf 2.57 whine mightily.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Tue Jul 22 21:43:30 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.2
+<li style="list-style-type:none;">&nbsp;
+<li>
+Full support for all features in GTK2.
+<li>
+Removed the --enable-gtk2 configure option; uses GTK 2.0 if
+its installed and recent enough otherwise fallback to GTK 1.2.
+<li>
+Fixed colour coding of list rows in Files and Functions windows
+in gtk2.
+<li>
+Pushed ifdef code for dealing with GtkText in gtk 1.2 build versus
+GtkTextView in gtk 2.0, down into new ui_text_*() functions.  Source
+and Licence windows use new ui_text_*() functions.  No GTK2 ifdefs.
+<li>
+Fixed compile warning in GTK2 port.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added GNOME .desktop file (thanks to Dag Wieers) and a 63x63
+desktop icon.
+<li>
+ggcov handles file:// URLs on the command line so it can be
+invoked by dragging files or directories from Nautilus
+onto its GNOME desktop icon.
+<li>
+Default action if no files on commandline (e.g. user double-clicks
+the desktop icon) is to show the File-&gt;Open dialog and exit if files
+are selected (used to be the same as "ggcov .").
+<li style="list-style-type:none;">&nbsp;
+<li>
+User can load source, objects or directories into ggcov by dragging
+and dropping them from Nautilus.
+<li>
+Added File-&gt;Open dialog to allow user to select executables, source
+files or directories.  Files can be loaded in multiple passes, e.g.
+from multiple invocations of the File-&gt;Open dialog.
+<li>
+Added MVC module.
+<li>
+Class cov_file_t provides an object to be listened to for MVC
+notifications of when the global set of files changes.
+<li>
+All windows are notified of changes to the global files set
+by having their populate() method called, which rebuilds the
+display from scratch.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added support for building RPMs on RedHat 9.
+<li>
+Support for autoconf 2.57 (RH9).
+<li>
+Fixed library order bug which broke build on RH9.
+<li>
+Encode into the RPM filename the name of the Linux distro where built.
+<li>
+Only one of the two glade files is packaged into the RPM.
+<li>
+Used %configure in spec file.  Required switching from
+overloading prefix to DESTDIR in %install stage.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added ptrarray_t, a templated wrapper around glib's GPtrArray.
+<li>
+Converted most uses of GPtrArray to ptrarray_t.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Reorganised data structures.  There is now a per-line class
+cov_line_t, an array of which is kept per-file.  It contains the list
+of blocks for that line as well as caching the calculated count.
+<li>
+cov_file_t now created on demand for secondary files, e.g. header
+files with inline functions.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed bug which failed an assert if user selected a range of
+uninstrumented lines in the Source window and used the Summarise Range
+command.
+<li>
+Fixed bugs with text window line selection in gtk2 port.
+<li>
+Removed spurious #ifdef which was always disabling the config file.
+<li>
+Made formatting in Source window a little less dependent on hardcoded
+column widths.
+<li>
+Removed last traces of the screenshot_mode option.
+<li>
+Fixed bug where Files window's populate() method didn't handle
+being called twice.
+<li>
+Added argv0 so test programs will link.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Fri Jul 11 01:51:32 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.8
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed interpretation of relative filenames in .bb files.
+<li>
+Added assignment operators to class estring.
+<li>
+Fixed broken compile when libbfd missing.
+<li>
+When showing or hiding columns in the Source window, preserve
+the scroll position instead of flipping back to the start.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Wed Jul  2 22:30:45 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.7
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed bug in detection of gcc 2.96 braindamage which spuriously
+triggered the error message on gcc 3.3.
+<li>
+Fixed bug where Source window wrap was disabled for the GTK2 build
+even when it didn't need to be.
+<li>
+Enabled the Source window File-&gt;Save As command for gtk2 build, which
+also removes some runtime warnings when the Source window is opened.
+<li>
+Captured the log output for a new GTK2 log domain.
+<li>
+Simplified log initialisation code.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Wed Jul  2 22:30:45 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.6
+<li style="list-style-type:none;">&nbsp;
+<li>
+Initial support for new gcc 3.3 bbg and da formats.
+<li>
+Make cov_file_t::read_bbg_function() more robust in the face
+of bad data (e.g. the new .bbg file format).
+<li>
+Added support for moving machine-specific code into subclasses
+of abstract generic classes, including a factory class.  Moved the
+stab32 parsing code into a machine-specific subclass.
+<li>
+Updated strings to mention ggcov not cant.
+<li>
+Improved debugging prints.
+<li>
+Reorganised Makefile to build two archive libraries and link ggcov
+and test programs from there, rather than specifying all the source
+for every test program.
+<li>
+Added test program newbbgdump to dump the new gcc 3.3 bbg format.
+<li>
+Added test program tggcov to write coveraged like gcov, for automated
+comparison of basic block accounting.
+<li>
+Moved the summarise() debug code to cov.C:cov_dump().
+<li>
+Fixed FMR while parsing arguments in gtk1.2 build.
+<li>
+Fixed unused variable warning in argument parsing.
+<li>
+Fixed compile bug in debug message in fileswin.C.
+<li>
+Fixed bug in declarations of describe() methods in subclasses
+of cov_scope_t which only showed up in high debug levels.
+<li>
+Strip '&amp;' as well as '*' when normalising mangled .bbg names.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sat Jun 14 00:22:17 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.5
+<li style="list-style-type:none;">&nbsp;
+<li>
+Autoconf detects presence of gtk_text_buffer_select_range() and handles
+its absence as gracefully as possible.
+<li>
+If libpopt is missing, supply our own trivial implementation.  This allows
+only parse_args() to exist while handling building on systems with gtk2
+and no libpopt.
+<li>
+Fixed a couple of bugs gtk2 in the Source window where selecting items
+from the Filename or function menus would SEGV.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Jun  8 16:23:01 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.4
+<li style="list-style-type:none;">&nbsp;
+<li>
+Made ggcov more robust when faced with problems finding or loading
+data from object files; emits warning messages and keeps going rather
+than failing asserts.
+<li>
+Recognise file extensions .cc .cxx and .cpp as source code.
+<li>
+Added a wrapper for the C++ demangling code in libiberty and a
+function to normalise mangled names.
+<li>
+Demangle names from .o files, normalise mangled names from .bb files.
+<li>
+Ggcov doesn't use the "fake" arc flag from the .bbg data file anymore
+but detects call arcs using the arc's destination block.  With a
+working gcc this makes no difference; with the braindead 2.96 ggcov
+can detect most rather than none of the call arcs.
+<li>
+Ggcov now detects broken data files written by braindead gcc 2.96,
+and emits a warning message and skips reading the object file.
+<li>
+Ggcov will search directories for source files recursively;  disabled
+by default, enabled with the --recursive/-r option.
+<li>
+cov_file_t and related objects can be deleted, correctly &amp; efficiently.
+Needed for directory scanning to be robust in the presence of source
+which isn't compiled, or is compiled but not linked.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added hashtable_t templated wrapper for GHashTable, and replaced
+all uses of GHashTable with the wrapper.
+<li>
+Functions window can use a typesafe list now.
+<li>
+Replaced all uses of the strassign() &amp; strdelete() macros with
+class string_var.
+<li>
+Fileswin uses tok_t tokenizer instead of strtok().
+<li>
+Added operator to cast estring to const char*.
+<li>
+Minor de-crufting.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Created a cov_scope_t class which abstracts the scoped statistics
+summary.  Moved the overall and range scope code from global functions
+into private members of derived classes of cov_scope_t.
+<li>
+Call Graph window uses scope objects instead of calling calc_stats().
+<li>
+Added cov_compound_scope_t for aggregating multiple scopes, cached.
+<li>
+Files window and functions window use scope objects instead of
+calling calc_stats() methods and caching the results.
+<li>
+cov_file_t::calc_stats() and cov_function_t::calc_stats() are now
+private; they are only needed by the scope objects, which are friends.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed bug where double-click in Files List window didn't work.
+<li>
+Fixed memleak in the Call Graph window.
+<li>
+Fixed argument parsing code.
+<li>
+Fixed memleak destroying cov_blocks during recursive source scan.
+<li>
+Fixed bug in debug output.
+<li>
+Fixed broken view menu checkboxes in gtk2 build.
+<li>
+Fixed many bugs with gtk2 port.  Most windows now work passably
+rather than coredump when first shown.
+<li>
+Simplified coding of list &amp; tree double-click handlers, also hides
+most of the gtk/gtk2 differences.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sat May 31 17:32:17 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.3
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed bug in string_var class which randomly broke data file loading.
+<li>
+Removed warnings in -DDEBUG build.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Fri May 30 00:56:06 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.2
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added title column buttons to source window, and a View menu item
+to hide them.
+<li>
+Reimplemented Files window's tree mode; now shows accumulated statistics
+on directories.
+<li>
+Added a menu item to the Source window to save the source with the
+currently selected annotations.
+<li>
+All directories mentioned on the commandline are searched for
+all .bb .bbg .da and .o files, in the given order and always
+starting with the source file's own directory.  This gives the
+functionality of "gcov -o".
+<li>
+Rewrote file_make_absolute() to normalise out "." and ".." from
+pathnames.
+<li>
+Removed a stray TAB from a GUI label.
+<li>
+Centralised the File-&gt;Close and File-&gt;Exit callbacks in class window_t.
+<li>
+Added string_var and tok_t classes for string manipulation.
+<li>
+Portability fixes.
+<li>
+Minor code cleanups.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Mon Mar 17 14:54:46 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1.1
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added a tree mode to Files window, which displays source files
+from multiple directories in a tree format.
+<li>
+When the Call Butterfly window is shown, initialise the hpaned widget
+so that both the Calls From and Calls To lists are visible.
+<li>
+Call Graph window shows whole graph when graph is nontrivial.
+Layout algorithm still sucks.
+<li>
+Hacked around bug with new argument parsing where gtk/gnome options
+are not stripped out before ggcov parses the arguments.
+<li>
+Fixed bug which lost list column header labels on recent gtk 1.2's.
+<li>
+Fixed bugs where Call Graph window would SEGV or loop when the
+coverage data contained function call loops.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Tue Mar 11 13:54:45 2003 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.1
+<li style="list-style-type:none;">&nbsp;
+<li>
+Compile ggcov with the C++ compiler.
+<li>
+Converted cov.[ch] to C++, split up into multiple source files.
+<li>
+Added base class window_t and converted all the GUI windows to be
+derived classes of window_t.
+<li>
+Converted estring to C++.
+<li>
+Added C++ list_t&lt;&gt; templated wrapper for GList.
+<li>
+Added list_t::sort().
+<li>
+Moved ggcov.c:read_gcov_directory() -&gt; cov.c:cov_read_directory().
+<li>
+In many different places the internals details of how cov_file_t's,
+cov_function_t's, and cov_block_t's are related was unnecessarily
+exposed.  Added cov_file_num_functions(), cov_function_num_blocks();
+enforced use of cov_file_nth_function() &amp; cov_function_nth_block().
+<li>
+Separated cov_callnode_t and cov_callarc_t into their own files
+and converted them to C++.
+<li>
+cov_get_count_by_location() returns a 4-way enum instead of
+of a boolean, indicating the coverage status of the line.  One
+of the enum values indicates partially covered lines, i.e. multiple
+blocks appear on the line and not all of them are executed.
+<li>
+Renamed sourcewin_t::show_file() to show_filename() and added a new
+show_file() which takes a cov_file_t.  Summarywin and fileswin use
+the new function.
+<li>
+Converted fileswin.C:file_rec_t to C++.
+<li>
+Provided global operator delete which provides no value except
+to shut up valgrind and Purify about mismatched frees.
+<li>
+C++ compiler noticed that mode_t is unsigned so returning -1 through
+it is a bug...so changed return type of file_mode() to int.
+<li>
+Converted sourcewin.C:sourcewin_hacky_rec_t to C++.
+<li>
+Removed the global filenames list and replaced with a list of
+cov_file_t's iterated by cov_file_t::first().
+<li>
+Converted functionswin.C:func_rec_t to C++.
+<li>
+Extended file_change_extension() to allow the old extension to be
+specified as NULL which uses any existing extension.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Uses c99's uint64_t where available.
+<li>
+Centralised definitions of unsigned 32 &amp; 64 bit ints.
+<li>
+Provided macros in covio.h for formatting covio_u{32,64}_t.
+<li>
+Added define COV_COUNT_MAX which is maximum value of a count_t.
+<li>
+Centralised 64-bit integer printf format strings.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Partial gtk2 port derived from code contributed by Havoc Pennington.
+<li>
+GNOME colour pickers disabled for gtk2.
+<li>
+Canvas-based call graph window disabled for gtk2.
+<li>
+Config file reading disabled for gtk2.
+<li>
+Removed useless --glade-path option.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added cov_is_source_filename() to test whether a filename matches
+the known source file extensions.
+<li>
+Renamed cov_handle_c_file() -&gt; cov_read_source_file().
+<li>
+Added cov_read_object_file() which uses the .stab and .stabstr
+ELF sections to extract a list of source filenames with full paths.
+<li>
+Added cov_pre_read() by analogy with cov_post_read(); will be
+useful one day.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added infrastructure for program preferences, saved and loaded
+using gnome_config_*() routines.
+<li>
+Added preferences dialog to edit preferences.
+<li>
+Added to prefs foreground and background colours for colour coding
+various items according to coverage status.
+<li>
+Tweaked some default colours for better look.
+<li>
+Summarywin uses colours from prefs.
+<li>
+Functionswin colour codes list entries using colours from prefs.
+<li>
+Fileswin colour codes list entries using colours from prefs.
+<li>
+Sourcewin uses colours from prefs.
+<li>
+Callgraph2win uses colours from prefs.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Added a second Call Graph window which actually has a graphical
+presentation rather than navigable distribution to callers/callees.
+New window present calls as nodes in a call graph, with function
+name, filename, and coverage show textually in the node.  Nodes
+are colour coded red, yellow or green according to the function's
+line coverage.  Nodes with no instrumented source lines are grey.
+Arcs are colour coded according to arc coverage.  Layout is fixed
+and very primitive.
+<li>
+Changed the Windows menu names of the two call graph windows
+to be more indicative and less ambiguous: callgraphwin announces
+itself as "Call Butterfly" and callgraph2win as "Call Graph".
+<li>
+Attempted to improve the call graph window layout algorithm.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Callgraphwin list frame labels are easier to understand, e.g.
+"Called from" instead of "Distribution to Ancestors".
+<li>
+Sourcewin's block column collapses runs of consecutive blocks into
+a range, e.g. "3-6" instead of "3,4,5,6".  Avoids a lot of column
+overflow.
+<li>
+Split Function combo box into From Function and To Function boxes,
+both of which have an "All Functions" wildcard item which is the
+default.
+<li>
+Reorganised columns in Calls window, now has From To Line Arc Count.
+<li>
+Moved list of filenames and functions in source window from menubar
+to a new toolbar.
+<li>
+Added View-&gt;Toolbar to the source window to control whether the toolbar
+is visible (visible by default).
+<li>
+Added to prefs a boolean controlling whether a new source window is
+popped up every time or an old one is reused.
+<li>
+Added preference to reuse the summary window.
+<li>
+Added concept of minimal file names, where only the minimal
+unique suffix of a filename is displayed to the user.
+<li>
+Double-clicking on a row in the Calls list shows the `from' source line.
+<li>
+Visual improvements to the About window.
+<li>
+Added View menu to Calls window with a check menu item for each
+column.  Arc column is off by default.
+<li>
+Added icon for all toplevel windows derived from logo.xpm.
+<li>
+Added ui.c infrastructure for app to select a default icon.
+<li>
+Added infrastructure to debug GTK/Glib log messages.
+<li>
+Added to source window menu items to summarise the source file,
+the selected function, or the selected source lines.
+<li style="list-style-type:none;">&nbsp;
+<li>
+window_t::show() will also raise a window.
+<li>
+Reduce unnecessary processing on windows that are reused by only
+calling populate() the first time a window is shown.
+<li>
+Added default definitions of _ and N_ in preparation for gettext.
+<li>
+Dealt with stupid gnome header files redefining _ and N_.
+<li>
+Made cov_function_t::name() const like it always should have been.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Adding version.m4 for the website.
+<li>
+Used aclocal.m4 the way it was intended.
+<li>
+Install &amp; distribute the logo pixmap.
+<li>
+Removed autoconf stuff from .spec file setup section.
+<li>
+For gcc, add a bunch of warning options to $CFLAGS.
+<li>
+Added bbdump program to help debug .bb file problems.
+<li>
+Ignored a couple more generated files.
+<li>
+The .cvsignore and .gdbinit files are distributed.
+<li>
+Various minor configure.in/Makefile.am updates from Havoc Pennington.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Fixed bug which SEGVd when double-clicking on a function in the
+functions window which has no executable lines.
+<li>
+Fixed buffer overrun bug in sourcewin due to my misunderstanding
+the return value of snprintf().
+<li>
+Fixed bug which incorrectly assumed that the last function listed in
+the coverage data file would contain the last source line in its source
+file.  Now keep an explicit last location variable.
+<li>
+Fixed bug found by valgrind where selecting the last line of
+a source window overran the offsets_by_line_ array.
+<li>
+Fixed bug where sourcewin_t::show_lines() didn't show the window.
+<li>
+Worked around a bug where cov_arc_get_from_location()
+sometimes returned 0 unexpectedly.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Removed superfluous include of estring.h
+<li>
+Added estring_replace_all() instead of the poorly implemented
+attempt in ui.c.
+<li>
+Fixed minor warnings.
+<li>
+Made some debugging prints appear less frequently.
+<li>
+Removed some asserts from list_t dtor, valgrind is a better
+debugging tool.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Mon Dec  3 12:07:12 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.7.
+<li style="list-style-type:none;">&nbsp;
+<li>
+Builds a callgraph from the information read from various files,
+including calls to functions not covered (like printf).
+<li>
+Added a window to explore the call graph.  Shows distribution to
+callers and callees in clists; double-clicking navigates to the
+new function.
+<li>
+Added a Calls window which shows the call coverage per-call
+for a given function.
+<li>
+Ggcov uses the BFD library to read object files, using relocs,
+contents and symbols for text sections to figure out names
+for function call arcs in the block graph.
+<li>
+Added option to Source window to show block numbers.
+<li>
+Added ulcmp() and ullcmp() to help sorting on unsigned longs
+and unsigned long longs respectively.
+<li>
+Renamed xmalloc() -&gt; gnb_xmalloc() to avoid possible clash
+with function of same name in -liberty.
+<li>
+Added ui_combo_set_current_data().
+<li>
+Added listclear() macro which deletes GList structures like listdelete()
+but does not call any dtor.
+<li>
+Fixed a few minor problems with debugging prints and warnings.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Fri Nov 30 12:26:55 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.6
+<li>
+Added a Files List window analagous to the Function List window.
+<li>
+Added fixed Windows menu items to create new Summary, Source, File
+List and Function List windows.
+<li>
+Initial window population is now just an overall summary.
+<li>
+Sortable column support now handles the case where not every column
+is sortable (backport from ggui).
+<li>
+Added a TODO list of some ideas.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Tue Nov 27 11:53:14 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.5
+<li>
+Added progress bars to show test coverage stats in the Summary window.
+<li>
+Progress bars display red/green to color code coverage stats.
+Had to subclass from GtkProgressBar to achieve this.
+<li>
+Added a Functions List window to show all the functions in all
+the files, with line call and branch coverage results.  Clicking
+on columns sorts the list by that column.  Double-clicking on
+rows shows the source for that function.
+<li>
+Added support for having an up or down arrow in the current sort
+column of a clist.  Clicking on the columns does the expected
+thing with sorting.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sun Nov 25 19:44:38 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.4
+<li>
+Added GUI to show summary of coverage statistics at
+overall, file, function, and range scope.
+<li>
+Various small GUI improvments.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Sat Nov 24 01:34:43 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.3
+<li>
+Added GUI to browse source annotated with line execution
+counts (only).
+<li>
+Built RPM.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Fri Nov 23 15:41:28 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.2
+<li>
+Split source code up from one big .c file.
+<li>
+First check into CVS.
+<li style="list-style-type:none;">&nbsp;
+</ul>
+<p><b>Thu Nov 22 17:39:15 2001 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.0.1
+<li>
+Reads .bb, .bbg, and .da files to construct data structures
+<li>
+Annotates C files with line counts, identical results to gcov.
+<li style="list-style-type:none;">&nbsp;
+<li style="list-style-type:none;">&nbsp;
+</ul>
 
-</td>
-  </tr>
-</table>
-<!-- <HR NOSHADE SIZE=4> -->
-<br><br>
-<center>
-<p class="small">Updated: 29 Jul 2015
-. Copyright &copy; 2001-2011 Greg Banks. All Rights Reserved.
-.</p>
-</center>
-</body></html>
+<div id="footer">
+<p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
+</p>
 
+<p>
+      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
+      <!-- and added border="0" -->
+      <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-html40" border="0"
+      alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
+</p>
+</div>
+
+</div>
+
+</body>
+</html>

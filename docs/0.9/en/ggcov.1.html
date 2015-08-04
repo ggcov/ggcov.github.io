@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>ggcov.1</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="../../../../../ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <script type="text/javascript">
+    /* image preloads */
+    loc = window.location
+    baseurl = loc.protocol + "//" + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, "") + "/"
+  </script>
+</head>
+<body>
+
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
+
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="../../../../../index.html">Home</a>
+<li><a href="../../../../../features.html">Features</a>
+<li><a href="../../../../../documents.html">Documents</a>
+<li><a href="../../../../..//example/">Online&nbsp;Example</a>
+<li><a href="../../../../../support.html">Support</a>
+<li><a href="../../../../../download.html">Download</a>
+</ul>
+</div>
+
+<div id="columnpad" class="column">
+
+<h1 align=center>GGCOV</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#EXAMPLES">EXAMPLES</a><br>
+<a href="#AUTHOR">AUTHOR</a><br>
+<a href="#COPYRIGHT">COPYRIGHT</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+
+
+
+
+<a name="NAME"></a>
+<h2>NAME</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">ggcov &minus; a
+GNOME frontend for exploring gcov coverage data</p>
+
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>ggcov</b>
+[<i>GNOME options</i>] [[<b>&minus;r</b>]
+<i>directory</i>|<i>file</i>] ...</p>
+
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>Ggcov</b> is
+a GTK+ GUI for exploring test coverage data produced by C
+and C++ programs compiled with <i>gcc &minus;fprofile-arcs
+&minus;ftest-coverage</i>. So it&rsquo;s basically a GUI
+replacement for the <b>gcov</b> program that comes with
+<b>gcc</b>.</p>
+
+<p style="margin-left:4em; margin-top: 1em"><b>Ggcov</b>
+understands all the standard GTK+ and GNOME options, such as
+<b>&minus;display</b> and
+<b>&minus;disable&minus;crash&minus;dialog</b>. All other
+arguments are used to specify how to find coverage data
+files. The arguments can combinations of: <i><br>
+directory</i></p>
+
+<p style="margin-left:8em;">The directory is scanned for
+source files, which are handled as if they had been
+specified on the commandline (except that missing coverage
+data files are silently ignored). If the <b>&minus;r</b>
+flag is in effect, sub&minus;directories are scanned
+recursively. Multiple directories can be specified and are
+scanned in the order given.</p>
+
+<p style="margin-left:4em;"><i>executable</i></p>
+
+<p style="margin-left:8em;">The executable file is scanned
+for debugging records which contain source file names, and
+each source file which exists is handled as if it had been
+specified on the command line (except that missing coverage
+data files are silently ignored). Any shared libraries on
+which the executable depends are also scanned. Multiple
+executables can be specified and are scanned in the order
+given. This feature is only available on some platforms (for
+example, i386-linux).</p>
+
+<p style="margin-left:4em;"><i>source-file</i></p>
+
+<p style="margin-left:8em;">Is any regular file ending in
+one of the file extensions <i>.c</i>, <i>.cc</i>,
+<i>.cxx</i>, <i>.cpp</i>, or <i>.C</i>. Source files are
+matched to their corresponding coverage data files
+(<i>.gcno</i> and <i>.gcda</i> files, or <i>.bb</i>,
+<i>.bbg</i>, and <i>.da</i> files with older compilers) and
+object files by searching for a file of the same basename
+and the appropriate extension first in the same directory as
+the source file and then in all the directories specified on
+the command line (in the order they were specified).</p>
+
+<p style="margin-left:4em; margin-top: 1em">If no arguments
+are given, <b>ggcov</b> shows a file selection dialog so you
+can select one directory, executable, or source file.</p>
+
+<p style="margin-left:4em; margin-top: 1em">Directories,
+executables, or source files can also be added after
+<b>ggcov</b> is started by dragging and dropping them from a
+GNOME Nautilus window onto any <b>ggcov</b> window.</p>
+
+<a name="OPTIONS"></a>
+<h2>OPTIONS</h2>
+
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>&minus;o</b>
+<i>dir</i>,
+<b>&minus;&minus;object&minus;directory</b>=<i>dir</i></p>
+
+<p style="margin-left:8em;">Add the directory <i>dir</i> to
+the search path for object files and coverage data
+files.</p>
+
+<p style="margin-left:4em;"><b>-p</b> <i>dir</i>,
+<b>&minus;&minus;gcda&minus;prefix</b>=<i>dir</i></p>
+
+<p style="margin-left:8em;">Look for runtime coverage data
+files (<i>.gcda</i> files) underneath the directory
+<i>dir</i> instead of next to the corresponding <i>.c</i>
+files. See the example in the <b>ggcov-run</b>(1)
+manpage.</p>
+
+<p style="margin-left:4em;"><b>&minus;r</b>,
+<b>&minus;&minus;recursive</b></p>
+
+<p style="margin-left:8em;">When a directory is specified
+on the command line, search for coverage data files
+recursively in all child directories.</p>
+
+<p style="margin-left:4em;"><b>&minus;w</b> <i>windows</i>,
+<b>&minus;&minus;initial&minus;windows</b>=<i>windows</i></p>
+
+<p style="margin-left:8em;">Open the named windows when
+<b>ggcov</b> starts. Window names are <i>summary</i>,
+<i>files</i>, <i>functions</i>, <i>calls</i>,
+<i>callbutterfly</i>, <i>callgraph</i>, <i>lego</i>,
+<i>source</i>, and <i>reports</i>. The default window is
+<i>summary</i>.</p>
+
+<p style="margin-left:4em;"><b>&minus;X</b> <i>symbols</i>,
+<b>&minus;&minus;suppress&minus;ifdef=</b><i>symbols</i></p>
+
+<p style="margin-left:8em;">Do not include in statistics or
+summaries, code inside C pre-processor directives which
+depend on any of the given <i>symbols</i>. One or more
+symbols may be given, separated by commas or whitespace.
+<b>Ggcov</b> understands the following subset of the C
+pre-processor command set:</p>
+
+<p style="margin-left:8em; margin-top: 1em">&bull; <i>#if
+SYMBOL</i> <br>
+&bull; <i>#if defined(SYMBOL)</i> <br>
+&bull; <i>#ifdef SYMBOL</i> <br>
+&bull; <i>#ifndef SYMBOL</i> <br>
+&bull; <i>#else</i> <br>
+&bull; <i>#endif</i></p>
+
+<p style="margin-left:8em; margin-top: 1em">For example,
+<b>-X DEBUG</b> will suppress the <i>fprintf()</i> call in
+this code:</p>
+
+<p style="margin-left:8em; margin-top: 1em">unsigned int
+<br>
+my_function(unsigned int x) <br>
+{ <br>
+x += 42; <br>
+#ifdef DEBUG <br>
+fprintf(stderr, &quot;my_function: x=%u\n&quot;, x); <br>
+#endif <br>
+return x; <br>
+}</p>
+
+<p style="margin-left:8em; margin-top: 1em">This option is
+useful for suppressing test infrastructure code, debugging
+code, or other code which is compiled into the coverage test
+executable but whose coverage is not significant.</p>
+
+<p style="margin-left:4em;"><b>&minus;Y</b> <i>words</i>,
+<b>&minus;&minus;suppress&minus;comment=</b><i>words</i></p>
+
+<p style="margin-left:8em;">Do not include in statistics or
+summaries, code on lines which also contains a single-line
+comment comprising only one of the given <i>words</i>. One
+or more symbols may be given, separated by commas or
+whitespace. For example, specifying <b>-Y IGNOREME</b> will
+suppress the <i>assert()</i> in this code:</p>
+
+<p style="margin-left:8em; margin-top: 1em">unsigned int
+<br>
+my_function(unsigned int x) <br>
+{ <br>
+x += 42; <br>
+assert(x &gt;= 42); /* IGNOREME */ <br>
+return x; <br>
+}</p>
+
+<p style="margin-left:8em; margin-top: 1em">This option is
+useful for suppressing test infrastructure code, debugging
+code, or other code which is compiled into the coverage test
+executable but whose coverage is not significant.</p>
+
+<p style="margin-left:4em;"><b>&minus;Z</b>
+<i>startword,endword,...</i> <b><br>
+
+&minus;&minus;suppress&minus;comment-between=</b><i>startword,endword,...</i></p>
+
+<p style="margin-left:8em;">Do not include in statistics or
+summaries, code on lines between those containing a
+single-line comment comprising only <i>startword</i> and the
+next single-line comment comprising only <i>endword</i>. Two
+or more symbols may be given, in pairs, separated by commas
+or whitespace. For example, <b>-Z STARTIGNORE,ENDIGNORE</b>
+will suppress the entire function in this code:</p>
+
+<p style="margin-left:8em; margin-top: 1em">/* STARTIGNORE
+*/ <br>
+unsigned int <br>
+my_function(unsigned int x) <br>
+{ <br>
+x += 42; <br>
+return x; <br>
+} <br>
+// ENDIGNORE</p>
+
+<p style="margin-left:8em; margin-top: 1em">This option is
+useful for suppressing test infrastructure code, debugging
+code, or other code which is compiled into the coverage test
+executable but whose coverage is not significant.</p>
+
+<a name="EXAMPLES"></a>
+<h2>EXAMPLES</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">View coverage
+data for all the available source in an executable (on some
+platforms only):</p>
+
+<p style="margin-left:8em; margin-top: 1em"><b>ggcov
+a.out</b></p>
+
+<p style="margin-left:4em; margin-top: 1em">View coverage
+data for all the C source in the current directory,
+suppressing code which depends on the symbols <b>DEBUG</b>
+or <b>TEST</b>:</p>
+
+<p style="margin-left:8em; margin-top: 1em"><b>ggcov -X
+DEBUG,TEST *.c</b></p>
+
+<p style="margin-left:4em; margin-top: 1em">View coverage
+data for all the C source in one directory where the object
+files and test coverage data files are in different
+directories:</p>
+
+<p style="margin-left:8em; margin-top: 1em"><b>ggcov
+/foo/obj/ /foo/cov&minus;data/ /foo/src/</b></p>
+
+<a name="AUTHOR"></a>
+<h2>AUTHOR</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">Written by Greg
+Banks <i>&lt;gnb@users.sourceforge.net&gt;</i>.</p>
+
+<a name="COPYRIGHT"></a>
+<h2>COPYRIGHT</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">ggcov is
+Copyright &copy; 2001&minus;2005 Greg Banks
+<i>&lt;gnb@users.sourceforge.net&gt;</i>. <br>
+This is free software; see the COPYING file for copying
+conditions. There is NO warranty; not even for
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+<a name="SEE ALSO"></a>
+<h2>SEE ALSO</h2>
+
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>ggcov-run</b>(1).</p>
+
+</div>
+
+<div id="footer">
+<p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
+</p>
+
+<p>
+      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
+      <!-- and added border="0" -->
+      <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-html40" border="0"
+      alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
+</p>
+</div>
+
+</div>
+
+</body>
+</html>
