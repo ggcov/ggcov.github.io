@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <!-- Copyright (c) 2001-2020 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>HOWTO.web</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="../../../../ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+    /* image preloads */
+    function _absolute_url(url)
+    {
+	if (!url.match(/^(http|https|file):\//))
+	{
+	    /* relative url */
+	    loc = window.location;
+	    url = loc.protocol + '://' + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, '') + '/' + url;
+	}
+	return url;
+    }
+    function _preload(url)
+    {
+	new Image().src = _absolute_url(url);
+    }
+  </script>
+</head>
+<body>
+
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
+
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="../../../../index.html">Home</a>
+<li><a href="../../../../features.html">Features</a>
+<li><a href="../../../../documents.html">Documents</a>
+<li><a href="../../../..//example/">Online&nbsp;Example</a>
+<li><a href="../../../../support.html">Support</a>
+<li><a href="../../../../download.html">Download</a>
+</ul>
+</div>
+
+<div id="columnpad" class="column">
+<h1>How To Install and Configure the Ggcov Web Pages</h1>
+<p>The ggcov web pages are a set of PHP code which generate a small
+set of interconnected interactive HTML pages which allow a user
+to explore test code coverage data using a standard Web browser.</p>
+<h2>Browser Compatibility</h2>
+<p>The ggcov PHP pages are compliant HTML4 and (currently) use no
+Javascript.  They have only been tested on the Mozilla Firefox
+browser, but are designed to be browser agnostic and should work in
+any standards- compliant browser.  I don't know whether they will
+work in MSIE.</p>
+<h2>Server Compatibility</h2>
+<p>The ggcov PHP pages require a web server which</p>
+<ul>
+<li>
+<p>supports PHP version 4.3 or later, and</p>
+</li>
+<li>
+<p>provides the dba extension with the db4 provider (which
+   ggcov uses to read the intermediate database), and</p>
+</li>
+<li>
+<p>provides the gd extension (which ggcov uses to generate
+   the bargraphs on the Summary page).</p>
+</li>
+</ul>
+<p>The intermediate database format is designed to be platform-
+independant so that the web server can be a different platform to
+the development machine.  The pages are intended to be compatible
+with both PHP 4.3 and PHP 5.</p>
+<p>The pages have been tested using PHP 4.3.9 and Apache 2.0
+on an i386 Linux machine.</p>
+<h2>Installing, If You Control the Web Server</h2>
+<p>If you control the web server, i.e. you have the ability to
+install software, installation should be easy.</p>
+<ol>
+<li>
+<p>install the ggcov-web RPM, e.g.
+    www# rpm -Uvh ggcov-web-fc3-0.4-1.i386.rpm</p>
+</li>
+<li>
+<p>copy the file /usr/share/doc/ggcov-web-VERSION/ggcov.conf
+    into the /etc/httpd/conf.d/ directory (Apache 2) or insert
+    the contents into httpd.conf (Apache 1.3).</p>
+</li>
+<li>
+<p>restart the web server, e.g.
+    www# service httpd restart</p>
+</li>
+<li>
+<p>install one or more tests in subdirectories of /var/cache/ggcov/web/tests/, e.g.
+    dev$ ggcov-webdb *.c
+    dev$ scp ggcov.webdb.tgz root@www:/tmp
+    web# cd /var/cache/ggcov/web/tests
+    web# mkdir foo ; cd foo
+    web# tar -xzf /tmp/ggcov.webdb.tgz</p>
+</li>
+<li>
+<p>point your browser at http://yourserver.com/ggcov/</p>
+</li>
+</ol>
+<p>Note that the web pages do not need write permission for any files in
+the test directories; the test data is completely read-only.</p>
+<h2>Installing, If You Don't Control the Web Server</h2>
+<p>This technique works when you don't control the web server but you
+do have a shell account and control over some subset of the web site.
+It assumes that .htaccess files have been enabled.  For the purposes
+of this example let's assume you are a developer on a sourceforge.net
+project called "foobar"; the prompt "shell$" means commands you run
+on shell.sourceforge.net and the prompt "dev$" means commands you run
+on your development machine.</p>
+<ol>
+<li>
+<p>from the ggcov build directory, install the PHP files into
+    a directory you own which is outside the directory visible
+    to the web server, e.g.</p>
+<p>shell$ cd software/ggcov-0.4/
+shell$ cd php ; make phpdir=/home/groups/f/fo/foobar/php install</p>
+</li>
+<li>
+<p>the subset of those files which need to be seen by the web server
+    are located in the $phpdir/www/ directory, so move, copy or link
+    those into the directory the web server sees, e.g.</p>
+<p>shell$ cd /home/groups/f/fo/foobar/
+shell$ mv php/www htdocs/ggcov</p>
+</li>
+<li>
+<p>configure the PHP include path and the ggcov test directory
+    by adding a .htaccess file, e.g.</p>
+<p>shell$ cd /home/groups/f/fo/foobar/
+shell$ cat &gt; htdocs/ggcov/.htaccess &lt;EOF
+DirectoryIndex tests.php
+php_value include_path .:/home/groups/f/fo/foobar/php/include
+SetEnv GGCOV_TEST_DIR /home/groups/f/fo/foobar/php/tests
+EOF</p>
+</li>
+<li>
+<p>install one or more tests in subdirectories of the test directory, e.g.</p>
+<p>dev$ ggcov-webdb *.c
+dev$ scp ggcov.webdb.tgz shell.sourceforge.net:</p>
+<p>shell$ cd /home/groups/f/fo/foobar/php/tests
+shell$ mkdir foo ; cd foo
+shell$ tar -xzf ~/ggcov.webdb.tgz</p>
+</li>
+<li>
+<p>point your browser at http://foobar.sourceforget.net/ggcov/</p>
+</li>
+</ol>
+</div>
+
+<div id="footer">
+<p>Copyright &copy; 2001-2020 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
+</p>
+
+<p>
+      <a href="https://github.com/ggcov/ggcov"><img src="GitHub-Mark-32px.png"
+      border="0" valign="middle" alt="See me on github!" height="32" width="32"></a>
+      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
+      <!-- and added border="0" -->
+      <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html40"
+      border="0" valign="middle" alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
+</p>
+</div>
+
+</div>
+
+</body>
+</html>
+

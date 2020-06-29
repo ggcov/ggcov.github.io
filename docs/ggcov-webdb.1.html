@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <!-- Copyright (c) 2001-2020 Greg Banks. All Rights Reserved.  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>ggcov-webdb.1</title>
+  <link REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link href="../../../../ggcov.css" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="ggcov, coverage, gcov, test coverage, line coverage, branch coverage, call coverage, gcov, greg banks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+    /* image preloads */
+    function _absolute_url(url)
+    {
+	if (!url.match(/^(http|https|file):\//))
+	{
+	    /* relative url */
+	    loc = window.location;
+	    url = loc.protocol + '://' + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, '') + '/' + url;
+	}
+	return url;
+    }
+    function _preload(url)
+    {
+	new Image().src = _absolute_url(url);
+    }
+  </script>
+</head>
+<body>
+
+<div id="header">
+<h1>ggcov</h1>
+<p>Test coverage user interface for C and C++</p>
+</div>
+
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="../../../../index.html">Home</a>
+<li><a href="../../../../features.html">Features</a>
+<li><a href="../../../../documents.html">Documents</a>
+<li><a href="../../../..//example/">Online&nbsp;Example</a>
+<li><a href="../../../../support.html">Support</a>
+<li><a href="../../../../download.html">Download</a>
+</ul>
+</div>
+
+<div id="columnpad" class="column">
+
+<h1 align=center>GGCOV-WEBDB</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#EXAMPLES">EXAMPLES</a><br>
+<a href="#AUTHOR">AUTHOR</a><br>
+<a href="#COPYRIGHT">COPYRIGHT</a><br>
+
+
+
+
+<a name="NAME"></a>
+<h2>NAME</h2>
+
+
+
+<p style="margin-left:4em; margin-top: 1em">ggcov&minus;webdb
+&minus; generate intermediate database for ggcov web
+interface</p>
+
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>ggcov&minus;webdb</b>
+[[<b>&minus;r</b>] <i>directory</i>|<i>file</i>] ...</p>
+
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>Ggcov&minus;webdb</b>
+generates an intermediate database and tree of source files
+from a development directory, in the form of a tarball. The
+files in this tarball are later used by the <b>ggcov</b> PHP
+pages to present test coverage data to WWW browsers.</p>
+
+<p style="margin-left:4em; margin-top: 1em">Test coverage
+data is produced by C and C++ programs compiled with <i>gcc
+&minus;fprofile-arcs &minus;ftest-coverage</i>. So the
+combination of <b>ggcov&minus;webdb</b> and the <b>ggcov</b>
+PHP pages is basically a WWW replacement for the <b>gcov</b>
+program that comes with <b>gcc</b>.</p>
+
+<p style="margin-left:4em; margin-top: 1em">The
+intermediate database approach is used to handle the common
+case where the development machine and the web server
+machine are separate. The database contains coverage data in
+an indexed, platform&minus;independent, PHP&minus;friendly
+form. Because the database format is
+platform&minus;independant the PHP pages can be deployed on
+web servers of a different architecture to the development
+machines. In fact the <b>ggcov</b> web pages support any web
+server that meets the following criteria:</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em" valign="top">supports PHP
+version 4.3 or later, and</p></td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em" valign="top">provides the
+<b>dba</b> extension with the <b>db4</b> provider (which
+<b>ggcov</b> uses to read the intermediate database),
+and</p> </td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em" valign="top">provides the
+<b>gd</b> extension (which <b>ggcov</b> uses to generate the
+bargraphs on the Summary page).</p></td>
+</table>
+
+<p style="margin-left:4em; margin-top: 1em">The
+<i>sourceforge.net</i> project web server is an example of
+such a server.</p>
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>Ggcov-webdb</b>
+produces a gzipped tarball containing the intermediate
+database itself and copies of all the source files which are
+mentioned in the database. This is all the information that
+the <b>ggcov</b> web pages need, in one bundle which is
+convenient to copy from the development machine to the web
+server. Usually this tarball would be extracted into a
+subdirectory of <i>/var/cache/ggcov/tests/</i> on the web
+server.</p>
+
+<p style="margin-left:4em; margin-top: 1em">Arguments are
+used to specify how to find coverage data files. The
+arguments can combinations of: <i><br>
+directory</i></p>
+
+<p style="margin-left:8em;">The directory is scanned for
+source files, which are handled as if they had been
+specified on the commandline (except that missing coverage
+data files are silently ignored). If the <b>&minus;r</b>
+flag is in effect, sub&minus;directories are scanned
+recursively. Multiple directories can be specified and are
+scanned in the order given.</p>
+
+<p style="margin-left:4em;"><i>executable</i></p>
+
+<p style="margin-left:8em;">The executable file is scanned
+for debugging records which contain source file names, and
+each source file which exists is handled as if it had been
+specified on the command line (except that missing coverage
+data files are silently ignored). Any shared libraries on
+which the executable depends are also scanned. Multiple
+executables can be specified and are scanned in the order
+given. This feature is only available on some platforms (for
+example, i386&minus;linux).</p>
+
+<p style="margin-left:4em;"><i>source-file</i></p>
+
+<p style="margin-left:8em;">Is any regular file ending in
+one of the file extensions <i>.c</i>, <i>.cc</i>,
+<i>.cxx</i>, <i>.cpp</i>, or <i>.C</i>. Source files are
+matched to their corresponding coverage data files
+(<i>.gcno</i> and <i>.gcda</i> files, or <i>.bb</i>,
+<i>.bbg</i>, and <i>.da</i> files with older compilers) and
+object files by searching for a file of the same basename
+and the appropriate extension first in the same directory as
+the source file and then in all the directories specified on
+the command line (in the order they were specified).</p>
+
+<a name="OPTIONS"></a>
+<h2>OPTIONS</h2>
+
+
+
+<p style="margin-left:4em; margin-top: 1em"><b>&minus;f</b>
+<i>test.tgz</i>,
+<b>&minus;&minus;output&minus;file</b>=<i>test.tgz</i></p>
+
+<p style="margin-left:8em;">Generate output to filename
+<i>test.tgz</i> instead of the default
+<b>ggcov.webdb.tgz</b>. The special filename <b>-</b> can be
+used to generate output to stdout.</p>
+
+<p style="margin-left:4em;"><b>&minus;o</b> <i>dir</i>,
+<b>&minus;&minus;object&minus;directory</b>=<i>dir</i></p>
+
+<p style="margin-left:8em;">Add the directory <i>dir</i> to
+the search path for object files and coverage data
+files.</p>
+
+<p style="margin-left:4em;"><b>&minus;r</b>,
+<b>&minus;&minus;recursive</b></p>
+
+<p style="margin-left:8em;">When a directory is specified
+on the command line, search for coverage data files
+recursively in all child directories.</p>
+
+<p style="margin-left:4em;"><b>&minus;X</b> <i>symbols</i>,
+<b>&minus;&minus;suppress&minus;ifdef=</b><i>symbols</i></p>
+
+<p style="margin-left:8em;">Suppress code inside C
+pre-processor directives which depend on any of the given
+<i>symbols</i>. Suppressed code is not included in
+statistics or summaries. One or more symbols may be given,
+separated by commas or whitespace. <b>Ggcov&minus;webdb</b>
+understands the following subset of the C pre-processor
+command set:</p>
+
+<p style="margin-left:8em; margin-top: 1em">&bull; <i>#if
+SYMBOL</i> <br>
+&bull; <i>#if defined(SYMBOL)</i> <br>
+&bull; <i>#ifdef SYMBOL</i> <br>
+&bull; <i>#ifndef SYMBOL</i> <br>
+&bull; <i>#else</i> <br>
+&bull; <i>#endif</i></p>
+
+<p style="margin-left:8em; margin-top: 1em">For example,
+<b>-X DEBUG</b> will suppress the <i>fprintf()</i> call in
+this code:</p>
+
+<p style="margin-left:8em; margin-top: 1em">unsigned int
+<br>
+my_function(unsigned int x) <br>
+{ <br>
+x += 42; <br>
+#ifdef DEBUG <br>
+fprintf(stderr, &quot;my_function: x=%u\n&quot;, x); <br>
+#endif <br>
+return x; <br>
+}</p>
+
+<p style="margin-left:8em; margin-top: 1em">This option is
+useful for suppressing test infrastructure code, debugging
+code, or other code which is compiled into the coverage test
+executable but whose coverage is not significant.</p>
+
+<p style="margin-left:4em;"><b>&minus;Y</b> <i>words</i>,
+<b>&minus;&minus;suppress&minus;comment=</b><i>words</i></p>
+
+<p style="margin-left:8em;">Suppress code on lines which
+also contain a single-line comment comprising only one of
+the given <i>words</i>. Suppressed code is not included in
+statistics or summaries. One or more symbols may be given,
+separated by commas or whitespace. For example, specifying
+<b>-Y IGNOREME</b> will suppress the <i>assert()</i> in this
+code:</p>
+
+<p style="margin-left:8em; margin-top: 1em">unsigned int
+<br>
+my_function(unsigned int x) <br>
+{ <br>
+x += 42; <br>
+assert(x &gt;= 42); /* IGNOREME */ <br>
+return x; <br>
+}</p>
+
+<p style="margin-left:8em; margin-top: 1em">This option is
+useful for suppressing test infrastructure code, debugging
+code, or other code which is compiled into the coverage test
+executable but whose coverage is not significant.</p>
+
+<p style="margin-left:4em;"><b>&minus;Z</b>
+<i>startword,endword,...</i> <b><br>
+
+&minus;&minus;suppress&minus;comment-between=</b><i>startword,endword,...</i></p>
+
+<p style="margin-left:8em;">Suppress code on lines between
+those containing a single-line comment comprising only
+<i>startword</i> and the next single-line comment comprising
+only <i>endword</i>. Suppressed code is not included in
+statistics or summaries. Two or more symbols may be given,
+in pairs, separated by commas or whitespace. For example,
+<b>-Z STARTIGNORE,ENDIGNORE</b> will suppress the entire
+function in this code:</p>
+
+<p style="margin-left:8em; margin-top: 1em">/* STARTIGNORE
+*/ <br>
+unsigned int <br>
+my_function(unsigned int x) <br>
+{ <br>
+x += 42; <br>
+return x; <br>
+} <br>
+// ENDIGNORE</p>
+
+<p style="margin-left:8em; margin-top: 1em">This option is
+useful for suppressing test infrastructure code, debugging
+code, or other code which is compiled into the coverage test
+executable but whose coverage is not significant.</p>
+
+<a name="EXAMPLES"></a>
+<h2>EXAMPLES</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">Generate
+intermediate database for all the available source in the
+executable <b>a.out</b> (on some platforms only), and
+install as test <b>foo</b> in the default tests
+location.</p>
+
+<p style="margin-left:8em; margin-top: 1em"><b>mkdir
+/var/cache/ggcov/tests/foo <br>
+ggcov&minus;webdb -f - a.out | <br>
+(cd /var/cache/ggcov/tests/foo ; tar &minus;xzf &minus;
+)</b></p>
+
+<p style="margin-left:4em; margin-top: 1em">Generate
+intermediate database for all the C source in the current
+directory.</p>
+
+
+<p style="margin-left:8em; margin-top: 1em"><b>ggcov&minus;webdb
+*.c</b></p>
+
+<p style="margin-left:4em; margin-top: 1em">Generate
+intermediate database for all the C source in one directory
+where the object files and test coverage data files are in
+different directories:</p>
+
+
+<p style="margin-left:8em; margin-top: 1em"><b>ggcov&minus;webdb
+/foo/obj/ /foo/cov&minus;data/ /foo/src/</b></p>
+
+<a name="AUTHOR"></a>
+<h2>AUTHOR</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">Written by Greg
+Banks <i>&lt;gnb@fastmail.fm&gt;</i>.</p>
+
+<a name="COPYRIGHT"></a>
+<h2>COPYRIGHT</h2>
+
+
+<p style="margin-left:4em; margin-top: 1em">ggcov is
+Copyright &copy; 2001&minus;2020 Greg Banks
+<i>&lt;gnb@fastmail.fm&gt;</i>. <br>
+This is free software; see the COPYING file for copying
+conditions. There is NO warranty; not even for
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+</div>
+
+<div id="footer">
+<p>Copyright &copy; 2001-2020 Greg Banks.  All Rights Reserved.
+Released under the
+<a href="http://www.gnu.org/">GNU</a> General Public License version 2
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
+with <b>no warranty</b>.
+</p>
+
+<p>
+      <a href="https://github.com/ggcov/ggcov"><img src="GitHub-Mark-32px.png"
+      border="0" valign="middle" alt="See me on github!" height="32" width="32"></a>
+      <!-- HTML copied from http://validator.w3.org/ 20061202 -->
+      <!-- and added border="0" -->
+      <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html40"
+      border="0" valign="middle" alt="Valid HTML 4.0 Transitional" height="31" width="88"></a>
+</p>
+</div>
+
+</div>
+
+</body>
+</html>
+

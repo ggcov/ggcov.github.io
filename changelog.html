@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved.  -->
+  <!-- Copyright (c) 2001-2020 Greg Banks. All Rights Reserved.  -->
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <title>Change Log</title>
   <link REL="SHORTCUT ICON" HREF="favicon.ico">
@@ -50,7 +50,7 @@
 </ul>
 </div>
 
-<!-- Copyright (c) 2001-2014 Greg Banks. All Rights Reserved. -->
+<!-- Copyright (c) 2001-2020 Greg Banks. All Rights Reserved. -->
 
 <div id="column" class="column">
 
@@ -60,6 +60,34 @@ This listing is also available as the file ChangeLog in the source tarball.
 
 </div>
 
+<p><b>Sat Jun 27 16:58:33 2020 Greg Banks</b></p>
+<ul>
+<li>
+Release 0.10
+<li>
+Support for every GCC release up to 10.0
+<li>
+Support binutils up to 2.34
+<li>
+Add gccov-html which generates a static HTML coverage report
+(entirely separate from the PHP-based "ggcov-web" support).
+<li>
+Support C++ source filenames ending in ".c++"
+<li>
+Reimplemented runtime logging and commandline argument parsing
+<li>
+Fix update of flow diagram in the Source window
+<li>
+Improve accounting for Function and Overall scopes
+<li>
+Merge in most of the Debian/Ubuntu package patches
+<li>
+Removed various code smells like static variables, singletons,
+friend declarations, and ancient integer typedefs.
+<li>
+Multiple improvements to build and unit tests.
+<li style="list-style-type:none;">&nbsp;
+</ul>
 <p><b>Thu Mar 13 07:44:17 2014 Greg Banks</b></p>
 <ul>
 <li>
@@ -1352,7 +1380,7 @@ Annotates C files with line counts, identical results to gcov.
 </ul>
 
 <div id="footer">
-<p>Copyright &copy; 2001-2014 Greg Banks.  All Rights Reserved.
+<p>Copyright &copy; 2001-2020 Greg Banks.  All Rights Reserved.
 Released under the
 <a href="http://www.gnu.org/">GNU</a> General Public License version 2
 <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">(GPLv2)</a>
@@ -1373,3 +1401,4 @@ with <b>no warranty</b>.
 
 </body>
 </html>
+
