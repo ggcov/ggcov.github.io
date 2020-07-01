@@ -1,0 +1,2027 @@
+<!--
+ggcov - A GTK frontend for exploring gcov coverage data
+Copyright (c) 2001-2020 Greg Banks gnb@fastmail.fm
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<html>
+<head>
+<title>ggcov - source src/thread-utils.h</title>
+<link rel="stylesheet" type="text/css" href="ggcov.css">
+</head>
+<body>
+<div id="header">
+<h1>ggcov</h1>
+<p>source src/thread-utils.h</p>
+</div>
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Index</a>
+<li><a href="tree.html">Files</a>
+<li><a href="functions.html">Functions</a>
+</ul>
+</div>
+
+<div id="body">
+<table class="main">
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Flow</th>
+      <th>Count</th>
+      <th>Block(s)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L1"></a><a href="#L1">1</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L2"></a><a href="#L2">2</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Copyright (C) the libgit2 contributors. All rights reserved.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L3"></a><a href="#L3">3</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L4"></a><a href="#L4">4</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * This file is part of libgit2, distributed under the GNU GPL v2 with
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L5"></a><a href="#L5">5</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * a Linking Exception. For full terms see the included COPYING file.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L6"></a><a href="#L6">6</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L7"></a><a href="#L7">7</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifndef INCLUDE_thread_utils_h__
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L8"></a><a href="#L8">8</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define INCLUDE_thread_utils_h__
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L9"></a><a href="#L9">9</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(__GNUC__) &amp;&amp; defined(GIT_THREADS)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># if (__GNUC__ &lt; 4 || (__GNUC__ == 4 &amp;&amp; __GNUC_MINOR__ &lt; 1))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#  error Atomic primitives do not exist on this version of gcc; configure libgit2 with -DTHREADSAFE=OFF
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Common operations even if threading has been disabled */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef struct {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	volatile long val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	volatile int val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">} git_atomic;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef GIT_ARCH_64
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef struct {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	__int64 val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int64_t val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">} git_atomic64;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef git_atomic64 git_atomic_ssize;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_atomic_ssize_add git_atomic64_add
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef git_atomic git_atomic_ssize;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_atomic_ssize_add git_atomic_add
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef GIT_THREADS
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef GIT_WIN32
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#   include &quot;win32/thread.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#   include &quot;unix/pthread.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2,2,2</td>
+      <td class="FUN Ctext">GIT_INLINE(void) git_atomic_set(git_atomic *a, int val)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	InterlockedExchange(&amp;a-&gt;val, (LONG)val);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(__GNUC__)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2,2,2</td>
+      <td class="FUN Ctext">	__sync_lock_test_and_set(&amp;a-&gt;val, val);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#	error &quot;Unsupported architecture for atomic operations&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2,2,2</td>
+      <td class="FUN Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6580</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(int) git_atomic_inc(git_atomic *a)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return InterlockedIncrement(&amp;a-&gt;val);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(__GNUC__)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6580</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return __sync_add_and_fetch(&amp;a-&gt;val, 1);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#	error &quot;Unsupported architecture for atomic operations&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int) git_atomic_add(git_atomic *a, int32_t addend)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return InterlockedExchangeAdd(&amp;a-&gt;val, addend);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(__GNUC__)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return __sync_add_and_fetch(&amp;a-&gt;val, addend);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#	error &quot;Unsupported architecture for atomic operations&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6580</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(int) git_atomic_dec(git_atomic *a)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return InterlockedDecrement(&amp;a-&gt;val);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(__GNUC__)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6580</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return __sync_sub_and_fetch(&amp;a-&gt;val, 1);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#	error &quot;Unsupported architecture for atomic operations&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">11906</td>
+      <td class="FCO Cblocks" width="1%">2,2,2</td>
+      <td class="FCO Ctext">GIT_INLINE(void *) git___compare_and_swap(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void * volatile *ptr, void *oldval, void *newval)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	volatile void *foundval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L104"></a><a href="#L104">104</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	foundval = InterlockedCompareExchangePointer((volatile PVOID *)ptr, newval, oldval);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(__GNUC__)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">11906</td>
+      <td class="FCO Cblocks" width="1%">2,2,2</td>
+      <td class="FCO Ctext">	foundval = __sync_val_compare_and_swap(ptr, oldval, newval);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#	error &quot;Unsupported architecture for atomic operations&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">11906</td>
+      <td class="FCO Cblocks" width="1%">2,2,2</td>
+      <td class="FCO Ctext">	return (foundval == oldval) ? oldval : newval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">54</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(volatile void *) git___swap(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void * volatile *ptr, void *newval)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return InterlockedExchangePointer(ptr, newval);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">54</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return __sync_lock_test_and_set(ptr, newval);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef GIT_ARCH_64
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L125"></a><a href="#L125">125</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">38439</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(int64_t) git_atomic64_add(git_atomic64 *a, int64_t addend)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L126"></a><a href="#L126">126</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L127"></a><a href="#L127">127</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_WIN32)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L128"></a><a href="#L128">128</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return InterlockedExchangeAdd64(&amp;a-&gt;val, addend);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L129"></a><a href="#L129">129</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(__GNUC__)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L130"></a><a href="#L130">130</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">38439</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return __sync_add_and_fetch(&amp;a-&gt;val, addend);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L131"></a><a href="#L131">131</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L132"></a><a href="#L132">132</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#	error &quot;Unsupported architecture for atomic operations&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L133"></a><a href="#L133">133</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L134"></a><a href="#L134">134</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L135"></a><a href="#L135">135</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L136"></a><a href="#L136">136</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L137"></a><a href="#L137">137</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L138"></a><a href="#L138">138</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L139"></a><a href="#L139">139</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L140"></a><a href="#L140">140</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_thread unsigned int
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L141"></a><a href="#L141">141</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_thread_create(thread, start_routine, arg) 0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L142"></a><a href="#L142">142</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_thread_join(id, status) (void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L143"></a><a href="#L143">143</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L144"></a><a href="#L144">144</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Pthreads Mutex */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L145"></a><a href="#L145">145</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_mutex unsigned int
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L146"></a><a href="#L146">146</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int) git_mutex_init(git_mutex *mutex) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L147"></a><a href="#L147">147</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	{ GIT_UNUSED(mutex); return 0; }
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L148"></a><a href="#L148">148</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int) git_mutex_lock(git_mutex *mutex) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L149"></a><a href="#L149">149</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	{ GIT_UNUSED(mutex); return 0; }
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L150"></a><a href="#L150">150</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_mutex_unlock(a) (void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L151"></a><a href="#L151">151</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_mutex_free(a) (void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L152"></a><a href="#L152">152</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L153"></a><a href="#L153">153</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Pthreads condition vars */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L154"></a><a href="#L154">154</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_cond unsigned int
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L155"></a><a href="#L155">155</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_cond_init(c, a)	(void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L156"></a><a href="#L156">156</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_cond_free(c) (void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L157"></a><a href="#L157">157</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_cond_wait(c, l)	(void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L158"></a><a href="#L158">158</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_cond_signal(c) (void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L159"></a><a href="#L159">159</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_cond_broadcast(c) (void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L160"></a><a href="#L160">160</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L161"></a><a href="#L161">161</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Pthreads rwlock */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L162"></a><a href="#L162">162</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock unsigned int
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L163"></a><a href="#L163">163</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock_init(a)		0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L164"></a><a href="#L164">164</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock_rdlock(a)	0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L165"></a><a href="#L165">165</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock_rdunlock(a)	(void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L166"></a><a href="#L166">166</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock_wrlock(a)	0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L167"></a><a href="#L167">167</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock_wrunlock(a)	(void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L168"></a><a href="#L168">168</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_rwlock_free(a)		(void)0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L169"></a><a href="#L169">169</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_RWLOCK_STATIC_INIT	0
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L170"></a><a href="#L170">170</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L171"></a><a href="#L171">171</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L172"></a><a href="#L172">172</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(void) git_atomic_set(git_atomic *a, int val)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L173"></a><a href="#L173">173</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L174"></a><a href="#L174">174</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	a-&gt;val = val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L175"></a><a href="#L175">175</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L176"></a><a href="#L176">176</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L177"></a><a href="#L177">177</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int) git_atomic_inc(git_atomic *a)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L178"></a><a href="#L178">178</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L179"></a><a href="#L179">179</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return ++a-&gt;val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L180"></a><a href="#L180">180</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L181"></a><a href="#L181">181</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L182"></a><a href="#L182">182</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int) git_atomic_add(git_atomic *a, int32_t addend)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L183"></a><a href="#L183">183</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L184"></a><a href="#L184">184</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	a-&gt;val += addend;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L185"></a><a href="#L185">185</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return a-&gt;val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L186"></a><a href="#L186">186</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L187"></a><a href="#L187">187</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L188"></a><a href="#L188">188</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int) git_atomic_dec(git_atomic *a)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L189"></a><a href="#L189">189</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L190"></a><a href="#L190">190</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return --a-&gt;val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L191"></a><a href="#L191">191</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L192"></a><a href="#L192">192</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L193"></a><a href="#L193">193</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(void *) git___compare_and_swap(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L194"></a><a href="#L194">194</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void * volatile *ptr, void *oldval, void *newval)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L195"></a><a href="#L195">195</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L196"></a><a href="#L196">196</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	if (*ptr == oldval)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L197"></a><a href="#L197">197</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		*ptr = newval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L198"></a><a href="#L198">198</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L199"></a><a href="#L199">199</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		oldval = newval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L200"></a><a href="#L200">200</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return oldval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L201"></a><a href="#L201">201</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L202"></a><a href="#L202">202</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L203"></a><a href="#L203">203</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(volatile void *) git___swap(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L204"></a><a href="#L204">204</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void * volatile *ptr, void *newval)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L205"></a><a href="#L205">205</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L206"></a><a href="#L206">206</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	volatile void *old = *ptr;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L207"></a><a href="#L207">207</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	*ptr = newval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L208"></a><a href="#L208">208</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return old;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L209"></a><a href="#L209">209</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L210"></a><a href="#L210">210</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L211"></a><a href="#L211">211</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef GIT_ARCH_64
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L212"></a><a href="#L212">212</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L213"></a><a href="#L213">213</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">GIT_INLINE(int64_t) git_atomic64_add(git_atomic64 *a, int64_t addend)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L214"></a><a href="#L214">214</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L215"></a><a href="#L215">215</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	a-&gt;val += addend;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L216"></a><a href="#L216">216</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	return a-&gt;val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L217"></a><a href="#L217">217</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L218"></a><a href="#L218">218</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L219"></a><a href="#L219">219</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L220"></a><a href="#L220">220</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L221"></a><a href="#L221">221</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L222"></a><a href="#L222">222</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L223"></a><a href="#L223">223</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3110028</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(int) git_atomic_get(git_atomic *a)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L224"></a><a href="#L224">224</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L225"></a><a href="#L225">225</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3110028</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return (int)a-&gt;val;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L226"></a><a href="#L226">226</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L227"></a><a href="#L227">227</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L228"></a><a href="#L228">228</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Atomically replace oldval with newval
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L229"></a><a href="#L229">229</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * @return oldval if it was replaced or newval if it was not
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L230"></a><a href="#L230">230</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L231"></a><a href="#L231">231</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git__compare_and_swap(P,O,N) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L232"></a><a href="#L232">232</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git___compare_and_swap((void * volatile *)P, O, N)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L233"></a><a href="#L233">233</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L234"></a><a href="#L234">234</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git__swap(ptr, val) (void *)git___swap((void * volatile *)&amp;ptr, val)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L235"></a><a href="#L235">235</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L236"></a><a href="#L236">236</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">extern int git_online_cpus(void);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L237"></a><a href="#L237">237</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L238"></a><a href="#L238">238</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined(GIT_THREADS) &amp;&amp; defined(_MSC_VER)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L239"></a><a href="#L239">239</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define GIT_MEMORY_BARRIER MemoryBarrier()
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L240"></a><a href="#L240">240</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#elif defined(GIT_THREADS)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L241"></a><a href="#L241">241</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define GIT_MEMORY_BARRIER __sync_synchronize()
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L242"></a><a href="#L242">242</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L243"></a><a href="#L243">243</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define GIT_MEMORY_BARRIER /* noop */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L244"></a><a href="#L244">244</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L245"></a><a href="#L245">245</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L246"></a><a href="#L246">246</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="footer">
+<p>Generated by ggcov-html. Copyright &copy; 2001-2020 Greg Banks.</p>
+</div>
+</div>
+</body>
+</html>

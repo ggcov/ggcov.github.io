@@ -1,0 +1,4019 @@
+<!--
+ggcov - A GTK frontend for exploring gcov coverage data
+Copyright (c) 2001-2020 Greg Banks gnb@fastmail.fm
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<html>
+<head>
+<title>ggcov - source src/blob.c</title>
+<link rel="stylesheet" type="text/css" href="ggcov.css">
+</head>
+<body>
+<div id="header">
+<h1>ggcov</h1>
+<p>source src/blob.c</p>
+</div>
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Index</a>
+<li><a href="tree.html">Files</a>
+<li><a href="functions.html">Functions</a>
+</ul>
+</div>
+
+<div id="body">
+<table class="main">
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Flow</th>
+      <th>Count</th>
+      <th>Block(s)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L1"></a><a href="#L1">1</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L2"></a><a href="#L2">2</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Copyright (C) the libgit2 contributors. All rights reserved.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L3"></a><a href="#L3">3</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L4"></a><a href="#L4">4</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * This file is part of libgit2, distributed under the GNU GPL v2 with
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L5"></a><a href="#L5">5</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * a Linking Exception. For full terms see the included COPYING file.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L6"></a><a href="#L6">6</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L7"></a><a href="#L7">7</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L8"></a><a href="#L8">8</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;blob.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L9"></a><a href="#L9">9</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;git2/common.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;git2/object.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;git2/repository.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;git2/odb_backend.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;filebuf.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;filter.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;buf_text.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">10256</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">const void *git_blob_rawcontent(const git_blob *blob)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">10256</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	assert(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">10256</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	if (blob-&gt;raw)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">5</td>
+      <td class="FUN Ctext">		return blob-&gt;data.raw.data;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">10256</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">		return git_odb_object_data(blob-&gt;data.odb);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">8655</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">git_object_size_t git_blob_rawsize(const git_blob *blob)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">8655</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	assert(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">8655</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	if (blob-&gt;raw)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">5</td>
+      <td class="FUN Ctext">		return blob-&gt;data.raw.size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">8655</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">		return (git_object_size_t)git_odb_object_size(blob-&gt;data.odb);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">102</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob__getbuf(git_buf *buffer, git_blob *blob)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">102</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_object_size_t size = git_blob_rawsize(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">102</td>
+      <td class="FPC Cblocks" width="1%">3-6</td>
+      <td class="FPC Ctext">	GIT_ERROR_CHECK_BLOBSIZE(size);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">102</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	return git_buf_set(buffer, git_blob_rawcontent(blob), (size_t)size);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23861</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">void git_blob__free(void *_blob)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23861</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_blob *blob = (git_blob *) _blob;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23861</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (!blob-&gt;raw)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23851</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		git_odb_object_free(blob-&gt;data.odb);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23908</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	git__free(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23920</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob__parse_raw(void *_blob, const char *data, size_t size)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_blob *blob = (git_blob *) _blob;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	assert(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	blob-&gt;raw = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	blob-&gt;data.raw.data = data;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	blob-&gt;data.raw.size = size;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23795</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob__parse(void *_blob, git_odb_object *odb_obj)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23795</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_blob *blob = (git_blob *) _blob;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23795</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	assert(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23795</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	git_cached_obj_incref((git_cached_obj *)odb_obj);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23909</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	blob-&gt;raw = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23909</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	blob-&gt;data.odb = odb_obj;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">23909</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_create_from_buffer(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id, git_repository *repo, const void *buffer, size_t len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_odb *odb;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_odb_stream *stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">2-4</td>
+      <td class="FCO Ctext">	assert(id &amp;&amp; repo);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">5-8</td>
+      <td class="FCO Ctext">	if ((error = git_repository_odb__weakptr(&amp;odb, repo)) &lt; 0 ||
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">		(error = git_odb_open_wstream(&amp;stream, odb, len, GIT_OBJECT_BLOB)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">9</td>
+      <td class="FUN Ctext">		return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">10,11</td>
+      <td class="FCO Ctext">	if ((error = git_odb_stream_write(stream, buffer, len)) == 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">		error = git_odb_stream_finalize_write(id, stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">	git_odb_stream_free(stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">837</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static int write_file_stream(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id, git_odb *odb, const char *path, git_object_size_t file_size)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int fd, error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	char buffer[FILEIO_BUFSIZE];
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_odb_stream *stream = NULL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	ssize_t read_len = -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_object_size_t written = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	if ((error = git_odb_open_wstream(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			&amp;stream, odb, file_size, GIT_OBJECT_BLOB)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L104"></a><a href="#L104">104</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">4</td>
+      <td class="FUN Ctext">		return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">5,6</td>
+      <td class="FCO Ctext">	if ((fd = git_futils_open_ro(path)) &lt; 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">7</td>
+      <td class="FUN Ctext">		git_odb_stream_free(stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">8</td>
+      <td class="FUN Ctext">		return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4054</td>
+      <td class="FCO Cblocks" width="1%">9,12-14</td>
+      <td class="FCO Ctext">	while (!error &amp;&amp; (read_len = p_read(fd, buffer, sizeof(buffer))) &gt; 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2011</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">		error = git_odb_stream_write(stream, buffer, read_len);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2011</td>
+      <td class="FCO Cblocks" width="1%">11</td>
+      <td class="FCO Ctext">		written += read_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	p_close(fd);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">16,17</td>
+      <td class="FCO Ctext">	if (written != file_size || read_len &lt; 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">18</td>
+      <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;failed to read file into stream&quot;);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">19</td>
+      <td class="FUN Ctext">		error = -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">20</td>
+      <td class="FCO Ctext">	if (!error)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">21</td>
+      <td class="FCO Ctext">		error = git_odb_stream_finalize_write(id, stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L125"></a><a href="#L125">125</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L126"></a><a href="#L126">126</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">22</td>
+      <td class="FCO Ctext">	git_odb_stream_free(stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L127"></a><a href="#L127">127</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">23</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L128"></a><a href="#L128">128</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L129"></a><a href="#L129">129</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L130"></a><a href="#L130">130</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static int write_file_filtered(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L131"></a><a href="#L131">131</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L132"></a><a href="#L132">132</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_object_size_t *size,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L133"></a><a href="#L133">133</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_odb *odb,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L134"></a><a href="#L134">134</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const char *full_path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L135"></a><a href="#L135">135</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_filter_list *fl)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L136"></a><a href="#L136">136</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L137"></a><a href="#L137">137</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L138"></a><a href="#L138">138</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_buf tgt = GIT_BUF_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L139"></a><a href="#L139">139</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L140"></a><a href="#L140">140</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	error = git_filter_list_apply_to_file(&amp;tgt, fl, NULL, full_path);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L141"></a><a href="#L141">141</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L142"></a><a href="#L142">142</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* Write the file to disk if it was properly filtered */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L143"></a><a href="#L143">143</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">	if (!error) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L144"></a><a href="#L144">144</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1242</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		*size = tgt.size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L145"></a><a href="#L145">145</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L146"></a><a href="#L146">146</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1242</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		error = git_odb_write(id, odb, tgt.ptr, tgt.size, GIT_OBJECT_BLOB);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L147"></a><a href="#L147">147</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L148"></a><a href="#L148">148</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L149"></a><a href="#L149">149</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	git_buf_dispose(&amp;tgt);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L150"></a><a href="#L150">150</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L151"></a><a href="#L151">151</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L152"></a><a href="#L152">152</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L153"></a><a href="#L153">153</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">static int write_symlink(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L154"></a><a href="#L154">154</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id, git_odb *odb, const char *path, size_t link_size)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L155"></a><a href="#L155">155</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L156"></a><a href="#L156">156</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	char *link_data;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L157"></a><a href="#L157">157</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	ssize_t read_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L158"></a><a href="#L158">158</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L159"></a><a href="#L159">159</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L160"></a><a href="#L160">160</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	link_data = git__malloc(link_size);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L161"></a><a href="#L161">161</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">3,4</td>
+      <td class="FUN Ctext">	GIT_ERROR_CHECK_ALLOC(link_data);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L162"></a><a href="#L162">162</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L163"></a><a href="#L163">163</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">5</td>
+      <td class="FUN Ctext">	read_len = p_readlink(path, link_data, link_size);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L164"></a><a href="#L164">164</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">6</td>
+      <td class="FUN Ctext">	if (read_len != (ssize_t)link_size) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L165"></a><a href="#L165">165</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">7</td>
+      <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;failed to create blob: cannot read symlink &#39;%s&#39;&quot;, path);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L166"></a><a href="#L166">166</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">8</td>
+      <td class="FUN Ctext">		git__free(link_data);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L167"></a><a href="#L167">167</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">9</td>
+      <td class="FUN Ctext">		return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L168"></a><a href="#L168">168</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L169"></a><a href="#L169">169</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L170"></a><a href="#L170">170</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">10</td>
+      <td class="FUN Ctext">	error = git_odb_write(id, odb, (void *)link_data, link_size, GIT_OBJECT_BLOB);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L171"></a><a href="#L171">171</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">11</td>
+      <td class="FUN Ctext">	git__free(link_data);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L172"></a><a href="#L172">172</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">12</td>
+      <td class="FUN Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L173"></a><a href="#L173">173</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L174"></a><a href="#L174">174</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L175"></a><a href="#L175">175</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob__create_from_paths(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L176"></a><a href="#L176">176</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L177"></a><a href="#L177">177</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	struct stat *out_st,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L178"></a><a href="#L178">178</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_repository *repo,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L179"></a><a href="#L179">179</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const char *content_path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L180"></a><a href="#L180">180</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const char *hint_path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L181"></a><a href="#L181">181</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	mode_t hint_mode,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L182"></a><a href="#L182">182</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	bool try_load_filters)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L183"></a><a href="#L183">183</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L184"></a><a href="#L184">184</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L185"></a><a href="#L185">185</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	struct stat st;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L186"></a><a href="#L186">186</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_odb *odb = NULL;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L187"></a><a href="#L187">187</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_object_size_t size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L188"></a><a href="#L188">188</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	mode_t mode;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L189"></a><a href="#L189">189</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_buf path = GIT_BUF_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L190"></a><a href="#L190">190</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L191"></a><a href="#L191">191</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">2-4</td>
+      <td class="FCO Ctext">	assert(hint_path || !try_load_filters);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L192"></a><a href="#L192">192</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L193"></a><a href="#L193">193</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	if (!content_path) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L194"></a><a href="#L194">194</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3554</td>
+      <td class="FCO Cblocks" width="1%">6,7</td>
+      <td class="FCO Ctext">		if (git_repository__ensure_not_bare(repo, &quot;create blob from file&quot;) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L195"></a><a href="#L195">195</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">8</td>
+      <td class="FUN Ctext">			return GIT_EBAREREPO;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L196"></a><a href="#L196">196</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L197"></a><a href="#L197">197</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3554</td>
+      <td class="FCO Cblocks" width="1%">9-11</td>
+      <td class="FCO Ctext">		if (git_buf_joinpath(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L198"></a><a href="#L198">198</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				&amp;path, git_repository_workdir(repo), hint_path) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L199"></a><a href="#L199">199</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">12</td>
+      <td class="FUN Ctext">			return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L200"></a><a href="#L200">200</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L201"></a><a href="#L201">201</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3554</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">		content_path = path.ptr;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L202"></a><a href="#L202">202</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L203"></a><a href="#L203">203</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L204"></a><a href="#L204">204</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">14-17</td>
+      <td class="FCO Ctext">	if ((error = git_path_lstat(content_path, &amp;st)) &lt; 0 ||
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L205"></a><a href="#L205">205</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		(error = git_repository_odb(&amp;odb, repo)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L206"></a><a href="#L206">206</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		goto done;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L207"></a><a href="#L207">207</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L208"></a><a href="#L208">208</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">18</td>
+      <td class="FCO Ctext">	if (S_ISDIR(st.st_mode)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L209"></a><a href="#L209">209</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3</td>
+      <td class="FCO Cblocks" width="1%">19</td>
+      <td class="FCO Ctext">		git_error_set(GIT_ERROR_ODB, &quot;cannot create blob from &#39;%s&#39;: it is a directory&quot;, content_path);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L210"></a><a href="#L210">210</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3</td>
+      <td class="FCO Cblocks" width="1%">20</td>
+      <td class="FCO Ctext">		error = GIT_EDIRECTORY;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L211"></a><a href="#L211">211</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3</td>
+      <td class="FCO Cblocks" width="1%">20</td>
+      <td class="FCO Ctext">		goto done;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L212"></a><a href="#L212">212</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L213"></a><a href="#L213">213</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L214"></a><a href="#L214">214</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">21</td>
+      <td class="FCO Ctext">	if (out_st)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L215"></a><a href="#L215">215</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3436</td>
+      <td class="FCO Cblocks" width="1%">22</td>
+      <td class="FCO Ctext">		memcpy(out_st, &amp;st, sizeof(st));
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L216"></a><a href="#L216">216</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L217"></a><a href="#L217">217</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">23</td>
+      <td class="FCO Ctext">	size = st.st_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L218"></a><a href="#L218">218</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">3557</td>
+      <td class="FPC Cblocks" width="1%">23-25</td>
+      <td class="FPC Ctext">	mode = hint_mode ? hint_mode : st.st_mode;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L219"></a><a href="#L219">219</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L220"></a><a href="#L220">220</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">26</td>
+      <td class="FCO Ctext">	if (S_ISLNK(mode)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L221"></a><a href="#L221">221</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">27</td>
+      <td class="FUN Ctext">		error = write_symlink(id, odb, content_path, (size_t)size);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L222"></a><a href="#L222">222</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	} else {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L223"></a><a href="#L223">223</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">28</td>
+      <td class="FCO Ctext">		git_filter_list *fl = NULL;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L224"></a><a href="#L224">224</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L225"></a><a href="#L225">225</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">28</td>
+      <td class="FCO Ctext">		if (try_load_filters)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L226"></a><a href="#L226">226</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* Load the filters for writing this file to the ODB */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L227"></a><a href="#L227">227</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3556</td>
+      <td class="FCO Cblocks" width="1%">29</td>
+      <td class="FCO Ctext">			error = git_filter_list_load(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L228"></a><a href="#L228">228</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				&amp;fl, repo, NULL, hint_path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L229"></a><a href="#L229">229</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				GIT_FILTER_TO_ODB, GIT_FILTER_DEFAULT);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L230"></a><a href="#L230">230</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L231"></a><a href="#L231">231</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">30</td>
+      <td class="FCO Ctext">		if (error &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L232"></a><a href="#L232">232</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* well, that didn&#39;t work */;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L233"></a><a href="#L233">233</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">31</td>
+      <td class="FCO Ctext">		else if (fl == NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L234"></a><a href="#L234">234</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* No filters need to be applied to the document: we can stream
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L235"></a><a href="#L235">235</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			 * directly from disk */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L236"></a><a href="#L236">236</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2043</td>
+      <td class="FCO Cblocks" width="1%">32</td>
+      <td class="FCO Ctext">			error = write_file_stream(id, odb, content_path, size);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L237"></a><a href="#L237">237</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		else {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L238"></a><a href="#L238">238</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* We need to apply one or more filters */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L239"></a><a href="#L239">239</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1514</td>
+      <td class="FCO Cblocks" width="1%">33</td>
+      <td class="FCO Ctext">			error = write_file_filtered(id, &amp;size, odb, content_path, fl);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L240"></a><a href="#L240">240</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L241"></a><a href="#L241">241</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3557</td>
+      <td class="FCO Cblocks" width="1%">34,35</td>
+      <td class="FCO Ctext">			git_filter_list_free(fl);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L242"></a><a href="#L242">242</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L243"></a><a href="#L243">243</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L244"></a><a href="#L244">244</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L245"></a><a href="#L245">245</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * TODO: eventually support streaming filtered files, for files
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L246"></a><a href="#L246">246</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * which are bigger than a given threshold. This is not a priority
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L247"></a><a href="#L247">247</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * because applying a filter in streaming mode changes the final
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L248"></a><a href="#L248">248</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * size of the blob, and without knowing its final size, the blob
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L249"></a><a href="#L249">249</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * cannot be written in stream mode to the ODB.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L250"></a><a href="#L250">250</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L251"></a><a href="#L251">251</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * The plan is to do streaming writes to a tempfile on disk and then
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L252"></a><a href="#L252">252</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * opening streaming that file to the ODB, using
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L253"></a><a href="#L253">253</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * `write_file_stream`.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L254"></a><a href="#L254">254</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L255"></a><a href="#L255">255</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * CAREFULLY DESIGNED APIS YO
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L256"></a><a href="#L256">256</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L257"></a><a href="#L257">257</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L258"></a><a href="#L258">258</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L259"></a><a href="#L259">259</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">done:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L260"></a><a href="#L260">260</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">36</td>
+      <td class="FCO Ctext">	git_odb_free(odb);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L261"></a><a href="#L261">261</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">37</td>
+      <td class="FCO Ctext">	git_buf_dispose(&amp;path);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L262"></a><a href="#L262">262</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L263"></a><a href="#L263">263</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3560</td>
+      <td class="FCO Cblocks" width="1%">38</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L264"></a><a href="#L264">264</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L265"></a><a href="#L265">265</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L266"></a><a href="#L266">266</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">115</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_create_from_workdir(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L267"></a><a href="#L267">267</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id, git_repository *repo, const char *path)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L268"></a><a href="#L268">268</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L269"></a><a href="#L269">269</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">115</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return git_blob__create_from_paths(id, NULL, repo, NULL, path, 0, true);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L270"></a><a href="#L270">270</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L271"></a><a href="#L271">271</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L272"></a><a href="#L272">272</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_create_from_disk(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L273"></a><a href="#L273">273</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id, git_repository *repo, const char *path)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L274"></a><a href="#L274">274</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L275"></a><a href="#L275">275</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L276"></a><a href="#L276">276</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_buf full_path = GIT_BUF_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L277"></a><a href="#L277">277</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const char *workdir, *hintpath;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L278"></a><a href="#L278">278</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L279"></a><a href="#L279">279</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	if ((error = git_path_prettify(&amp;full_path, path, NULL)) &lt; 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L280"></a><a href="#L280">280</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">4</td>
+      <td class="FUN Ctext">		git_buf_dispose(&amp;full_path);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L281"></a><a href="#L281">281</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">5</td>
+      <td class="FUN Ctext">		return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L282"></a><a href="#L282">282</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L283"></a><a href="#L283">283</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L284"></a><a href="#L284">284</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">	hintpath = git_buf_cstr(&amp;full_path);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L285"></a><a href="#L285">285</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	workdir  = git_repository_workdir(repo);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L286"></a><a href="#L286">286</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L287"></a><a href="#L287">287</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">8-10</td>
+      <td class="FCO Ctext">	if (workdir &amp;&amp; !git__prefixcmp(hintpath, workdir))
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L288"></a><a href="#L288">288</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">11</td>
+      <td class="FUN Ctext">		hintpath += strlen(workdir);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L289"></a><a href="#L289">289</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L290"></a><a href="#L290">290</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">12,13</td>
+      <td class="FCO Ctext">	error = git_blob__create_from_paths(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L291"></a><a href="#L291">291</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		id, NULL, repo, git_buf_cstr(&amp;full_path), hintpath, 0, true);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L292"></a><a href="#L292">292</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L293"></a><a href="#L293">293</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">	git_buf_dispose(&amp;full_path);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L294"></a><a href="#L294">294</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L295"></a><a href="#L295">295</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L296"></a><a href="#L296">296</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L297"></a><a href="#L297">297</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef struct {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L298"></a><a href="#L298">298</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_writestream parent;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L299"></a><a href="#L299">299</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_filebuf fbuf;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L300"></a><a href="#L300">300</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_repository *repo;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L301"></a><a href="#L301">301</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	char *hintpath;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L302"></a><a href="#L302">302</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">} blob_writestream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L303"></a><a href="#L303">303</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L304"></a><a href="#L304">304</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">static int blob_writestream_close(git_writestream *_stream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L305"></a><a href="#L305">305</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L306"></a><a href="#L306">306</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	blob_writestream *stream = (blob_writestream *) _stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L307"></a><a href="#L307">307</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L308"></a><a href="#L308">308</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	git_filebuf_cleanup(&amp;stream-&gt;fbuf);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L309"></a><a href="#L309">309</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">3</td>
+      <td class="FUN Ctext">	return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L310"></a><a href="#L310">310</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L311"></a><a href="#L311">311</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L312"></a><a href="#L312">312</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static void blob_writestream_free(git_writestream *_stream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L313"></a><a href="#L313">313</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L314"></a><a href="#L314">314</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	blob_writestream *stream = (blob_writestream *) _stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L315"></a><a href="#L315">315</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L316"></a><a href="#L316">316</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_filebuf_cleanup(&amp;stream-&gt;fbuf);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L317"></a><a href="#L317">317</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">	git__free(stream-&gt;hintpath);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L318"></a><a href="#L318">318</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	git__free(stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L319"></a><a href="#L319">319</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L320"></a><a href="#L320">320</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L321"></a><a href="#L321">321</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">24</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static int blob_writestream_write(git_writestream *_stream, const char *buffer, size_t len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L322"></a><a href="#L322">322</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L323"></a><a href="#L323">323</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">24</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	blob_writestream *stream = (blob_writestream *) _stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L324"></a><a href="#L324">324</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L325"></a><a href="#L325">325</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">24</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return git_filebuf_write(&amp;stream-&gt;fbuf, buffer, len);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L326"></a><a href="#L326">326</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L327"></a><a href="#L327">327</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L328"></a><a href="#L328">328</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_create_from_stream(git_writestream **out, git_repository *repo, const char *hintpath)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L329"></a><a href="#L329">329</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L330"></a><a href="#L330">330</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L331"></a><a href="#L331">331</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_buf path = GIT_BUF_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L332"></a><a href="#L332">332</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	blob_writestream *stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L333"></a><a href="#L333">333</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L334"></a><a href="#L334">334</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2-4</td>
+      <td class="FCO Ctext">	assert(out &amp;&amp; repo);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L335"></a><a href="#L335">335</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L336"></a><a href="#L336">336</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	stream = git__calloc(1, sizeof(blob_writestream));
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L337"></a><a href="#L337">337</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">4</td>
+      <td class="FPC Cblocks" width="1%">6,7</td>
+      <td class="FPC Ctext">	GIT_ERROR_CHECK_ALLOC(stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L338"></a><a href="#L338">338</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L339"></a><a href="#L339">339</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">8</td>
+      <td class="FCO Ctext">	if (hintpath) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L340"></a><a href="#L340">340</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">		stream-&gt;hintpath = git__strdup(hintpath);
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L341"></a><a href="#L341">341</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">3</td>
+      <td class="FPC Cblocks" width="1%">10,11</td>
+      <td class="FPC Ctext">		GIT_ERROR_CHECK_ALLOC(stream-&gt;hintpath);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L342"></a><a href="#L342">342</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L343"></a><a href="#L343">343</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L344"></a><a href="#L344">344</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">	stream-&gt;repo = repo;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L345"></a><a href="#L345">345</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">	stream-&gt;parent.write = blob_writestream_write;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L346"></a><a href="#L346">346</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">	stream-&gt;parent.close = blob_writestream_close;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L347"></a><a href="#L347">347</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">	stream-&gt;parent.free  = blob_writestream_free;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L348"></a><a href="#L348">348</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L349"></a><a href="#L349">349</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">12,13</td>
+      <td class="FCO Ctext">	if ((error = git_repository_item_path(&amp;path, repo, GIT_REPOSITORY_ITEM_OBJECTS)) &lt; 0
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L350"></a><a href="#L350">350</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">14,15</td>
+      <td class="FCO Ctext">		|| (error = git_buf_joinpath(&amp;path, path.ptr, &quot;streamed&quot;)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L351"></a><a href="#L351">351</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		goto cleanup;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L352"></a><a href="#L352">352</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L353"></a><a href="#L353">353</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">16-18</td>
+      <td class="FCO Ctext">	if ((error = git_filebuf_open_withsize(&amp;stream-&gt;fbuf, git_buf_cstr(&amp;path), GIT_FILEBUF_TEMPORARY,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L354"></a><a href="#L354">354</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					       0666, 2 * 1024 * 1024)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L355"></a><a href="#L355">355</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">19</td>
+      <td class="FUN Ctext">		goto cleanup;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L356"></a><a href="#L356">356</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L357"></a><a href="#L357">357</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">20</td>
+      <td class="FCO Ctext">	*out = (git_writestream *) stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L358"></a><a href="#L358">358</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L359"></a><a href="#L359">359</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">cleanup:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L360"></a><a href="#L360">360</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">21</td>
+      <td class="FCO Ctext">	if (error &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L361"></a><a href="#L361">361</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">22</td>
+      <td class="FUN Ctext">		blob_writestream_free((git_writestream *) stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L362"></a><a href="#L362">362</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L363"></a><a href="#L363">363</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">23</td>
+      <td class="FCO Ctext">	git_buf_dispose(&amp;path);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L364"></a><a href="#L364">364</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">24</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L365"></a><a href="#L365">365</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L366"></a><a href="#L366">366</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L367"></a><a href="#L367">367</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_create_from_stream_commit(git_oid *out, git_writestream *_stream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L368"></a><a href="#L368">368</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L369"></a><a href="#L369">369</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int error;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L370"></a><a href="#L370">370</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	blob_writestream *stream = (blob_writestream *) _stream;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L371"></a><a href="#L371">371</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L372"></a><a href="#L372">372</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L373"></a><a href="#L373">373</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	 * We can make this more officient by avoiding writing to
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L374"></a><a href="#L374">374</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	 * disk, but for now let&#39;s re-use the helper functions we
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L375"></a><a href="#L375">375</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	 * have.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L376"></a><a href="#L376">376</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	 */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L377"></a><a href="#L377">377</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	if ((error = git_filebuf_flush(&amp;stream-&gt;fbuf)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L378"></a><a href="#L378">378</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">4</td>
+      <td class="FUN Ctext">		goto cleanup;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L379"></a><a href="#L379">379</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L380"></a><a href="#L380">380</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">5,5</td>
+      <td class="FCO Ctext">	error = git_blob__create_from_paths(out, NULL, stream-&gt;repo, stream-&gt;fbuf.path_lock,
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L381"></a><a href="#L381">381</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">5,5</td>
+      <td class="FCO Ctext">					    stream-&gt;hintpath, 0, !!stream-&gt;hintpath);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L382"></a><a href="#L382">382</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L383"></a><a href="#L383">383</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">cleanup:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L384"></a><a href="#L384">384</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">	blob_writestream_free(_stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L385"></a><a href="#L385">385</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L386"></a><a href="#L386">386</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L387"></a><a href="#L387">387</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L388"></a><a href="#L388">388</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L389"></a><a href="#L389">389</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">566</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_is_binary(const git_blob *blob)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L390"></a><a href="#L390">390</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L391"></a><a href="#L391">391</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">566</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_buf content = GIT_BUF_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L392"></a><a href="#L392">392</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_object_size_t size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L393"></a><a href="#L393">393</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L394"></a><a href="#L394">394</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">566</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	assert(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L395"></a><a href="#L395">395</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L396"></a><a href="#L396">396</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">566</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	size = git_blob_rawsize(blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L397"></a><a href="#L397">397</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L398"></a><a href="#L398">398</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">566</td>
+      <td class="FCO Cblocks" width="1%">5,6</td>
+      <td class="FCO Ctext">	git_buf_attach_notowned(&amp;content, git_blob_rawcontent(blob),
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L399"></a><a href="#L399">399</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		(size_t)min(size, GIT_FILTER_BYTES_TO_CHECK_NUL));
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L400"></a><a href="#L400">400</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">566</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	return git_buf_text_is_binary(&amp;content);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L401"></a><a href="#L401">401</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L402"></a><a href="#L402">402</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L403"></a><a href="#L403">403</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_blob_filter(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L404"></a><a href="#L404">404</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_buf *out,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L405"></a><a href="#L405">405</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_blob *blob,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L406"></a><a href="#L406">406</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const char *path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L407"></a><a href="#L407">407</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_blob_filter_options *given_opts)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L408"></a><a href="#L408">408</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L409"></a><a href="#L409">409</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	int error = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L410"></a><a href="#L410">410</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_filter_list *fl = NULL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L411"></a><a href="#L411">411</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_blob_filter_options opts = GIT_BLOB_FILTER_OPTIONS_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L412"></a><a href="#L412">412</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_filter_flag_t flags = GIT_FILTER_DEFAULT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L413"></a><a href="#L413">413</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L414"></a><a href="#L414">414</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">2-5</td>
+      <td class="FCO Ctext">	assert(blob &amp;&amp; path &amp;&amp; out);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L415"></a><a href="#L415">415</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L416"></a><a href="#L416">416</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">	git_buf_sanitize(out);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L417"></a><a href="#L417">417</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L418"></a><a href="#L418">418</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">33</td>
+      <td class="FPC Cblocks" width="1%">7-9</td>
+      <td class="FPC Ctext">	GIT_ERROR_CHECK_VERSION(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L419"></a><a href="#L419">419</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		given_opts, GIT_BLOB_FILTER_OPTIONS_VERSION, &quot;git_blob_filter_options&quot;);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L420"></a><a href="#L420">420</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L421"></a><a href="#L421">421</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">	if (given_opts != NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L422"></a><a href="#L422">422</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">16</td>
+      <td class="FCO Cblocks" width="1%">11</td>
+      <td class="FCO Ctext">		memcpy(&amp;opts, given_opts, sizeof(git_blob_filter_options));
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L423"></a><a href="#L423">423</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L424"></a><a href="#L424">424</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">12,14</td>
+      <td class="FCO Ctext">	if ((opts.flags &amp; GIT_BLOB_FILTER_CHECK_FOR_BINARY) != 0 &amp;&amp;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L425"></a><a href="#L425">425</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">	    git_blob_is_binary(blob))
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L426"></a><a href="#L426">426</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">15</td>
+      <td class="FUN Ctext">		return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L427"></a><a href="#L427">427</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L428"></a><a href="#L428">428</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">16</td>
+      <td class="FCO Ctext">	if ((opts.flags &amp; GIT_BLOB_FILTER_NO_SYSTEM_ATTRIBUTES) != 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L429"></a><a href="#L429">429</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">16</td>
+      <td class="FCO Cblocks" width="1%">17</td>
+      <td class="FCO Ctext">		flags |= GIT_FILTER_NO_SYSTEM_ATTRIBUTES;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L430"></a><a href="#L430">430</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L431"></a><a href="#L431">431</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">18</td>
+      <td class="FCO Ctext">	if ((opts.flags &amp; GIT_BLOB_FILTER_ATTTRIBUTES_FROM_HEAD) != 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L432"></a><a href="#L432">432</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">13</td>
+      <td class="FCO Cblocks" width="1%">19</td>
+      <td class="FCO Ctext">		flags |= GIT_FILTER_ATTRIBUTES_FROM_HEAD;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L433"></a><a href="#L433">433</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L434"></a><a href="#L434">434</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">20-22</td>
+      <td class="FCO Ctext">	if (!(error = git_filter_list_load(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L435"></a><a href="#L435">435</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			&amp;fl, git_blob_owner(blob), blob, path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L436"></a><a href="#L436">436</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			GIT_FILTER_TO_WORKTREE, flags))) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L437"></a><a href="#L437">437</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L438"></a><a href="#L438">438</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">23</td>
+      <td class="FCO Ctext">		error = git_filter_list_apply_to_blob(out, fl, blob);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L439"></a><a href="#L439">439</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L440"></a><a href="#L440">440</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">24</td>
+      <td class="FCO Ctext">		git_filter_list_free(fl);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L441"></a><a href="#L441">441</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L442"></a><a href="#L442">442</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L443"></a><a href="#L443">443</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">25</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L444"></a><a href="#L444">444</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L445"></a><a href="#L445">445</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L446"></a><a href="#L446">446</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Deprecated functions */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L447"></a><a href="#L447">447</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L448"></a><a href="#L448">448</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifndef GIT_DEPRECATE_HARD
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L449"></a><a href="#L449">449</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">int git_blob_create_frombuffer(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L450"></a><a href="#L450">450</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *id, git_repository *repo, const void *buffer, size_t len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L451"></a><a href="#L451">451</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L452"></a><a href="#L452">452</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	return git_blob_create_from_buffer(id, repo, buffer, len);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L453"></a><a href="#L453">453</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L454"></a><a href="#L454">454</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L455"></a><a href="#L455">455</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">int git_blob_create_fromworkdir(git_oid *id, git_repository *repo, const char *relative_path)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L456"></a><a href="#L456">456</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L457"></a><a href="#L457">457</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	return git_blob_create_from_workdir(id, repo, relative_path);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L458"></a><a href="#L458">458</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L459"></a><a href="#L459">459</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L460"></a><a href="#L460">460</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">int git_blob_create_fromdisk(git_oid *id, git_repository *repo, const char *path)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L461"></a><a href="#L461">461</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L462"></a><a href="#L462">462</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	return git_blob_create_from_disk(id, repo, path);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L463"></a><a href="#L463">463</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L464"></a><a href="#L464">464</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L465"></a><a href="#L465">465</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">int git_blob_create_fromstream(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L466"></a><a href="#L466">466</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">    git_writestream **out,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L467"></a><a href="#L467">467</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">    git_repository *repo,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L468"></a><a href="#L468">468</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">    const char *hintpath)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L469"></a><a href="#L469">469</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L470"></a><a href="#L470">470</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	return  git_blob_create_from_stream(out, repo, hintpath);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L471"></a><a href="#L471">471</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L472"></a><a href="#L472">472</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L473"></a><a href="#L473">473</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">int git_blob_create_fromstream_commit(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L474"></a><a href="#L474">474</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_oid *out,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L475"></a><a href="#L475">475</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_writestream *stream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L476"></a><a href="#L476">476</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L477"></a><a href="#L477">477</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	return git_blob_create_from_stream_commit(out, stream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L478"></a><a href="#L478">478</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L479"></a><a href="#L479">479</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L480"></a><a href="#L480">480</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">int git_blob_filtered_content(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L481"></a><a href="#L481">481</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_buf *out,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L482"></a><a href="#L482">482</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_blob *blob,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L483"></a><a href="#L483">483</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const char *path,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L484"></a><a href="#L484">484</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int check_for_binary_data)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L485"></a><a href="#L485">485</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L486"></a><a href="#L486">486</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	git_blob_filter_options opts = GIT_BLOB_FILTER_OPTIONS_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L487"></a><a href="#L487">487</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L488"></a><a href="#L488">488</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">2</td>
+      <td class="FUN Ctext">	if (check_for_binary_data)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L489"></a><a href="#L489">489</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">3</td>
+      <td class="FUN Ctext">		opts.flags |= GIT_BLOB_FILTER_CHECK_FOR_BINARY;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L490"></a><a href="#L490">490</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L491"></a><a href="#L491">491</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">4</td>
+      <td class="FUN Ctext">		opts.flags &amp;= ~GIT_BLOB_FILTER_CHECK_FOR_BINARY;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L492"></a><a href="#L492">492</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L493"></a><a href="#L493">493</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">5</td>
+      <td class="FUN Ctext">	return git_blob_filter(out, blob, path, &amp;opts);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L494"></a><a href="#L494">494</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L495"></a><a href="#L495">495</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="footer">
+<p>Generated by ggcov-html. Copyright &copy; 2001-2020 Greg Banks.</p>
+</div>
+</div>
+</body>
+</html>

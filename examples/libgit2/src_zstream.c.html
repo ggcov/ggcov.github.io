@@ -1,0 +1,1581 @@
+<!--
+ggcov - A GTK frontend for exploring gcov coverage data
+Copyright (c) 2001-2020 Greg Banks gnb@fastmail.fm
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<html>
+<head>
+<title>ggcov - source src/zstream.c</title>
+<link rel="stylesheet" type="text/css" href="ggcov.css">
+</head>
+<body>
+<div id="header">
+<h1>ggcov</h1>
+<p>source src/zstream.c</p>
+</div>
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Index</a>
+<li><a href="tree.html">Files</a>
+<li><a href="functions.html">Functions</a>
+</ul>
+</div>
+
+<div id="body">
+<table class="main">
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Flow</th>
+      <th>Count</th>
+      <th>Block(s)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L1"></a><a href="#L1">1</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L2"></a><a href="#L2">2</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Copyright (C) the libgit2 contributors. All rights reserved.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L3"></a><a href="#L3">3</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L4"></a><a href="#L4">4</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * This file is part of libgit2, distributed under the GNU GPL v2 with
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L5"></a><a href="#L5">5</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * a Linking Exception. For full terms see the included COPYING file.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L6"></a><a href="#L6">6</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L7"></a><a href="#L7">7</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L8"></a><a href="#L8">8</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;zstream.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L9"></a><a href="#L9">9</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &lt;zlib.h&gt;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;buffer.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ZSTREAM_BUFFER_SIZE (1024 * 1024)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ZSTREAM_BUFFER_MIN_EXTRA 8
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
+      <td class="Cflow" width="1%" rowspan="18"><img width="34" height="376" src="flow4086.png"></td>
+      <td class="FCO Ccount" width="1%">240770</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(int) zstream_seterr(git_zstream *zs)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
+      <td class="FCO Ccount" width="1%">240770</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	switch (zs-&gt;zerr) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	case Z_OK:
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	case Z_STREAM_END:
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	case Z_BUF_ERROR: /* not fatal; we retry with a larger buffer */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
+      <td class="FCO Ccount" width="1%">240585</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	case Z_MEM_ERROR:
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">4</td>
+      <td class="FUN Ctext">		git_error_set_oom();
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">5</td>
+      <td class="FUN Ctext">		break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	default:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
+      <td class="FCO Ccount" width="1%">185</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">		if (zs-&gt;z.msg)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
+      <td class="FCO Ccount" width="1%">185</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">			git_error_set_str(GIT_ERROR_ZLIB, zs-&gt;z.msg);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		else
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">8</td>
+      <td class="FUN Ctext">			git_error_set(GIT_ERROR_ZLIB, &quot;unknown compression error&quot;);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
+      <td class="FCO Ccount" width="1%">185</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">	return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
+      <td class="Cflow" width="1%" rowspan="9"><img width="45" height="183" src="flow4085.png"></td>
+      <td class="FCO Ccount" width="1%">98689</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_zstream_init(git_zstream *zstream, git_zstream_t type)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
+      <td class="FCO Ccount" width="1%">98689</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	zstream-&gt;type = type;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
+      <td class="FCO Ccount" width="1%">98689</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (zstream-&gt;type == GIT_ZSTREAM_INFLATE)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
+      <td class="FCO Ccount" width="1%">98906</td>
+      <td class="FCO Cblocks" width="1%">3,4</td>
+      <td class="FCO Ctext">		zstream-&gt;zerr = inflateInit(&amp;zstream-&gt;z);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
+      <td class="FCO Ccount" width="1%">297</td>
+      <td class="FCO Cblocks" width="1%">5,6</td>
+      <td class="FCO Ctext">		zstream-&gt;zerr = deflateInit(&amp;zstream-&gt;z, Z_DEFAULT_COMPRESSION);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
+      <td class="FCO Ccount" width="1%">99203</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	return zstream_seterr(zstream);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
+      <td class="Cflow" width="1%" rowspan="7"><img width="23" height="141" src="flow4084.png"></td>
+      <td class="FCO Ccount" width="1%">98925</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">void git_zstream_free(git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
+      <td class="FCO Ccount" width="1%">98925</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (zstream-&gt;type == GIT_ZSTREAM_INFLATE)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
+      <td class="FCO Ccount" width="1%">98628</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		inflateEnd(&amp;zstream-&gt;z);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
+      <td class="FCO Ccount" width="1%">297</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		deflateEnd(&amp;zstream-&gt;z);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
+      <td class="FCO Ccount" width="1%">99457</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
+      <td class="Cflow" width="1%" rowspan="10"><img width="23" height="205" src="flow4083.png"></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">void git_zstream_reset(git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (zstream-&gt;type == GIT_ZSTREAM_INFLATE)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">3</td>
+      <td class="FUN Ctext">		inflateReset(&amp;zstream-&gt;z);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		deflateReset(&amp;zstream-&gt;z);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	zstream-&gt;in = NULL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	zstream-&gt;in_len = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	zstream-&gt;zerr = Z_STREAM_END;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
+      <td class="FCO Ccount" width="1%">2098</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
+      <td class="Cflow" width="1%" rowspan="6"><img width="12" height="119" src="flow4082.png"></td>
+      <td class="FCO Ccount" width="1%">101010</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_zstream_set_input(git_zstream *zstream, const void *in, size_t in_len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
+      <td class="FCO Ccount" width="1%">101010</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	zstream-&gt;in = in;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
+      <td class="FCO Ccount" width="1%">101010</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	zstream-&gt;in_len = in_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
+      <td class="FCO Ccount" width="1%">101010</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	zstream-&gt;zerr = Z_OK;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
+      <td class="FCO Ccount" width="1%">101010</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow4081.png"></td>
+      <td class="FCO Ccount" width="1%">72042</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">bool git_zstream_done(git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
+      <td class="FCO Ccount" width="1%">72042</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return (!zstream-&gt;in_len &amp;&amp; zstream-&gt;zerr == Z_STREAM_END);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow4080.png"></td>
+      <td class="FCO Ccount" width="1%">40515</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">bool git_zstream_eos(git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
+      <td class="FCO Ccount" width="1%">40515</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return zstream-&gt;zerr == Z_STREAM_END;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
+      <td class="Cflow" width="1%" rowspan="8"><img width="18" height="162" src="flow4079.png"></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">size_t git_zstream_suggest_output_len(git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (zstream-&gt;in_len &gt; ZSTREAM_BUFFER_SIZE)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		return ZSTREAM_BUFFER_SIZE;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
+      <td class="FCO Ccount" width="1%">437</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">	else if (zstream-&gt;in_len &gt; ZSTREAM_BUFFER_MIN_EXTRA)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
+      <td class="FCO Ccount" width="1%">230</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">		return zstream-&gt;in_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
+      <td class="FCO Ccount" width="1%">207</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">		return ZSTREAM_BUFFER_MIN_EXTRA;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
+      <td class="Cflow" width="1%" rowspan="42"><img width="45" height="888" src="flow4078.png"></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_zstream_get_output_chunk(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void *out, size_t *out_len, git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t in_queued, in_used, out_queued;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* set up input data */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	zstream-&gt;z.next_in = (Bytef *)zstream-&gt;in;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* feed as much data to zlib as it can consume, at most UINT_MAX */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L104"></a><a href="#L104">104</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (zstream-&gt;in_len &gt; UINT_MAX) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
+      <td class="FCO Ccount" width="1%">174</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		zstream-&gt;z.avail_in = UINT_MAX;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
+      <td class="FCO Ccount" width="1%">174</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		zstream-&gt;flush = Z_NO_FLUSH;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	} else {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
+      <td class="FCO Ccount" width="1%">141815</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		zstream-&gt;z.avail_in = (uInt)zstream-&gt;in_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
+      <td class="FCO Ccount" width="1%">141815</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		zstream-&gt;flush = Z_FINISH;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	in_queued = (size_t)zstream-&gt;z.avail_in;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* set up output data */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	zstream-&gt;z.next_out = out;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	zstream-&gt;z.avail_out = (uInt)*out_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">	if ((size_t)zstream-&gt;z.avail_out != *out_len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">6</td>
+      <td class="FUN Ctext">		zstream-&gt;z.avail_out = UINT_MAX;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	out_queued = (size_t)zstream-&gt;z.avail_out;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* compress next chunk */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
+      <td class="FCO Ccount" width="1%">141989</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	if (zstream-&gt;type == GIT_ZSTREAM_INFLATE)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
+      <td class="FCO Ccount" width="1%">120960</td>
+      <td class="FCO Cblocks" width="1%">8,9</td>
+      <td class="FCO Ctext">		zstream-&gt;zerr = inflate(&amp;zstream-&gt;z, zstream-&gt;flush);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	else
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L125"></a><a href="#L125">125</a></td>
+      <td class="FCO Ccount" width="1%">21301</td>
+      <td class="FCO Cblocks" width="1%">10,11</td>
+      <td class="FCO Ctext">		zstream-&gt;zerr = deflate(&amp;zstream-&gt;z, zstream-&gt;flush);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L126"></a><a href="#L126">126</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L127"></a><a href="#L127">127</a></td>
+      <td class="FCO Ccount" width="1%">142261</td>
+      <td class="FCO Cblocks" width="1%">12,13</td>
+      <td class="FCO Ctext">	if (zstream_seterr(zstream))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L128"></a><a href="#L128">128</a></td>
+      <td class="FCO Ccount" width="1%">185</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">		return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L129"></a><a href="#L129">129</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L130"></a><a href="#L130">130</a></td>
+      <td class="FCO Ccount" width="1%">142066</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	in_used = (in_queued - zstream-&gt;z.avail_in);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L131"></a><a href="#L131">131</a></td>
+      <td class="FCO Ccount" width="1%">142066</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	zstream-&gt;in_len -= in_used;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L132"></a><a href="#L132">132</a></td>
+      <td class="FCO Ccount" width="1%">142066</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	zstream-&gt;in += in_used;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L133"></a><a href="#L133">133</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L134"></a><a href="#L134">134</a></td>
+      <td class="FCO Ccount" width="1%">142066</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	*out_len = (out_queued - zstream-&gt;z.avail_out);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L135"></a><a href="#L135">135</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L136"></a><a href="#L136">136</a></td>
+      <td class="FCO Ccount" width="1%">142066</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L137"></a><a href="#L137">137</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L138"></a><a href="#L138">138</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L139"></a><a href="#L139">139</a></td>
+      <td class="Cflow" width="1%" rowspan="26"><img width="71" height="546" src="flow4077.png"></td>
+      <td class="FCO Ccount" width="1%">120763</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_zstream_get_output(void *out, size_t *out_len, git_zstream *zstream)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L140"></a><a href="#L140">140</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L141"></a><a href="#L141">141</a></td>
+      <td class="FCO Ccount" width="1%">120763</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	size_t out_remain = *out_len;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L142"></a><a href="#L142">142</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L143"></a><a href="#L143">143</a></td>
+      <td class="FCO Ccount" width="1%">120763</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	if (zstream-&gt;in_len &amp;&amp; zstream-&gt;zerr == Z_STREAM_END) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L144"></a><a href="#L144">144</a></td>
+      <td class="FCO Ccount" width="1%">1</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		git_error_set(GIT_ERROR_ZLIB, &quot;zlib input had trailing garbage&quot;);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L145"></a><a href="#L145">145</a></td>
+      <td class="FCO Ccount" width="1%">1</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">		return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L146"></a><a href="#L146">146</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L147"></a><a href="#L147">147</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L148"></a><a href="#L148">148</a></td>
+      <td class="FCO Ccount" width="1%">212331</td>
+      <td class="FCO Cblocks" width="1%">6,11,12</td>
+      <td class="FCO Ctext">	while (out_remain &gt; 0 &amp;&amp; zstream-&gt;zerr != Z_STREAM_END) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L149"></a><a href="#L149">149</a></td>
+      <td class="FCO Ccount" width="1%">91453</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">		size_t out_written = out_remain;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L150"></a><a href="#L150">150</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L151"></a><a href="#L151">151</a></td>
+      <td class="FCO Ccount" width="1%">91754</td>
+      <td class="FCO Cblocks" width="1%">7,8</td>
+      <td class="FCO Ctext">		if (git_zstream_get_output_chunk(out, &amp;out_written, zstream) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L152"></a><a href="#L152">152</a></td>
+      <td class="FCO Ccount" width="1%">185</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">			return -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L153"></a><a href="#L153">153</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L154"></a><a href="#L154">154</a></td>
+      <td class="FCO Ccount" width="1%">91569</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">		out_remain -= out_written;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L155"></a><a href="#L155">155</a></td>
+      <td class="FCO Ccount" width="1%">91569</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">		out = ((char *)out) + out_written;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L156"></a><a href="#L156">156</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L157"></a><a href="#L157">157</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L158"></a><a href="#L158">158</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* either we finished the input or we did not flush the data */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L159"></a><a href="#L159">159</a></td>
+      <td class="FCO Ccount" width="1%">120878</td>
+      <td class="FCO Cblocks" width="1%">13-15</td>
+      <td class="FCO Ctext">	assert(zstream-&gt;in_len &gt; 0 || zstream-&gt;flush == Z_FINISH);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L160"></a><a href="#L160">160</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L161"></a><a href="#L161">161</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* set out_size to number of bytes actually written to output */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L162"></a><a href="#L162">162</a></td>
+      <td class="FCO Ccount" width="1%">120878</td>
+      <td class="FCO Cblocks" width="1%">16</td>
+      <td class="FCO Ctext">	*out_len = *out_len - out_remain;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L163"></a><a href="#L163">163</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L164"></a><a href="#L164">164</a></td>
+      <td class="FCO Ccount" width="1%">120878</td>
+      <td class="FCO Cblocks" width="1%">16</td>
+      <td class="FCO Ctext">	return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L165"></a><a href="#L165">165</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L166"></a><a href="#L166">166</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L167"></a><a href="#L167">167</a></td>
+      <td class="Cflow" width="1%" rowspan="33"><img width="71" height="696" src="flow4076.png"></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static int zstream_buf(git_buf *out, const void *in, size_t in_len, git_zstream_t type)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L168"></a><a href="#L168">168</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L169"></a><a href="#L169">169</a></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	git_zstream zs = GIT_ZSTREAM_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L170"></a><a href="#L170">170</a></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	int error = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L171"></a><a href="#L171">171</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L172"></a><a href="#L172">172</a></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	if ((error = git_zstream_init(&amp;zs, type)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L173"></a><a href="#L173">173</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">4</td>
+      <td class="FUN Ctext">		return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L174"></a><a href="#L174">174</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L175"></a><a href="#L175">175</a></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">5,6</td>
+      <td class="FCO Ctext">	if ((error = git_zstream_set_input(&amp;zs, in, in_len)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L176"></a><a href="#L176">176</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">7</td>
+      <td class="FUN Ctext">		goto done;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L177"></a><a href="#L177">177</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L178"></a><a href="#L178">178</a></td>
+      <td class="FCO Ccount" width="1%">690</td>
+      <td class="FCO Cblocks" width="1%">8,18,19</td>
+      <td class="FCO Ctext">	while (!git_zstream_done(&amp;zs)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L179"></a><a href="#L179">179</a></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">		size_t step = git_zstream_suggest_output_len(&amp;zs), written;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L180"></a><a href="#L180">180</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L181"></a><a href="#L181">181</a></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">10,11</td>
+      <td class="FCO Ctext">		if ((error = git_buf_grow_by(out, step)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L182"></a><a href="#L182">182</a></td>
+      <td class="FPC Ccount" width="1%">1</td>
+      <td class="FPC Cblocks" width="1%">12,17</td>
+      <td class="FPC Ctext">			goto done;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L183"></a><a href="#L183">183</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L184"></a><a href="#L184">184</a></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">		written = out-&gt;asize - out-&gt;size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L185"></a><a href="#L185">185</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L186"></a><a href="#L186">186</a></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">13,14</td>
+      <td class="FCO Ctext">		if ((error = git_zstream_get_output(
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L187"></a><a href="#L187">187</a></td>
+      <td class="FCO Ccount" width="1%">445</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">				out-&gt;ptr + out-&gt;size, &amp;written, &amp;zs)) &lt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L188"></a><a href="#L188">188</a></td>
+      <td class="FCO Ccount" width="1%">1</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">			goto done;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L189"></a><a href="#L189">189</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L190"></a><a href="#L190">190</a></td>
+      <td class="FCO Ccount" width="1%">444</td>
+      <td class="FCO Cblocks" width="1%">16</td>
+      <td class="FCO Ctext">		out-&gt;size += written;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L191"></a><a href="#L191">191</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L192"></a><a href="#L192">192</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L193"></a><a href="#L193">193</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* NULL terminate for consistency if possible */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L194"></a><a href="#L194">194</a></td>
+      <td class="FCO Ccount" width="1%">245</td>
+      <td class="FCO Cblocks" width="1%">20</td>
+      <td class="FCO Ctext">	if (out-&gt;size &lt; out-&gt;asize)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L195"></a><a href="#L195">195</a></td>
+      <td class="FCO Ccount" width="1%">198</td>
+      <td class="FCO Cblocks" width="1%">21</td>
+      <td class="FCO Ctext">		out-&gt;ptr[out-&gt;size] = &#39;\0&#39;;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L196"></a><a href="#L196">196</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L197"></a><a href="#L197">197</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">done:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L198"></a><a href="#L198">198</a></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">22</td>
+      <td class="FCO Ctext">	git_zstream_free(&amp;zs);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L199"></a><a href="#L199">199</a></td>
+      <td class="FCO Ccount" width="1%">246</td>
+      <td class="FCO Cblocks" width="1%">23</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L200"></a><a href="#L200">200</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L201"></a><a href="#L201">201</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L202"></a><a href="#L202">202</a></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow4075.png"></td>
+      <td class="FCO Ccount" width="1%">210</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_zstream_deflatebuf(git_buf *out, const void *in, size_t in_len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L203"></a><a href="#L203">203</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L204"></a><a href="#L204">204</a></td>
+      <td class="FCO Ccount" width="1%">210</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return zstream_buf(out, in, in_len, GIT_ZSTREAM_DEFLATE);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L205"></a><a href="#L205">205</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L206"></a><a href="#L206">206</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L207"></a><a href="#L207">207</a></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow4074.png"></td>
+      <td class="FCO Ccount" width="1%">36</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_zstream_inflatebuf(git_buf *out, const void *in, size_t in_len)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L208"></a><a href="#L208">208</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L209"></a><a href="#L209">209</a></td>
+      <td class="FCO Ccount" width="1%">36</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return zstream_buf(out, in, in_len, GIT_ZSTREAM_INFLATE);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L210"></a><a href="#L210">210</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="footer">
+<p>Generated by ggcov-html. Copyright &copy; 2001-2020 Greg Banks.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1051 @@
+<!--
+ggcov - A GTK frontend for exploring gcov coverage data
+Copyright (c) 2001-2020 Greg Banks gnb@fastmail.fm
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<html>
+<head>
+<title>ggcov - source src/array.h</title>
+<link rel="stylesheet" type="text/css" href="ggcov.css">
+</head>
+<body>
+<div id="header">
+<h1>ggcov</h1>
+<p>source src/array.h</p>
+</div>
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Index</a>
+<li><a href="tree.html">Files</a>
+<li><a href="functions.html">Functions</a>
+</ul>
+</div>
+
+<div id="body">
+<table class="main">
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Flow</th>
+      <th>Count</th>
+      <th>Block(s)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L1"></a><a href="#L1">1</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L2"></a><a href="#L2">2</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Copyright (C) the libgit2 contributors. All rights reserved.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L3"></a><a href="#L3">3</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L4"></a><a href="#L4">4</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * This file is part of libgit2, distributed under the GNU GPL v2 with
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L5"></a><a href="#L5">5</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * a Linking Exception. For full terms see the included COPYING file.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L6"></a><a href="#L6">6</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L7"></a><a href="#L7">7</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifndef INCLUDE_array_h__
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L8"></a><a href="#L8">8</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define INCLUDE_array_h__
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L9"></a><a href="#L9">9</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;common.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Use this to declare a typesafe resizable array of items, a la:
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     git_array_t(int) my_ints = GIT_ARRAY_INIT;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     ...
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     int *i = git_array_alloc(my_ints);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     GIT_ERROR_CHECK_ALLOC(i);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     ...
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     git_array_clear(my_ints);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * You may also want to do things like:
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *     typedef git_array_t(my_struct) my_struct_array_t;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_t(type) struct { type *ptr; size_t size, asize; }
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_ARRAY_INIT { NULL, 0, 0 }
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_init(a) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	do { (a).size = (a).asize = 0; (a).ptr = NULL; } while (0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_init_to_size(a, desired) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	do { (a).size = 0; (a).asize = desired; (a).ptr = git__calloc(desired, sizeof(*(a).ptr)); } while (0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_clear(a) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	do { git__free((a).ptr); git_array_init(a); } while (0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_ERROR_CHECK_ARRAY(a) GIT_ERROR_CHECK_ALLOC((a).ptr)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef git_array_t(char) git_array_generic_t;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* use a generic array for growth so this can return the new item */
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15711</td>
+      <td class="FPC Cblocks" width="1%">2,2,2,2,2,2,2,2,2,2,2,2,2,2,2</td>
+      <td class="FPC Ctext">GIT_INLINE(void *) git_array_grow(void *_a, size_t item_size)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15711</td>
+      <td class="FPC Cblocks" width="1%">2,2,2,2,2,2,2,2,2,2,2,2,2,2,2</td>
+      <td class="FPC Ctext">	volatile git_array_generic_t *a = _a;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t new_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	char *new_array;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15711</td>
+      <td class="FPC Cblocks" width="1%">2,2,2,2,2,2,2,2,2,2,2,2,2,2,2</td>
+      <td class="FPC Ctext">	if (a-&gt;size &lt; 8) {
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15455</td>
+      <td class="FPC Cblocks" width="1%">3,3,3,3,3,3,3,3,3,3,3,3,3,3,3</td>
+      <td class="FPC Ctext">		new_size = 8;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	} else {
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">7419</td>
+      <td class="FPC Cblocks" width="1%">4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9,4-9</td>
+      <td class="FPC Ctext">		if (GIT_MULTIPLY_SIZET_OVERFLOW(&amp;new_size, a-&gt;size, 3))
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">10,10,10,10,10,10,10,10,10,10,10,10,10,10,10</td>
+      <td class="FUN Ctext">			goto on_oom;
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">7419</td>
+      <td class="FPC Cblocks" width="1%">11,11,11,11,11,11,11,11,11,11,11,11,11,11,11</td>
+      <td class="FPC Ctext">		new_size /= 2;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15711</td>
+      <td class="FPC Cblocks" width="1%">12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13,12,13</td>
+      <td class="FPC Ctext">	if ((new_array = git__reallocarray(a-&gt;ptr, new_size, item_size)) == NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">14,14,14,14,14,14,14,14,14,14,14,14,14,14,14</td>
+      <td class="FUN Ctext">		goto on_oom;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15711</td>
+      <td class="FPC Cblocks" width="1%">15,15,15,15,15,15,15,15,15,15,15,15,15,15,15</td>
+      <td class="FPC Ctext">	a-&gt;ptr = new_array; a-&gt;asize = new_size; a-&gt;size++;
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FPC Ccount" width="1%">15711</td>
+      <td class="FPC Cblocks" width="1%">15,15,15,15,15,15,15,15,15,15,15,15,15,15,15</td>
+      <td class="FPC Ctext">	return a-&gt;ptr + (a-&gt;size - 1) * item_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">on_oom:
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">16,16,16,16,16,16,16,16,16,16,16,16,16,16,16</td>
+      <td class="FUN Ctext">	git_array_clear(*a);
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">17,17,17,17,17,17,17,17,17,17,17,17,17,17,17</td>
+      <td class="FUN Ctext">	return NULL;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_alloc(a) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	(((a).size &gt;= (a).asize) ? \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_array_grow(&amp;(a), sizeof(*(a).ptr)) : \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	((a).ptr ? &amp;(a).ptr[(a).size++] : NULL))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_last(a) ((a).size ? &amp;(a).ptr[(a).size - 1] : NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_pop(a) ((a).size ? &amp;(a).ptr[--(a).size] : NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_get(a, i) (((i) &lt; (a).size) ? &amp;(a).ptr[(i)] : NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_size(a) (a).size
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_valid_index(a, i) ((i) &lt; (a).size)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_foreach(a, i, element) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	for ((i) = 0; (i) &lt; (a).size &amp;&amp; ((element) = &amp;(a).ptr[(i)]); (i)++)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7799</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">GIT_INLINE(int) git_array__search(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t *out,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void *array_ptr,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t item_size,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t array_len,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	int (*compare)(const void *, const void *),
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	const void *key)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t lim;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7799</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	unsigned char *part, *array = array_ptr, *base = array_ptr;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7799</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	int cmp = -1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">17472</td>
+      <td class="FCO Cblocks" width="1%">2,8,9</td>
+      <td class="FCO Ctext">	for (lim = array_len; lim != 0; lim &gt;&gt;= 1) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">17280</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		part = base + (lim &gt;&gt; 1) * item_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">17280</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		cmp = (*compare)(key, part);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L104"></a><a href="#L104">104</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">17280</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		if (cmp == 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7607</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">			base = part;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7607</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">			break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">9673</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">		if (cmp &gt; 0) { /* key &gt; p; take right partition */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6054</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">			base = part + 1 * item_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6054</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">			lim--;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		} /* else take left partition */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7799</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">	if (out)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7799</td>
+      <td class="FCO Cblocks" width="1%">11</td>
+      <td class="FCO Ctext">		*out = (base - array) / item_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">7799</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">	return (cmp == 0) ? 0 : GIT_ENOTFOUND;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define git_array_search(out, a, cmp, key) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_array__search(out, (a).ptr, sizeof(*(a).ptr), (a).size, \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		(cmp), (key))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="footer">
+<p>Generated by ggcov-html. Copyright &copy; 2001-2020 Greg Banks.</p>
+</div>
+</div>
+</body>
+</html>

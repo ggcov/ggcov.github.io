@@ -1,0 +1,1059 @@
+<!--
+ggcov - A GTK frontend for exploring gcov coverage data
+Copyright (c) 2001-2020 Greg Banks gnb@fastmail.fm
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<html>
+<head>
+<title>ggcov - source src/pqueue.c</title>
+<link rel="stylesheet" type="text/css" href="ggcov.css">
+</head>
+<body>
+<div id="header">
+<h1>ggcov</h1>
+<p>source src/pqueue.c</p>
+</div>
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Index</a>
+<li><a href="tree.html">Files</a>
+<li><a href="functions.html">Functions</a>
+</ul>
+</div>
+
+<div id="body">
+<table class="main">
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Flow</th>
+      <th>Count</th>
+      <th>Block(s)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L1"></a><a href="#L1">1</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L2"></a><a href="#L2">2</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Copyright (C) the libgit2 contributors. All rights reserved.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L3"></a><a href="#L3">3</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L4"></a><a href="#L4">4</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * This file is part of libgit2, distributed under the GNU GPL v2 with
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L5"></a><a href="#L5">5</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * a Linking Exception. For full terms see the included COPYING file.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L6"></a><a href="#L6">6</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L7"></a><a href="#L7">7</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L8"></a><a href="#L8">8</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;pqueue.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L9"></a><a href="#L9">9</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;util.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define PQUEUE_LCHILD_OF(I) (((I)&lt;&lt;1)+1)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define PQUEUE_RCHILD_OF(I) (((I)&lt;&lt;1)+2)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define PQUEUE_PARENT_OF(I) (((I)-1)&gt;&gt;1)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">876</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_pqueue_init(
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_pqueue *pq,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	uint32_t flags,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	size_t init_size,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	git_vector_cmp cmp)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">876</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	int error = git_vector_init(pq, init_size, cmp);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">876</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">	if (!error) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/* mix in our flags */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">876</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		pq-&gt;flags |= flags;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/* if fixed size heap, pretend vector is exactly init_size elements */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">876</td>
+      <td class="FCO Cblocks" width="1%">4,5</td>
+      <td class="FCO Ctext">		if ((flags &amp; GIT_PQUEUE_FIXED_SIZE) &amp;&amp; init_size &gt; 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">			pq-&gt;_alloc_size = init_size;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">876</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4242</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static void pqueue_up(git_pqueue *pq, size_t el)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4242</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	size_t parent_el = PQUEUE_PARENT_OF(el);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4242</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	void *kid = git_vector_get(pq, el);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6644</td>
+      <td class="FCO Cblocks" width="1%">3,8</td>
+      <td class="FCO Ctext">	while (el &gt; 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4821</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		void *parent = pq-&gt;contents[parent_el];
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4821</td>
+      <td class="FCO Cblocks" width="1%">4,5</td>
+      <td class="FCO Ctext">		if (pq-&gt;_cmp(parent, kid) &lt;= 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2419</td>
+      <td class="FCO Cblocks" width="1%">6</td>
+      <td class="FCO Ctext">			break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2402</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">		pq-&gt;contents[el] = parent;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2402</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">		el = parent_el;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2402</td>
+      <td class="FCO Cblocks" width="1%">7</td>
+      <td class="FCO Ctext">		parent_el = PQUEUE_PARENT_OF(el);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4242</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">	pq-&gt;contents[el] = kid;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4242</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static void pqueue_down(git_pqueue *pq, size_t el)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	void *parent = git_vector_get(pq, el), *kid, *rkid;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	while (1) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6668</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		size_t kid_el = PQUEUE_LCHILD_OF(el);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">6668</td>
+      <td class="FCO Cblocks" width="1%">3,4</td>
+      <td class="FCO Ctext">		if ((kid = git_vector_get(pq, kid_el)) == NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2762</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">			break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3906</td>
+      <td class="FCO Cblocks" width="1%">6,7,9</td>
+      <td class="FCO Ctext">		if ((rkid = git_vector_get(pq, kid_el + 1)) != NULL &amp;&amp;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">2964</td>
+      <td class="FCO Cblocks" width="1%">8</td>
+      <td class="FCO Ctext">			pq-&gt;_cmp(kid, rkid) &gt; 0) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1249</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">			kid    = rkid;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">1249</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">			kid_el += 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3906</td>
+      <td class="FCO Cblocks" width="1%">11,12</td>
+      <td class="FCO Ctext">		if (pq-&gt;_cmp(parent, kid) &lt;= 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">846</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">			break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3060</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">		pq-&gt;contents[el] = kid;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3060</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">		el = kid_el;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3060</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">	pq-&gt;contents[el] = parent;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4383</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int git_pqueue_insert(git_pqueue *pq, void *item)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4383</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	int error = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* if heap is full, pop the top element if new one should replace it */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4383</td>
+      <td class="FCO Cblocks" width="1%">2,3</td>
+      <td class="FCO Ctext">	if ((pq-&gt;flags &amp; GIT_PQUEUE_FIXED_SIZE) != 0 &amp;&amp;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">200</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		pq-&gt;length &gt;= pq-&gt;_alloc_size)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/* skip this item if below min item in heap or if
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		 * we do not have a comparison function */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">100</td>
+      <td class="FCO Cblocks" width="1%">4-7</td>
+      <td class="FCO Ctext">		if (!pq-&gt;_cmp || pq-&gt;_cmp(item, git_vector_get(pq, 0)) &lt;= 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">67</td>
+      <td class="FCO Cblocks" width="1%">8</td>
+      <td class="FCO Ctext">			return 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/* otherwise remove the min item before inserting new */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">33</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">		(void)git_pqueue_pop(pq);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4316</td>
+      <td class="FCO Cblocks" width="1%">10-12</td>
+      <td class="FCO Ctext">	if (!(error = git_vector_insert(pq, item)) &amp;&amp; pq-&gt;_cmp)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4242</td>
+      <td class="FCO Cblocks" width="1%">13</td>
+      <td class="FCO Ctext">		pqueue_up(pq, pq-&gt;length - 1);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4316</td>
+      <td class="FCO Cblocks" width="1%">14</td>
+      <td class="FCO Ctext">	return error;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L104"></a><a href="#L104">104</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4191</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">void *git_pqueue_pop(git_pqueue *pq)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	void *rval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4191</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	if (!pq-&gt;_cmp) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">80</td>
+      <td class="FCO Cblocks" width="1%">3</td>
+      <td class="FCO Ctext">		rval = git_vector_last(pq);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	} else {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4111</td>
+      <td class="FCO Cblocks" width="1%">4</td>
+      <td class="FCO Ctext">		rval = git_pqueue_get(pq, 0);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4191</td>
+      <td class="FCO Cblocks" width="1%">5-7</td>
+      <td class="FCO Ctext">	if (git_pqueue_size(pq) &gt; 1 &amp;&amp; pq-&gt;_cmp) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/* move last item to top of heap, shrink, and push item down */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">8</td>
+      <td class="FCO Ctext">		pq-&gt;contents[0] = git_vector_last(pq);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">9</td>
+      <td class="FCO Ctext">		git_vector_pop(pq);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">3608</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">		pqueue_down(pq, 0);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	} else {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		/* all we need to do is shrink the heap in this case */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">583</td>
+      <td class="FCO Cblocks" width="1%">11</td>
+      <td class="FCO Ctext">		git_vector_pop(pq);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FCO Ccount" width="1%">4191</td>
+      <td class="FCO Cblocks" width="1%">12</td>
+      <td class="FCO Ctext">	return rval;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L125"></a><a href="#L125">125</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="footer">
+<p>Generated by ggcov-html. Copyright &copy; 2001-2020 Greg Banks.</p>
+</div>
+</div>
+</body>
+</html>

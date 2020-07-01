@@ -1,0 +1,2401 @@
+<!--
+ggcov - A GTK frontend for exploring gcov coverage data
+Copyright (c) 2001-2020 Greg Banks gnb@fastmail.fm
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<html>
+<head>
+<title>ggcov - source src/wildmatch.c</title>
+<link rel="stylesheet" type="text/css" href="ggcov.css">
+</head>
+<body>
+<div id="header">
+<h1>ggcov</h1>
+<p>source src/wildmatch.c</p>
+</div>
+<div id="wrap">
+
+<div id="nav">
+<ul>
+<li><a href="index.html">Index</a>
+<li><a href="tree.html">Files</a>
+<li><a href="functions.html">Functions</a>
+</ul>
+</div>
+
+<div id="body">
+<table class="main">
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Flow</th>
+      <th>Count</th>
+      <th>Block(s)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L1"></a><a href="#L1">1</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L2"></a><a href="#L2">2</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Copyright (C) the libgit2 contributors. All rights reserved.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L3"></a><a href="#L3">3</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L4"></a><a href="#L4">4</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * This file is part of libgit2, distributed under the GNU GPL v2 with
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L5"></a><a href="#L5">5</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * a Linking Exception. For full terms see the included COPYING file.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L6"></a><a href="#L6">6</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L7"></a><a href="#L7">7</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Do shell-style pattern matching for ?, \, [], and * characters.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L8"></a><a href="#L8">8</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * It is 8bit clean.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L9"></a><a href="#L9">9</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Written by Rich $alz, mirror!rs, Wed Nov 26 19:03:17 EST 1986.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Rich $alz is now &lt;rsalz@bbn.com&gt;.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Modified by Wayne Davison to special-case &#39;/&#39; matching, to make &#39;**&#39;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * work differently than &#39;*&#39;, and to fix the character-class code.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> *
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> * Imported from git.git.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"> */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#include &quot;wildmatch.h&quot;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_SPACE 0x01
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_DIGIT 0x02
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_ALPHA 0x04
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_GLOB_SPECIAL 0x08
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_REGEX_SPECIAL 0x10
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_PATHSPEC_MAGIC 0x20
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_CNTRL 0x40
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define GIT_PUNCT 0x80
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">enum {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	S = GIT_SPACE,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	A = GIT_ALPHA,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	D = GIT_DIGIT,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	G = GIT_GLOB_SPECIAL,	/* *, ?, [, \\ */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	R = GIT_REGEX_SPECIAL,	/* $, (, ), +, ., ^, {, | */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	P = GIT_PATHSPEC_MAGIC, /* other non-alnum, except for ] and } */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	X = GIT_CNTRL,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	U = GIT_PUNCT,
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	Z = GIT_CNTRL | GIT_SPACE
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">};
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">static const unsigned char sane_ctype[256] = {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	X, X, X, X, X, X, X, X, X, Z, Z, X, X, Z, X, X,		/*   0.. 15 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X,		/*  16.. 31 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	S, P, P, P, R, P, P, P, R, R, G, R, P, P, R, P,		/*  32.. 47 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	D, D, D, D, D, D, D, D, D, D, P, P, P, P, P, G,		/*  48.. 63 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	P, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A,		/*  64.. 79 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	A, A, A, A, A, A, A, A, A, A, A, G, G, U, R, P,		/*  80.. 95 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	P, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A,		/*  96..111 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	A, A, A, A, A, A, A, A, A, A, A, R, R, U, P, X,		/* 112..127 */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	/* Nothing in the 128.. range */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">};
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define sane_istest(x,mask) ((sane_ctype[(unsigned char)(x)] &amp; (mask)) != 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define is_glob_special(x) sane_istest(x,GIT_GLOB_SPECIAL)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">typedef unsigned char uchar;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* What character marks an inverted character class? */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define NEGATE_CLASS	&#39;!&#39;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define NEGATE_CLASS2	&#39;^&#39;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define CC_EQ(class, len, litmatch) ((len) == sizeof (litmatch)-1 \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				    &amp;&amp; *(class) == *(litmatch) \
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				    &amp;&amp; strncmp((char*)class, litmatch, len) == 0)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#if defined STDC_HEADERS || !defined isascii
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define ISASCII(c) 1
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define ISASCII(c) isascii(c)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef isblank
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define ISBLANK(c) (ISASCII(c) &amp;&amp; isblank(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define ISBLANK(c) ((c) == &#39; &#39; || (c) == &#39;\t&#39;)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef isgraph
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define ISGRAPH(c) (ISASCII(c) &amp;&amp; isgraph(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext"># define ISGRAPH(c) (ISASCII(c) &amp;&amp; isprint(c) &amp;&amp; !isspace(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISPRINT(c) (ISASCII(c) &amp;&amp; isprint(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISDIGIT(c) (ISASCII(c) &amp;&amp; isdigit(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISALNUM(c) (ISASCII(c) &amp;&amp; isalnum(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISALPHA(c) (ISASCII(c) &amp;&amp; isalpha(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISCNTRL(c) (ISASCII(c) &amp;&amp; iscntrl(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISLOWER(c) (ISASCII(c) &amp;&amp; islower(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISPUNCT(c) (ISASCII(c) &amp;&amp; ispunct(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISSPACE(c) (ISASCII(c) &amp;&amp; isspace(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISUPPER(c) (ISASCII(c) &amp;&amp; isupper(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#define ISXDIGIT(c) (ISASCII(c) &amp;&amp; isxdigit(c))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Match pattern &quot;p&quot; against &quot;text&quot; */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
+      <td class="Cflow" width="1%" rowspan="217"><img width="231" height="4626" src="flow3953.png"></td>
+      <td class="FCO Ccount" width="1%">351017</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">static int dowild(const uchar *p, const uchar *text, unsigned int flags)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	uchar p_ch;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
+      <td class="FCO Ccount" width="1%">351017</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	const uchar *pattern = p;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
+      <td class="FCO Ccount" width="1%">681476</td>
+      <td class="FCO Cblocks" width="1%">2,241,242</td>
+      <td class="FCO Ctext">	for ( ; (p_ch = *p) != &#39;\0&#39;; text++, p++) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		int matched, match_slash, negated;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L104"></a><a href="#L104">104</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		uchar t_ch, prev_ch;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
+      <td class="FCO Ccount" width="1%">678533</td>
+      <td class="FCO Cblocks" width="1%">3,4</td>
+      <td class="FCO Ctext">		if ((t_ch = *text) == &#39;\0&#39; &amp;&amp; p_ch != &#39;*&#39;)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
+      <td class="FCO Ccount" width="1%">8351</td>
+      <td class="FCO Cblocks" width="1%">5</td>
+      <td class="FCO Ctext">			return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
+      <td class="FCO Ccount" width="1%">670182</td>
+      <td class="FCO Cblocks" width="1%">6-9</td>
+      <td class="FCO Ctext">		if ((flags &amp; WM_CASEFOLD) &amp;&amp; ISUPPER(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
+      <td class="FCO Ccount" width="1%">70</td>
+      <td class="FCO Cblocks" width="1%">10</td>
+      <td class="FCO Ctext">			t_ch = tolower(t_ch);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
+      <td class="FCO Ccount" width="1%">670182</td>
+      <td class="FCO Cblocks" width="1%">11-14</td>
+      <td class="FCO Ctext">		if ((flags &amp; WM_CASEFOLD) &amp;&amp; ISUPPER(p_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
+      <td class="FCO Ccount" width="1%">193</td>
+      <td class="FCO Cblocks" width="1%">15</td>
+      <td class="FCO Ctext">			p_ch = tolower(p_ch);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
+      <td class="FCO Ccount" width="1%">670182</td>
+      <td class="FCO Cblocks" width="1%">16</td>
+      <td class="FCO Ctext">		switch (p_ch) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		case &#39;\\&#39;:
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* Literal match with following character.  Note that the test
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			 * in &quot;default&quot; handles the p[1] == &#39;\0&#39; failure case. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
+      <td class="FCO Ccount" width="1%">92</td>
+      <td class="FCO Cblocks" width="1%">17</td>
+      <td class="FCO Ctext">			p_ch = *++p;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* FALLTHROUGH */
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		default:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
+      <td class="FCO Ccount" width="1%">643973</td>
+      <td class="FCO Cblocks" width="1%">18</td>
+      <td class="FCO Ctext">			if (t_ch != p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
+      <td class="FCO Ccount" width="1%">314094</td>
+      <td class="FCO Cblocks" width="1%">19</td>
+      <td class="FCO Ctext">				return WM_NOMATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
+      <td class="FCO Ccount" width="1%">329879</td>
+      <td class="FCO Cblocks" width="1%">20</td>
+      <td class="FCO Ctext">			continue;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		case &#39;?&#39;:
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* Match anything but &#39;/&#39;. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
+      <td class="FCO Ccount" width="1%">54</td>
+      <td class="FCO Cblocks" width="1%">21,22</td>
+      <td class="FCO Ctext">			if ((flags &amp; WM_PATHNAME) &amp;&amp; t_ch == &#39;/&#39;)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">23</td>
+      <td class="FCO Ctext">				return WM_NOMATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L125"></a><a href="#L125">125</a></td>
+      <td class="FCO Ccount" width="1%">50</td>
+      <td class="FCO Cblocks" width="1%">24</td>
+      <td class="FCO Ctext">			continue;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L126"></a><a href="#L126">126</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		case &#39;*&#39;:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L127"></a><a href="#L127">127</a></td>
+      <td class="FCO Ccount" width="1%">25595</td>
+      <td class="FCO Cblocks" width="1%">25</td>
+      <td class="FCO Ctext">			if (*++p == &#39;*&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L128"></a><a href="#L128">128</a></td>
+      <td class="FCO Ccount" width="1%">313</td>
+      <td class="FCO Cblocks" width="1%">26</td>
+      <td class="FCO Ctext">				const uchar *prev_p = p - 2;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L129"></a><a href="#L129">129</a></td>
+      <td class="FCO Ccount" width="1%">313</td>
+      <td class="FCO Cblocks" width="1%">26,27</td>
+      <td class="FCO Ctext">				while (*++p == &#39;*&#39;) {}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L130"></a><a href="#L130">130</a></td>
+      <td class="FCO Ccount" width="1%">313</td>
+      <td class="FCO Cblocks" width="1%">28</td>
+      <td class="FCO Ctext">				if (!(flags &amp; WM_PATHNAME))
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L131"></a><a href="#L131">131</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					/* without WM_PATHNAME, &#39;*&#39; == &#39;**&#39; */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L132"></a><a href="#L132">132</a></td>
+      <td class="FCO Ccount" width="1%">91</td>
+      <td class="FCO Cblocks" width="1%">29</td>
+      <td class="FCO Ctext">					match_slash = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L133"></a><a href="#L133">133</a></td>
+      <td class="FCO Ccount" width="1%">222</td>
+      <td class="FCO Cblocks" width="1%">30-32</td>
+      <td class="FCO Ctext">				else if ((prev_p &lt; pattern || *prev_p == &#39;/&#39;) &amp;&amp;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L134"></a><a href="#L134">134</a></td>
+      <td class="FCO Ccount" width="1%">214</td>
+      <td class="FCO Cblocks" width="1%">32-34</td>
+      <td class="FCO Ctext">				    (*p == &#39;\0&#39; || *p == &#39;/&#39; ||
+</td>
+    </tr>
+    <tr>
+      <td class="FPC Clineno" width="1%"><a name="#L135"></a><a href="#L135">135</a></td>
+      <td class="FPC Ccount" width="1%">8</td>
+      <td class="FPC Cblocks" width="1%">34,35</td>
+      <td class="FPC Ctext">				     (p[0] == &#39;\\&#39; &amp;&amp; p[1] == &#39;/&#39;))) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L136"></a><a href="#L136">136</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L137"></a><a href="#L137">137</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * Assuming we already match &#39;foo/&#39; and are at
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L138"></a><a href="#L138">138</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * &lt;star star slash&gt;, just assume it matches
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L139"></a><a href="#L139">139</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * nothing and go ahead match the rest of the
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L140"></a><a href="#L140">140</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * pattern with the remaining string. This
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L141"></a><a href="#L141">141</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * helps make foo/&lt;*&gt;&lt;*&gt;/bar (&lt;&gt; because
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L142"></a><a href="#L142">142</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * otherwise it breaks C comment syntax) match
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L143"></a><a href="#L143">143</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 * both foo/bar and foo/a/bar.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L144"></a><a href="#L144">144</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					 */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L145"></a><a href="#L145">145</a></td>
+      <td class="FCO Ccount" width="1%">206</td>
+      <td class="FCO Cblocks" width="1%">36,38</td>
+      <td class="FCO Ctext">					if (p[0] == &#39;/&#39; &amp;&amp;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L146"></a><a href="#L146">146</a></td>
+      <td class="FCO Ccount" width="1%">177</td>
+      <td class="FCO Cblocks" width="1%">37</td>
+      <td class="FCO Ctext">					    dowild(p + 1, text, flags) == WM_MATCH)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L147"></a><a href="#L147">147</a></td>
+      <td class="FCO Ccount" width="1%">22</td>
+      <td class="FCO Cblocks" width="1%">39</td>
+      <td class="FCO Ctext">						return WM_MATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L148"></a><a href="#L148">148</a></td>
+      <td class="FCO Ccount" width="1%">184</td>
+      <td class="FCO Cblocks" width="1%">40</td>
+      <td class="FCO Ctext">					match_slash = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L149"></a><a href="#L149">149</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				} else /* WM_PATHNAME is set */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L150"></a><a href="#L150">150</a></td>
+      <td class="FCO Ccount" width="1%">291</td>
+      <td class="FCO Cblocks" width="1%">41,42</td>
+      <td class="FCO Ctext">					match_slash = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L151"></a><a href="#L151">151</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			} else
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L152"></a><a href="#L152">152</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				/* without WM_PATHNAME, &#39;*&#39; == &#39;**&#39; */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L153"></a><a href="#L153">153</a></td>
+      <td class="FCO Ccount" width="1%">25282</td>
+      <td class="FCO Cblocks" width="1%">43</td>
+      <td class="FCO Ctext">				match_slash = flags &amp; WM_PATHNAME ? 0 : 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L154"></a><a href="#L154">154</a></td>
+      <td class="FCO Ccount" width="1%">25573</td>
+      <td class="FCO Cblocks" width="1%">44</td>
+      <td class="FCO Ctext">			if (*p == &#39;\0&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L155"></a><a href="#L155">155</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				/* Trailing &quot;**&quot; matches everything.  Trailing &quot;*&quot; matches
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L156"></a><a href="#L156">156</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * only if there are no more slash characters. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L157"></a><a href="#L157">157</a></td>
+      <td class="FCO Ccount" width="1%">18423</td>
+      <td class="FCO Cblocks" width="1%">45</td>
+      <td class="FCO Ctext">				if (!match_slash) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L158"></a><a href="#L158">158</a></td>
+      <td class="FCO Ccount" width="1%">153</td>
+      <td class="FCO Cblocks" width="1%">46</td>
+      <td class="FCO Ctext">					if (strchr((char*)text, &#39;/&#39;) != NULL)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L159"></a><a href="#L159">159</a></td>
+      <td class="FCO Ccount" width="1%">75</td>
+      <td class="FCO Cblocks" width="1%">47</td>
+      <td class="FCO Ctext">						return WM_NOMATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L160"></a><a href="#L160">160</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L161"></a><a href="#L161">161</a></td>
+      <td class="FCO Ccount" width="1%">18348</td>
+      <td class="FCO Cblocks" width="1%">48</td>
+      <td class="FCO Ctext">				return WM_MATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L162"></a><a href="#L162">162</a></td>
+      <td class="FCO Ccount" width="1%">7150</td>
+      <td class="FCO Cblocks" width="1%">49,50</td>
+      <td class="FCO Ctext">			} else if (!match_slash &amp;&amp; *p == &#39;/&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L163"></a><a href="#L163">163</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L164"></a><a href="#L164">164</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * _one_ asterisk followed by a slash
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L165"></a><a href="#L165">165</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * with WM_PATHNAME matches the next
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L166"></a><a href="#L166">166</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * directory
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L167"></a><a href="#L167">167</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L168"></a><a href="#L168">168</a></td>
+      <td class="FCO Ccount" width="1%">166</td>
+      <td class="FCO Cblocks" width="1%">51</td>
+      <td class="FCO Ctext">				const char *slash = strchr((char*)text, &#39;/&#39;);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L169"></a><a href="#L169">169</a></td>
+      <td class="FCO Ccount" width="1%">166</td>
+      <td class="FCO Cblocks" width="1%">51</td>
+      <td class="FCO Ctext">				if (!slash)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L170"></a><a href="#L170">170</a></td>
+      <td class="FCO Ccount" width="1%">20</td>
+      <td class="FCO Cblocks" width="1%">52</td>
+      <td class="FCO Ctext">					return WM_NOMATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L171"></a><a href="#L171">171</a></td>
+      <td class="FCO Ccount" width="1%">146</td>
+      <td class="FCO Cblocks" width="1%">53</td>
+      <td class="FCO Ctext">				text = (const uchar*)slash;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L172"></a><a href="#L172">172</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				/* the slash is consumed by the top-level for loop */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L173"></a><a href="#L173">173</a></td>
+      <td class="FCO Ccount" width="1%">146</td>
+      <td class="FCO Cblocks" width="1%">53</td>
+      <td class="FCO Ctext">				break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L174"></a><a href="#L174">174</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L175"></a><a href="#L175">175</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			while (1) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L176"></a><a href="#L176">176</a></td>
+      <td class="FCO Ccount" width="1%">11841</td>
+      <td class="FCO Cblocks" width="1%">54</td>
+      <td class="FCO Ctext">				if (t_ch == &#39;\0&#39;)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L177"></a><a href="#L177">177</a></td>
+      <td class="FCO Ccount" width="1%">188</td>
+      <td class="FCO Cblocks" width="1%">55</td>
+      <td class="FCO Ctext">					break;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L178"></a><a href="#L178">178</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				/*
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L179"></a><a href="#L179">179</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * Try to advance faster when an asterisk is
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L180"></a><a href="#L180">180</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * followed by a literal. We know in this case
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L181"></a><a href="#L181">181</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * that the string before the literal
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L182"></a><a href="#L182">182</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * must belong to &quot;*&quot;.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L183"></a><a href="#L183">183</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * If match_slash is false, do not look past
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L184"></a><a href="#L184">184</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 * the first slash as it cannot belong to &#39;*&#39;.
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L185"></a><a href="#L185">185</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				 */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L186"></a><a href="#L186">186</a></td>
+      <td class="FCO Ccount" width="1%">11653</td>
+      <td class="FCO Cblocks" width="1%">56</td>
+      <td class="FCO Ctext">				if (!is_glob_special(*p)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L187"></a><a href="#L187">187</a></td>
+      <td class="FCO Ccount" width="1%">11587</td>
+      <td class="FCO Cblocks" width="1%">57</td>
+      <td class="FCO Ctext">					p_ch = *p;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L188"></a><a href="#L188">188</a></td>
+      <td class="FCO Ccount" width="1%">11587</td>
+      <td class="FCO Cblocks" width="1%">57-60</td>
+      <td class="FCO Ctext">					if ((flags &amp; WM_CASEFOLD) &amp;&amp; ISUPPER(p_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L189"></a><a href="#L189">189</a></td>
+      <td class="FCO Ccount" width="1%">12</td>
+      <td class="FCO Cblocks" width="1%">61</td>
+      <td class="FCO Ctext">						p_ch = tolower(p_ch);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L190"></a><a href="#L190">190</a></td>
+      <td class="FCO Ccount" width="1%">66920</td>
+      <td class="FCO Cblocks" width="1%">62,71,72</td>
+      <td class="FCO Ctext">					while ((t_ch = *text) != &#39;\0&#39; &amp;&amp;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L191"></a><a href="#L191">191</a></td>
+      <td class="FCO Ccount" width="1%">8884</td>
+      <td class="FCO Cblocks" width="1%">73</td>
+      <td class="FCO Ctext">					       (match_slash || t_ch != &#39;/&#39;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L192"></a><a href="#L192">192</a></td>
+      <td class="FCO Ccount" width="1%">61387</td>
+      <td class="FCO Cblocks" width="1%">63-66</td>
+      <td class="FCO Ctext">						if ((flags &amp; WM_CASEFOLD) &amp;&amp; ISUPPER(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L193"></a><a href="#L193">193</a></td>
+      <td class="FCO Ccount" width="1%">52</td>
+      <td class="FCO Cblocks" width="1%">67</td>
+      <td class="FCO Ctext">							t_ch = tolower(t_ch);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L194"></a><a href="#L194">194</a></td>
+      <td class="FCO Ccount" width="1%">61387</td>
+      <td class="FCO Cblocks" width="1%">68</td>
+      <td class="FCO Ctext">						if (t_ch == p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L195"></a><a href="#L195">195</a></td>
+      <td class="FCO Ccount" width="1%">6054</td>
+      <td class="FCO Cblocks" width="1%">69</td>
+      <td class="FCO Ctext">							break;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L196"></a><a href="#L196">196</a></td>
+      <td class="FCO Ccount" width="1%">55333</td>
+      <td class="FCO Cblocks" width="1%">70</td>
+      <td class="FCO Ctext">						text++;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L197"></a><a href="#L197">197</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L198"></a><a href="#L198">198</a></td>
+      <td class="FCO Ccount" width="1%">11587</td>
+      <td class="FCO Cblocks" width="1%">74</td>
+      <td class="FCO Ctext">					if (t_ch != p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L199"></a><a href="#L199">199</a></td>
+      <td class="FCO Ccount" width="1%">5533</td>
+      <td class="FCO Cblocks" width="1%">75</td>
+      <td class="FCO Ctext">						return WM_NOMATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L200"></a><a href="#L200">200</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L201"></a><a href="#L201">201</a></td>
+      <td class="FCO Ccount" width="1%">6120</td>
+      <td class="FCO Cblocks" width="1%">76,77</td>
+      <td class="FCO Ctext">				if ((matched = dowild(p, text, flags)) != WM_NOMATCH) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L202"></a><a href="#L202">202</a></td>
+      <td class="FCO Ccount" width="1%">1263</td>
+      <td class="FCO Cblocks" width="1%">78,79</td>
+      <td class="FCO Ctext">					if (!match_slash || matched != WM_ABORT_TO_STARSTAR)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L203"></a><a href="#L203">203</a></td>
+      <td class="FCO Ccount" width="1%">1263</td>
+      <td class="FCO Cblocks" width="1%">80</td>
+      <td class="FCO Ctext">						return matched;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L204"></a><a href="#L204">204</a></td>
+      <td class="FCO Ccount" width="1%">4857</td>
+      <td class="FCO Cblocks" width="1%">81,82</td>
+      <td class="FCO Ctext">				} else if (!match_slash &amp;&amp; t_ch == &#39;/&#39;)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L205"></a><a href="#L205">205</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">83</td>
+      <td class="FUN Ctext">					return WM_ABORT_TO_STARSTAR;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L206"></a><a href="#L206">206</a></td>
+      <td class="FCO Ccount" width="1%">4857</td>
+      <td class="FCO Cblocks" width="1%">84</td>
+      <td class="FCO Ctext">				t_ch = *++text;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L207"></a><a href="#L207">207</a></td>
+      <td class="FCO Ccount" width="1%">4857</td>
+      <td class="FCO Cblocks" width="1%">84</td>
+      <td class="FCO Ctext">			}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L208"></a><a href="#L208">208</a></td>
+      <td class="FCO Ccount" width="1%">188</td>
+      <td class="FCO Cblocks" width="1%">85</td>
+      <td class="FCO Ctext">			return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L209"></a><a href="#L209">209</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		case &#39;[&#39;:
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L210"></a><a href="#L210">210</a></td>
+      <td class="FCO Ccount" width="1%">560</td>
+      <td class="FCO Cblocks" width="1%">86</td>
+      <td class="FCO Ctext">			p_ch = *++p;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L211"></a><a href="#L211">211</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#ifdef NEGATE_CLASS2
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L212"></a><a href="#L212">212</a></td>
+      <td class="FCO Ccount" width="1%">560</td>
+      <td class="FCO Cblocks" width="1%">86</td>
+      <td class="FCO Ctext">			if (p_ch == NEGATE_CLASS2)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L213"></a><a href="#L213">213</a></td>
+      <td class="FCO Ccount" width="1%">52</td>
+      <td class="FCO Cblocks" width="1%">87</td>
+      <td class="FCO Ctext">				p_ch = NEGATE_CLASS;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L214"></a><a href="#L214">214</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">#endif
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L215"></a><a href="#L215">215</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			/* Assign literal 1/0 because of &quot;matched&quot; comparison. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L216"></a><a href="#L216">216</a></td>
+      <td class="FCO Ccount" width="1%">560</td>
+      <td class="FCO Cblocks" width="1%">88</td>
+      <td class="FCO Ctext">			negated = p_ch == NEGATE_CLASS ? 1 : 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L217"></a><a href="#L217">217</a></td>
+      <td class="FCO Ccount" width="1%">560</td>
+      <td class="FCO Cblocks" width="1%">88</td>
+      <td class="FCO Ctext">			if (negated) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L218"></a><a href="#L218">218</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">				/* Inverted character class. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L219"></a><a href="#L219">219</a></td>
+      <td class="FCO Ccount" width="1%">116</td>
+      <td class="FCO Cblocks" width="1%">89</td>
+      <td class="FCO Ctext">				p_ch = *++p;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L220"></a><a href="#L220">220</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L221"></a><a href="#L221">221</a></td>
+      <td class="FCO Ccount" width="1%">560</td>
+      <td class="FCO Cblocks" width="1%">90</td>
+      <td class="FCO Ctext">			prev_ch = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L222"></a><a href="#L222">222</a></td>
+      <td class="FCO Ccount" width="1%">560</td>
+      <td class="FCO Cblocks" width="1%">90</td>
+      <td class="FCO Ctext">			matched = 0;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L223"></a><a href="#L223">223</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">			do {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L224"></a><a href="#L224">224</a></td>
+      <td class="FCO Ccount" width="1%">1368</td>
+      <td class="FCO Cblocks" width="1%">91</td>
+      <td class="FCO Ctext">				if (!p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L225"></a><a href="#L225">225</a></td>
+      <td class="FCO Ccount" width="1%">34</td>
+      <td class="FCO Cblocks" width="1%">92</td>
+      <td class="FCO Ctext">					return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L226"></a><a href="#L226">226</a></td>
+      <td class="FCO Ccount" width="1%">1334</td>
+      <td class="FCO Cblocks" width="1%">93</td>
+      <td class="FCO Ctext">				if (p_ch == &#39;\\&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L227"></a><a href="#L227">227</a></td>
+      <td class="FCO Ccount" width="1%">60</td>
+      <td class="FCO Cblocks" width="1%">94</td>
+      <td class="FCO Ctext">					p_ch = *++p;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L228"></a><a href="#L228">228</a></td>
+      <td class="FCO Ccount" width="1%">60</td>
+      <td class="FCO Cblocks" width="1%">94</td>
+      <td class="FCO Ctext">					if (!p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L229"></a><a href="#L229">229</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">95</td>
+      <td class="FUN Ctext">						return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L230"></a><a href="#L230">230</a></td>
+      <td class="FCO Ccount" width="1%">60</td>
+      <td class="FCO Cblocks" width="1%">96</td>
+      <td class="FCO Ctext">					if (t_ch == p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L231"></a><a href="#L231">231</a></td>
+      <td class="FCO Ccount" width="1%">60</td>
+      <td class="FCO Cblocks" width="1%">97,98</td>
+      <td class="FCO Ctext">						matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L232"></a><a href="#L232">232</a></td>
+      <td class="FCO Ccount" width="1%">1274</td>
+      <td class="FCO Cblocks" width="1%">99-102</td>
+      <td class="FCO Ctext">				} else if (p_ch == &#39;-&#39; &amp;&amp; prev_ch &amp;&amp; p[1] &amp;&amp; p[1] != &#39;]&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L233"></a><a href="#L233">233</a></td>
+      <td class="FCO Ccount" width="1%">297</td>
+      <td class="FCO Cblocks" width="1%">103</td>
+      <td class="FCO Ctext">					p_ch = *++p;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L234"></a><a href="#L234">234</a></td>
+      <td class="FCO Ccount" width="1%">297</td>
+      <td class="FCO Cblocks" width="1%">103</td>
+      <td class="FCO Ctext">					if (p_ch == &#39;\\&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L235"></a><a href="#L235">235</a></td>
+      <td class="FCO Ccount" width="1%">32</td>
+      <td class="FCO Cblocks" width="1%">104</td>
+      <td class="FCO Ctext">						p_ch = *++p;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L236"></a><a href="#L236">236</a></td>
+      <td class="FCO Ccount" width="1%">32</td>
+      <td class="FCO Cblocks" width="1%">104</td>
+      <td class="FCO Ctext">						if (!p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L237"></a><a href="#L237">237</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">105</td>
+      <td class="FUN Ctext">							return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L238"></a><a href="#L238">238</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L239"></a><a href="#L239">239</a></td>
+      <td class="FCO Ccount" width="1%">297</td>
+      <td class="FCO Cblocks" width="1%">106,107</td>
+      <td class="FCO Ctext">					if (t_ch &lt;= p_ch &amp;&amp; t_ch &gt;= prev_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L240"></a><a href="#L240">240</a></td>
+      <td class="FCO Ccount" width="1%">147</td>
+      <td class="FCO Cblocks" width="1%">108</td>
+      <td class="FCO Ctext">						matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L241"></a><a href="#L241">241</a></td>
+      <td class="FCO Ccount" width="1%">150</td>
+      <td class="FCO Cblocks" width="1%">109-112</td>
+      <td class="FCO Ctext">					else if ((flags &amp; WM_CASEFOLD) &amp;&amp; ISLOWER(t_ch)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L242"></a><a href="#L242">242</a></td>
+      <td class="FCO Ccount" width="1%">32</td>
+      <td class="FCO Cblocks" width="1%">113</td>
+      <td class="FCO Ctext">						uchar t_ch_upper = toupper(t_ch);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L243"></a><a href="#L243">243</a></td>
+      <td class="FCO Ccount" width="1%">32</td>
+      <td class="FCO Cblocks" width="1%">113,114</td>
+      <td class="FCO Ctext">						if (t_ch_upper &lt;= p_ch &amp;&amp; t_ch_upper &gt;= prev_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L244"></a><a href="#L244">244</a></td>
+      <td class="FCO Ccount" width="1%">10</td>
+      <td class="FCO Cblocks" width="1%">115</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L245"></a><a href="#L245">245</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L246"></a><a href="#L246">246</a></td>
+      <td class="FCO Ccount" width="1%">297</td>
+      <td class="FCO Cblocks" width="1%">116</td>
+      <td class="FCO Ctext">					p_ch = 0; /* This makes &quot;prev_ch&quot; get set to 0. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L247"></a><a href="#L247">247</a></td>
+      <td class="FCO Ccount" width="1%">977</td>
+      <td class="FCO Cblocks" width="1%">117,118,232</td>
+      <td class="FCO Ctext">				} else if (p_ch == &#39;[&#39; &amp;&amp; p[1] == &#39;:&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L248"></a><a href="#L248">248</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					const uchar *s;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L249"></a><a href="#L249">249</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					int i;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L250"></a><a href="#L250">250</a></td>
+      <td class="FCO Ccount" width="1%">1624</td>
+      <td class="FCO Cblocks" width="1%">119-122</td>
+      <td class="FCO Ctext">					for (s = p += 2; (p_ch = *p) &amp;&amp; p_ch != &#39;]&#39;; p++) {} /*SHARED ITERATOR*/
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L251"></a><a href="#L251">251</a></td>
+      <td class="FCO Ccount" width="1%">236</td>
+      <td class="FCO Cblocks" width="1%">123</td>
+      <td class="FCO Ctext">					if (!p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L252"></a><a href="#L252">252</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">124</td>
+      <td class="FUN Ctext">						return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L253"></a><a href="#L253">253</a></td>
+      <td class="FCO Ccount" width="1%">236</td>
+      <td class="FCO Cblocks" width="1%">125</td>
+      <td class="FCO Ctext">					i = (int)(p - s - 1);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L254"></a><a href="#L254">254</a></td>
+      <td class="FCO Ccount" width="1%">236</td>
+      <td class="FCO Cblocks" width="1%">125,126</td>
+      <td class="FCO Ctext">					if (i &lt; 0 || p[-1] != &#39;:&#39;) {
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L255"></a><a href="#L255">255</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">						/* Didn&#39;t find &quot;:]&quot;, so treat like a normal set. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L256"></a><a href="#L256">256</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">127</td>
+      <td class="FCO Ctext">						p = s - 2;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L257"></a><a href="#L257">257</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">127</td>
+      <td class="FCO Ctext">						p_ch = &#39;[&#39;;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L258"></a><a href="#L258">258</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">127</td>
+      <td class="FCO Ctext">						if (t_ch == p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L259"></a><a href="#L259">259</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">128</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L260"></a><a href="#L260">260</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">129</td>
+      <td class="FCO Ctext">						continue;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L261"></a><a href="#L261">261</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					}
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L262"></a><a href="#L262">262</a></td>
+      <td class="FCO Ccount" width="1%">228</td>
+      <td class="FCO Cblocks" width="1%">130-132</td>
+      <td class="FCO Ctext">					if (CC_EQ(s,i, &quot;alnum&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L263"></a><a href="#L263">263</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">133-135,137</td>
+      <td class="FCO Ctext">						if (ISALNUM(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L264"></a><a href="#L264">264</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">136</td>
+      <td class="FUN Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L265"></a><a href="#L265">265</a></td>
+      <td class="FCO Ccount" width="1%">220</td>
+      <td class="FCO Cblocks" width="1%">138-140</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;alpha&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L266"></a><a href="#L266">266</a></td>
+      <td class="FCO Ccount" width="1%">12</td>
+      <td class="FCO Cblocks" width="1%">141-143,145</td>
+      <td class="FCO Ctext">						if (ISALPHA(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L267"></a><a href="#L267">267</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">144</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L268"></a><a href="#L268">268</a></td>
+      <td class="FCO Ccount" width="1%">208</td>
+      <td class="FCO Cblocks" width="1%">146-148</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;blank&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L269"></a><a href="#L269">269</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">149-151,153</td>
+      <td class="FCO Ctext">						if (ISBLANK(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L270"></a><a href="#L270">270</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">152</td>
+      <td class="FUN Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L271"></a><a href="#L271">271</a></td>
+      <td class="FCO Ccount" width="1%">200</td>
+      <td class="FCO Cblocks" width="1%">154-156</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;cntrl&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L272"></a><a href="#L272">272</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">157-159,161</td>
+      <td class="FCO Ctext">						if (ISCNTRL(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FUN Clineno" width="1%"><a name="#L273"></a><a href="#L273">273</a></td>
+      <td class="FUN Ccount" width="1%">#####</td>
+      <td class="FUN Cblocks" width="1%">160</td>
+      <td class="FUN Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L274"></a><a href="#L274">274</a></td>
+      <td class="FCO Ccount" width="1%">192</td>
+      <td class="FCO Cblocks" width="1%">162-164</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;digit&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L275"></a><a href="#L275">275</a></td>
+      <td class="FCO Ccount" width="1%">56</td>
+      <td class="FCO Cblocks" width="1%">165-167,169</td>
+      <td class="FCO Ctext">						if (ISDIGIT(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L276"></a><a href="#L276">276</a></td>
+      <td class="FCO Ccount" width="1%">16</td>
+      <td class="FCO Cblocks" width="1%">168</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L277"></a><a href="#L277">277</a></td>
+      <td class="FCO Ccount" width="1%">136</td>
+      <td class="FCO Cblocks" width="1%">170-172</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;graph&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L278"></a><a href="#L278">278</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">173-175,177</td>
+      <td class="FCO Ctext">						if (ISGRAPH(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L279"></a><a href="#L279">279</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">176</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L280"></a><a href="#L280">280</a></td>
+      <td class="FCO Ccount" width="1%">132</td>
+      <td class="FCO Cblocks" width="1%">178-180</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;lower&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L281"></a><a href="#L281">281</a></td>
+      <td class="FCO Ccount" width="1%">16</td>
+      <td class="FCO Cblocks" width="1%">181-183,185</td>
+      <td class="FCO Ctext">						if (ISLOWER(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L282"></a><a href="#L282">282</a></td>
+      <td class="FCO Ccount" width="1%">6</td>
+      <td class="FCO Cblocks" width="1%">184</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L283"></a><a href="#L283">283</a></td>
+      <td class="FCO Ccount" width="1%">116</td>
+      <td class="FCO Cblocks" width="1%">186-188</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;print&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L284"></a><a href="#L284">284</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">189-191,193</td>
+      <td class="FCO Ctext">						if (ISPRINT(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L285"></a><a href="#L285">285</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">192</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L286"></a><a href="#L286">286</a></td>
+      <td class="FCO Ccount" width="1%">112</td>
+      <td class="FCO Cblocks" width="1%">194-196</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;punct&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L287"></a><a href="#L287">287</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">197-199,201</td>
+      <td class="FCO Ctext">						if (ISPUNCT(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L288"></a><a href="#L288">288</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">200</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L289"></a><a href="#L289">289</a></td>
+      <td class="FCO Ccount" width="1%">104</td>
+      <td class="FCO Cblocks" width="1%">202-204</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;space&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L290"></a><a href="#L290">290</a></td>
+      <td class="FCO Ccount" width="1%">32</td>
+      <td class="FCO Cblocks" width="1%">205-207,209</td>
+      <td class="FCO Ctext">						if (ISSPACE(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L291"></a><a href="#L291">291</a></td>
+      <td class="FCO Ccount" width="1%">4</td>
+      <td class="FCO Cblocks" width="1%">208</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L292"></a><a href="#L292">292</a></td>
+      <td class="FCO Ccount" width="1%">72</td>
+      <td class="FCO Cblocks" width="1%">210-212</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;upper&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L293"></a><a href="#L293">293</a></td>
+      <td class="FCO Ccount" width="1%">44</td>
+      <td class="FCO Cblocks" width="1%">213-215,222</td>
+      <td class="FCO Ctext">						if (ISUPPER(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L294"></a><a href="#L294">294</a></td>
+      <td class="FCO Ccount" width="1%">6</td>
+      <td class="FCO Cblocks" width="1%">216</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L295"></a><a href="#L295">295</a></td>
+      <td class="FCO Ccount" width="1%">38</td>
+      <td class="FCO Cblocks" width="1%">217-220</td>
+      <td class="FCO Ctext">						else if ((flags &amp; WM_CASEFOLD) &amp;&amp; ISLOWER(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L296"></a><a href="#L296">296</a></td>
+      <td class="FCO Ccount" width="1%">10</td>
+      <td class="FCO Cblocks" width="1%">221</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L297"></a><a href="#L297">297</a></td>
+      <td class="FCO Ccount" width="1%">28</td>
+      <td class="FCO Cblocks" width="1%">223-225</td>
+      <td class="FCO Ctext">					} else if (CC_EQ(s,i, &quot;xdigit&quot;)) {
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L298"></a><a href="#L298">298</a></td>
+      <td class="FCO Ccount" width="1%">20</td>
+      <td class="FCO Cblocks" width="1%">226-228,230</td>
+      <td class="FCO Ctext">						if (ISXDIGIT(t_ch))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L299"></a><a href="#L299">299</a></td>
+      <td class="FCO Ccount" width="1%">12</td>
+      <td class="FCO Cblocks" width="1%">229</td>
+      <td class="FCO Ctext">							matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L300"></a><a href="#L300">300</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">					} else /* malformed [:class:] string */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L301"></a><a href="#L301">301</a></td>
+      <td class="FCO Ccount" width="1%">8</td>
+      <td class="FCO Cblocks" width="1%">231</td>
+      <td class="FCO Ctext">						return WM_ABORT_ALL;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L302"></a><a href="#L302">302</a></td>
+      <td class="FCO Ccount" width="1%">220</td>
+      <td class="FCO Cblocks" width="1%">232</td>
+      <td class="FCO Ctext">					p_ch = 0; /* This makes &quot;prev_ch&quot; get set to 0. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L303"></a><a href="#L303">303</a></td>
+      <td class="FCO Ccount" width="1%">741</td>
+      <td class="FCO Cblocks" width="1%">233</td>
+      <td class="FCO Ctext">				} else if (t_ch == p_ch)
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L304"></a><a href="#L304">304</a></td>
+      <td class="FCO Ccount" width="1%">177</td>
+      <td class="FCO Cblocks" width="1%">234</td>
+      <td class="FCO Ctext">					matched = 1;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L305"></a><a href="#L305">305</a></td>
+      <td class="FCO Ccount" width="1%">1326</td>
+      <td class="FCO Cblocks" width="1%">235</td>
+      <td class="FCO Ctext">			} while (prev_ch = p_ch, (p_ch = *++p) != &#39;]&#39;);
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L306"></a><a href="#L306">306</a></td>
+      <td class="FCO Ccount" width="1%">518</td>
+      <td class="FCO Cblocks" width="1%">236,237</td>
+      <td class="FCO Ctext">			if (matched == negated ||
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L307"></a><a href="#L307">307</a></td>
+      <td class="FCO Ccount" width="1%">394</td>
+      <td class="FCO Cblocks" width="1%">237,238</td>
+      <td class="FCO Ctext">			    ((flags &amp; WM_PATHNAME) &amp;&amp; t_ch == &#39;/&#39;))
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L308"></a><a href="#L308">308</a></td>
+      <td class="FCO Ccount" width="1%">134</td>
+      <td class="FCO Cblocks" width="1%">239</td>
+      <td class="FCO Ctext">				return WM_NOMATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L309"></a><a href="#L309">309</a></td>
+      <td class="FCO Ccount" width="1%">384</td>
+      <td class="FCO Cblocks" width="1%">240</td>
+      <td class="FCO Ctext">			continue;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L310"></a><a href="#L310">310</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">		}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L311"></a><a href="#L311">311</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">	}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L312"></a><a href="#L312">312</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L313"></a><a href="#L313">313</a></td>
+      <td class="FCO Ccount" width="1%">2943</td>
+      <td class="FCO Cblocks" width="1%">243</td>
+      <td class="FCO Ctext">	return *text ? WM_NOMATCH : WM_MATCH;
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L314"></a><a href="#L314">314</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L315"></a><a href="#L315">315</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L316"></a><a href="#L316">316</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">/* Match the &quot;pattern&quot; against the &quot;text&quot; string. */
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L317"></a><a href="#L317">317</a></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow3952.png"></td>
+      <td class="FCO Ccount" width="1%">344732</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">int wildmatch(const char *pattern, const char *text, unsigned int flags)
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L318"></a><a href="#L318">318</a></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">{
+</td>
+    </tr>
+    <tr>
+      <td class="FCO Clineno" width="1%"><a name="#L319"></a><a href="#L319">319</a></td>
+      <td class="FCO Ccount" width="1%">344732</td>
+      <td class="FCO Cblocks" width="1%">2</td>
+      <td class="FCO Ctext">	return dowild((const uchar*)pattern, (const uchar*)text, flags);
+</td>
+    </tr>
+    <tr>
+      <td class="FUI Clineno" width="1%"><a name="#L320"></a><a href="#L320">320</a></td>
+      <td class="Cflow" width="1%"></td>
+      <td class="FUI Ccount" width="1%">-</td>
+      <td class="FUI Cblocks" width="1%"></td>
+      <td class="FUI Ctext">}
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="footer">
+<p>Generated by ggcov-html. Copyright &copy; 2001-2020 Greg Banks.</p>
+</div>
+</div>
+</body>
+</html>
