@@ -202,7 +202,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
-      <td class="Cflow" width="1%" rowspan="4"><img width="12" height="77" src="flow711.png"></td>
+      <td class="Cflow" width="1%" rowspan="4"><img width="12" height="77" src="flow596.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_error_readonly(void)
@@ -247,7 +247,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
-      <td class="Cflow" width="1%" rowspan="16"><img width="66" height="333" src="flow710.png"></td>
+      <td class="Cflow" width="1%" rowspan="16"><img width="66" height="333" src="flow595.png"></td>
       <td class="FCO Ccount" width="1%">3876</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static int config_snapshot_iterator(
@@ -384,7 +384,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
-      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow709.png"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow594.png"></td>
       <td class="FCO Ccount" width="1%">18365</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static void config_snapshot_entry_free(git_config_entry *entry)
@@ -428,10 +428,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
-      <td class="Cflow" width="1%" rowspan="26"><img width="34" height="546" src="flow708.png"></td>
+      <td class="Cflow" width="1%" rowspan="26"><img width="34" height="546" src="flow593.png"></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">static int config_snapshot_get(git_config_backend *cfg, const char *key, git_config_entry **out)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>static int config_snapshot_get(git_config_backend *cfg, const char *key, git_config_entry **out)
 </td>
     </tr>
     <tr>
@@ -445,14 +445,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">	config_snapshot_backend *b = GIT_CONTAINER_OF(cfg, config_snapshot_backend, parent);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	config_snapshot_backend *b = GIT_CONTAINER_OF(cfg, config_snapshot_backend, parent);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">	git_config_entries *entries = NULL;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	git_config_entries *entries = NULL;
 </td>
     </tr>
     <tr>
@@ -466,7 +466,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">	int error = 0;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	int error = 0;
 </td>
     </tr>
     <tr>
@@ -480,21 +480,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2,3</td>
-      <td class="FSU Ctext">	if (git_mutex_lock(&amp;b-&gt;values_mutex) &lt; 0) {
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	if (git_mutex_lock(&amp;b-&gt;values_mutex) &lt; 0) {
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">4</td>
-      <td class="FSU Ctext">	    git_error_set(GIT_ERROR_OS, &quot;failed to lock config backend&quot;);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	    git_error_set(GIT_ERROR_OS, &quot;failed to lock config backend&quot;);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">5</td>
-      <td class="FSU Ctext">	    return -1;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	    return -1;
 </td>
     </tr>
     <tr>
@@ -515,21 +515,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">6</td>
-      <td class="FSU Ctext">	entries = b-&gt;entries;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	entries = b-&gt;entries;
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">6</td>
-      <td class="FSU Ctext">	git_config_entries_incref(entries);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	git_config_entries_incref(entries);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">7</td>
-      <td class="FSU Ctext">	git_mutex_unlock(&amp;b-&gt;values_mutex);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	git_mutex_unlock(&amp;b-&gt;values_mutex);
 </td>
     </tr>
     <tr>
@@ -543,21 +543,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">8,9</td>
-      <td class="FSU Ctext">	if ((error = (git_config_entries_get(&amp;entry, entries, key))) &lt; 0) {
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	if ((error = (git_config_entries_get(&amp;entry, entries, key))) &lt; 0) {
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">10</td>
-      <td class="FSU Ctext">		git_config_entries_free(entries);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>		git_config_entries_free(entries);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">11</td>
-      <td class="FSU Ctext">		return error;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>		return error;
 </td>
     </tr>
     <tr>
@@ -578,21 +578,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">12</td>
-      <td class="FSU Ctext">	entry-&gt;free = config_snapshot_entry_free;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	entry-&gt;free = config_snapshot_entry_free;
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">12</td>
-      <td class="FSU Ctext">	entry-&gt;payload = entries;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	entry-&gt;payload = entries;
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">12</td>
-      <td class="FSU Ctext">	*out = entry;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	*out = entry;
 </td>
     </tr>
     <tr>
@@ -606,7 +606,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">12</td>
-      <td class="FSU Ctext">	return 0;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_get (automatic due to inconsistent arc counts in .gcda files)</span>	return 0;
 </td>
     </tr>
     <tr>
@@ -627,7 +627,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
-      <td class="Cflow" width="1%" rowspan="7"><img width="12" height="141" src="flow707.png"></td>
+      <td class="Cflow" width="1%" rowspan="7"><img width="12" height="141" src="flow592.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_snapshot_set(git_config_backend *cfg, const char *name, const char *value)
@@ -693,7 +693,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
-      <td class="Cflow" width="1%" rowspan="9"><img width="12" height="183" src="flow706.png"></td>
+      <td class="Cflow" width="1%" rowspan="9"><img width="12" height="183" src="flow591.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_snapshot_set_multivar(
@@ -773,7 +773,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
-      <td class="Cflow" width="1%" rowspan="7"><img width="12" height="141" src="flow705.png"></td>
+      <td class="Cflow" width="1%" rowspan="7"><img width="12" height="141" src="flow590.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_snapshot_delete_multivar(git_config_backend *cfg, const char *name, const char *regexp)
@@ -839,7 +839,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
-      <td class="Cflow" width="1%" rowspan="6"><img width="12" height="119" src="flow704.png"></td>
+      <td class="Cflow" width="1%" rowspan="6"><img width="12" height="119" src="flow589.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_snapshot_delete(git_config_backend *cfg, const char *name)
@@ -898,7 +898,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
-      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow703.png"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow588.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_snapshot_lock(git_config_backend *_cfg)
@@ -950,7 +950,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
-      <td class="Cflow" width="1%" rowspan="6"><img width="12" height="119" src="flow702.png"></td>
+      <td class="Cflow" width="1%" rowspan="6"><img width="12" height="119" src="flow587.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">static int config_snapshot_unlock(git_config_backend *_cfg, int success)
@@ -1009,7 +1009,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L131"></a><a href="#L131">131</a></td>
-      <td class="Cflow" width="1%" rowspan="6"><img width="34" height="119" src="flow701.png"></td>
+      <td class="Cflow" width="1%" rowspan="6"><img width="34" height="119" src="flow586.png"></td>
       <td class="FCO Ccount" width="1%">47988</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static void config_snapshot_free(git_config_backend *_backend)
@@ -1100,10 +1100,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L143"></a><a href="#L143">143</a></td>
-      <td class="Cflow" width="1%" rowspan="33"><img width="103" height="696" src="flow700.png"></td>
+      <td class="Cflow" width="1%" rowspan="33"><img width="103" height="696" src="flow585.png"></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">static int config_snapshot_open(git_config_backend *cfg, git_config_level_t level, const git_repository *repo)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>static int config_snapshot_open(git_config_backend *cfg, git_config_level_t level, const git_repository *repo)
 </td>
     </tr>
     <tr>
@@ -1117,21 +1117,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L145"></a><a href="#L145">145</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">	config_snapshot_backend *b = GIT_CONTAINER_OF(cfg, config_snapshot_backend, parent);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	config_snapshot_backend *b = GIT_CONTAINER_OF(cfg, config_snapshot_backend, parent);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L146"></a><a href="#L146">146</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">	git_config_entries *entries = NULL;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	git_config_entries *entries = NULL;
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L147"></a><a href="#L147">147</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2</td>
-      <td class="FSU Ctext">	git_config_iterator *it = NULL;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	git_config_iterator *it = NULL;
 </td>
     </tr>
     <tr>
@@ -1187,14 +1187,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L155"></a><a href="#L155">155</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">2-5</td>
-      <td class="FSU Ctext">	if ((error = git_config_entries_new(&amp;entries)) &lt; 0 ||
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	if ((error = git_config_entries_new(&amp;entries)) &lt; 0 ||
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L156"></a><a href="#L156">156</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">4</td>
-      <td class="FSU Ctext">	    (error = b-&gt;source-&gt;iterator(&amp;it, b-&gt;source)) &lt; 0)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	    (error = b-&gt;source-&gt;iterator(&amp;it, b-&gt;source)) &lt; 0)
 </td>
     </tr>
     <tr>
@@ -1215,21 +1215,21 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L159"></a><a href="#L159">159</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">6,10,11</td>
-      <td class="FSU Ctext">	while ((error = git_config_next(&amp;entry, it)) == 0)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	while ((error = git_config_next(&amp;entry, it)) == 0)
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L160"></a><a href="#L160">160</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">7,8</td>
-      <td class="FSU Ctext">		if ((error = git_config_entries_dup_entry(entries, entry)) &lt; 0)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>		if ((error = git_config_entries_dup_entry(entries, entry)) &lt; 0)
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L161"></a><a href="#L161">161</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">9</td>
-      <td class="FSU Ctext">			goto out;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>			goto out;
 </td>
     </tr>
     <tr>
@@ -1243,28 +1243,28 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L163"></a><a href="#L163">163</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">12</td>
-      <td class="FSU Ctext">	if (error &lt; 0) {
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	if (error &lt; 0) {
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L164"></a><a href="#L164">164</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">13</td>
-      <td class="FSU Ctext">		if (error != GIT_ITEROVER)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>		if (error != GIT_ITEROVER)
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L165"></a><a href="#L165">165</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">14</td>
-      <td class="FSU Ctext">			goto out;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>			goto out;
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L166"></a><a href="#L166">166</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">15</td>
-      <td class="FSU Ctext">		error = 0;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>		error = 0;
 </td>
     </tr>
     <tr>
@@ -1285,7 +1285,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L169"></a><a href="#L169">169</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">16</td>
-      <td class="FSU Ctext">	b-&gt;entries = entries;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	b-&gt;entries = entries;
 </td>
     </tr>
     <tr>
@@ -1306,28 +1306,28 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
       <td class="FSU Clineno" width="1%"><a name="#L172"></a><a href="#L172">172</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">17</td>
-      <td class="FSU Ctext">	git_config_iterator_free(it);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	git_config_iterator_free(it);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L173"></a><a href="#L173">173</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">18</td>
-      <td class="FSU Ctext">	if (error)
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	if (error)
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L174"></a><a href="#L174">174</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">19</td>
-      <td class="FSU Ctext">		git_config_entries_free(entries);
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>		git_config_entries_free(entries);
 </td>
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L175"></a><a href="#L175">175</a></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">20</td>
-      <td class="FSU Ctext">	return error;
+      <td class="FSU Ctext tooltip"><span class="tooltiptext">suppressed: function cannot be solved config_snapshot_open (automatic due to inconsistent arc counts in .gcda files)</span>	return error;
 </td>
     </tr>
     <tr>
@@ -1348,7 +1348,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L178"></a><a href="#L178">178</a></td>
-      <td class="Cflow" width="1%" rowspan="29"><img width="34" height="611" src="flow699.png"></td>
+      <td class="Cflow" width="1%" rowspan="29"><img width="34" height="611" src="flow584.png"></td>
       <td class="FCO Ccount" width="1%">47981</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_config_backend_snapshot(git_config_backend **out, git_config_backend *source)

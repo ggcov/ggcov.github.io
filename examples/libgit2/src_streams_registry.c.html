@@ -250,7 +250,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="4"><img width="12" height="77" src="flow2811.png"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static void shutdown_stream_registry(void)
@@ -258,7 +258,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -266,7 +265,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	git_rwlock_free(&amp;stream_registry.lock);
@@ -274,7 +272,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">}
@@ -290,7 +287,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="7"><img width="34" height="141" src="flow2810.png"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_stream_registry_global_init(void)
@@ -298,7 +295,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -306,7 +302,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if (git_rwlock_init(&amp;stream_registry.lock) &lt; 0)
@@ -314,7 +309,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">4</td>
       <td class="FUN Ctext">		return -1;
@@ -322,7 +316,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -330,7 +323,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">	git__on_shutdown(shutdown_stream_registry);
@@ -338,7 +330,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">	return 0;
@@ -362,7 +353,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="9"><img width="23" height="183" src="flow2809.png"></td>
       <td class="FCO Ccount" width="1%">18</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">GIT_INLINE(void) stream_registration_cpy(
@@ -370,7 +361,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_stream_registration *target,
@@ -378,7 +368,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_stream_registration *src)
@@ -386,7 +375,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -394,7 +382,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">18</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	if (src)
@@ -402,7 +389,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">8</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">		memcpy(target, src, sizeof(git_stream_registration));
@@ -410,7 +396,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	else
@@ -418,7 +403,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">10</td>
       <td class="FCO Cblocks" width="1%">4</td>
       <td class="FCO Ctext">		memset(target, 0, sizeof(git_stream_registration));
@@ -426,7 +410,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">18</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">}
@@ -442,7 +425,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="31"><img width="50" height="653" src="flow2808.png"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_stream_registry_lookup(git_stream_registration *out, git_stream_t type)
@@ -450,7 +433,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -458,7 +440,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_stream_registration *target;
@@ -466,7 +447,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	int error = GIT_ENOTFOUND;
@@ -474,7 +454,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L54"></a><a href="#L54">54</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -482,7 +461,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L55"></a><a href="#L55">55</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	assert(out);
@@ -490,7 +468,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -498,7 +475,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">4</td>
       <td class="FCO Ctext">	switch(type) {
@@ -506,7 +482,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	case GIT_STREAM_STANDARD:
@@ -514,7 +489,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">96</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">		target = &amp;stream_registry.callbacks;
@@ -522,7 +496,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L60"></a><a href="#L60">60</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">96</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">		break;
@@ -530,7 +503,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	case GIT_STREAM_TLS:
@@ -538,7 +510,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">51</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">		target = &amp;stream_registry.tls_callbacks;
@@ -546,7 +517,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">51</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">		break;
@@ -554,7 +524,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L64"></a><a href="#L64">64</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	default:
@@ -562,7 +531,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FSU Clineno" width="1%"><a name="#L65"></a><a href="#L65">65</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FSU Ccount" width="1%">-</td>
       <td class="FSU Cblocks" width="1%">7</td>
       <td class="FSU Ctext">		assert(0);
@@ -570,7 +538,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">		return -1;
@@ -578,7 +545,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -586,7 +552,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -594,7 +559,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">8,9</td>
       <td class="FCO Ctext">	if (git_rwlock_rdlock(&amp;stream_registry.lock) &lt; 0) {
@@ -602,7 +566,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">10</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;failed to lock stream registry&quot;);
@@ -610,7 +573,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">11</td>
       <td class="FUN Ctext">		return -1;
@@ -618,7 +580,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -626,7 +587,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -634,7 +594,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">12</td>
       <td class="FCO Ctext">	if (target-&gt;init) {
@@ -642,7 +601,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">4</td>
       <td class="FCO Cblocks" width="1%">13</td>
       <td class="FCO Ctext">		stream_registration_cpy(out, target);
@@ -650,7 +608,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">4</td>
       <td class="FCO Cblocks" width="1%">14</td>
       <td class="FCO Ctext">		error = 0;
@@ -658,7 +615,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -666,7 +622,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -674,7 +629,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">15</td>
       <td class="FCO Ctext">	git_rwlock_rdunlock(&amp;stream_registry.lock);
@@ -682,7 +636,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">147</td>
       <td class="FCO Cblocks" width="1%">16</td>
       <td class="FCO Ctext">	return error;
@@ -706,7 +659,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L83"></a><a href="#L83">83</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="19"><img width="61" height="397" src="flow2807.png"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_stream_register(git_stream_t type, git_stream_registration *registration)
@@ -714,7 +667,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -722,7 +674,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">2-4</td>
       <td class="FCO Ctext">	assert(!registration || registration-&gt;init);
@@ -730,7 +681,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -738,7 +688,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">9</td>
       <td class="FPC Cblocks" width="1%">5-7</td>
       <td class="FPC Ctext">	GIT_ERROR_CHECK_VERSION(registration, GIT_STREAM_VERSION, &quot;stream_registration&quot;);
@@ -746,7 +695,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -754,7 +702,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L89"></a><a href="#L89">89</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">8,9</td>
       <td class="FCO Ctext">	if (git_rwlock_wrlock(&amp;stream_registry.lock) &lt; 0) {
@@ -762,7 +709,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L90"></a><a href="#L90">90</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">10</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;failed to lock stream registry&quot;);
@@ -770,7 +716,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L91"></a><a href="#L91">91</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">11</td>
       <td class="FUN Ctext">		return -1;
@@ -778,7 +723,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L92"></a><a href="#L92">92</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -786,7 +730,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L93"></a><a href="#L93">93</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -794,7 +737,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L94"></a><a href="#L94">94</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">12</td>
       <td class="FCO Ctext">	if ((type &amp; GIT_STREAM_STANDARD) == GIT_STREAM_STANDARD)
@@ -802,7 +744,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L95"></a><a href="#L95">95</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">7</td>
       <td class="FCO Cblocks" width="1%">13</td>
       <td class="FCO Ctext">		stream_registration_cpy(&amp;stream_registry.callbacks, registration);
@@ -810,7 +751,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L96"></a><a href="#L96">96</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -818,7 +758,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L97"></a><a href="#L97">97</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">14</td>
       <td class="FCO Ctext">	if ((type &amp; GIT_STREAM_TLS) == GIT_STREAM_TLS)
@@ -826,7 +765,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L98"></a><a href="#L98">98</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">7</td>
       <td class="FCO Cblocks" width="1%">15</td>
       <td class="FCO Ctext">		stream_registration_cpy(&amp;stream_registry.tls_callbacks, registration);
@@ -834,7 +772,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L99"></a><a href="#L99">99</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -842,7 +779,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">16</td>
       <td class="FCO Ctext">	git_rwlock_wrunlock(&amp;stream_registry.lock);
@@ -850,7 +786,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">9</td>
       <td class="FCO Cblocks" width="1%">17</td>
       <td class="FCO Ctext">	return 0;
@@ -882,7 +817,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L105"></a><a href="#L105">105</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="13"><img width="18" height="269" src="flow2806.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">int git_stream_register_tls(
@@ -890,7 +825,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L106"></a><a href="#L106">106</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	int GIT_CALLBACK(ctor)(git_stream **out, const char *host, const char *port))
@@ -898,7 +832,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -906,7 +839,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">	git_stream_registration registration = {0};
@@ -914,7 +846,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -922,7 +853,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">	if (ctor) {
@@ -930,7 +860,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">3</td>
       <td class="FUN Ctext">		registration.version = GIT_STREAM_VERSION;
@@ -938,7 +867,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">3</td>
       <td class="FUN Ctext">		registration.init = ctor;
@@ -946,7 +874,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L113"></a><a href="#L113">113</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">3</td>
       <td class="FUN Ctext">		registration.wrap = NULL;
@@ -954,7 +881,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L114"></a><a href="#L114">114</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -962,7 +888,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L115"></a><a href="#L115">115</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">3</td>
       <td class="FUN Ctext">		return git_stream_register(GIT_STREAM_TLS, &amp;registration);
@@ -970,7 +895,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	} else {
@@ -978,7 +902,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">4</td>
       <td class="FUN Ctext">		return git_stream_register(GIT_STREAM_TLS, NULL);

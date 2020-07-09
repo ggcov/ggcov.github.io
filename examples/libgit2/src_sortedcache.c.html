@@ -122,7 +122,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L10"></a><a href="#L10">10</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="44"><img width="157" height="931" src="flow2701.png"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_new(
@@ -130,7 +130,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L11"></a><a href="#L11">11</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_sortedcache **out,
@@ -138,7 +137,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L12"></a><a href="#L12">12</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	size_t item_path_offset,
@@ -146,7 +144,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L13"></a><a href="#L13">13</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_sortedcache_free_item_fn free_item,
@@ -154,7 +151,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L14"></a><a href="#L14">14</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	void *free_item_payload,
@@ -162,7 +158,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L15"></a><a href="#L15">15</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_vector_cmp item_cmp,
@@ -170,7 +165,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L16"></a><a href="#L16">16</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	const char *path)
@@ -178,7 +172,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L17"></a><a href="#L17">17</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -186,7 +179,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L18"></a><a href="#L18">18</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_sortedcache *sc;
@@ -194,7 +186,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L19"></a><a href="#L19">19</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	size_t pathlen, alloclen;
@@ -202,7 +193,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L20"></a><a href="#L20">20</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -210,7 +200,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L21"></a><a href="#L21">21</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">2-4</td>
       <td class="FCO Ctext">	pathlen = path ? strlen(path) : 0;
@@ -218,7 +207,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L22"></a><a href="#L22">22</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -226,7 +214,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L23"></a><a href="#L23">23</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">2658</td>
       <td class="FPC Cblocks" width="1%">5-11</td>
       <td class="FPC Ctext">	GIT_ERROR_CHECK_ALLOC_ADD(&amp;alloclen, sizeof(git_sortedcache), pathlen);
@@ -234,7 +221,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L24"></a><a href="#L24">24</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">2658</td>
       <td class="FPC Cblocks" width="1%">12-18</td>
       <td class="FPC Ctext">	GIT_ERROR_CHECK_ALLOC_ADD(&amp;alloclen, alloclen, 1);
@@ -242,7 +228,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L25"></a><a href="#L25">25</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">19</td>
       <td class="FCO Ctext">	sc = git__calloc(1, alloclen);
@@ -250,7 +235,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L26"></a><a href="#L26">26</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">2658</td>
       <td class="FPC Cblocks" width="1%">20,21</td>
       <td class="FPC Ctext">	GIT_ERROR_CHECK_ALLOC(sc);
@@ -258,7 +242,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L27"></a><a href="#L27">27</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -266,7 +249,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L28"></a><a href="#L28">28</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">22,23,25</td>
       <td class="FCO Ctext">	if (git_pool_init(&amp;sc-&gt;pool, 1) &lt; 0 ||
@@ -274,7 +256,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L29"></a><a href="#L29">29</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">24,27</td>
       <td class="FCO Ctext">	    git_vector_init(&amp;sc-&gt;items, 4, item_cmp) &lt; 0 ||
@@ -282,7 +263,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L30"></a><a href="#L30">30</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">26</td>
       <td class="FCO Ctext">	    git_strmap_new(&amp;sc-&gt;map) &lt; 0)
@@ -290,7 +270,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L31"></a><a href="#L31">31</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">		goto fail;
@@ -298,7 +277,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L32"></a><a href="#L32">32</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -306,7 +284,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L33"></a><a href="#L33">33</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">28,29</td>
       <td class="FCO Ctext">	if (git_rwlock_init(&amp;sc-&gt;lock)) {
@@ -314,7 +291,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L34"></a><a href="#L34">34</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">30</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;failed to initialize lock&quot;);
@@ -322,7 +298,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L35"></a><a href="#L35">35</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">35</td>
       <td class="FUN Ctext">		goto fail;
@@ -330,7 +305,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L36"></a><a href="#L36">36</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -338,7 +312,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L37"></a><a href="#L37">37</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -346,7 +319,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L38"></a><a href="#L38">38</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">31</td>
       <td class="FCO Ctext">	sc-&gt;item_path_offset  = item_path_offset;
@@ -354,7 +326,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L39"></a><a href="#L39">39</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">31</td>
       <td class="FCO Ctext">	sc-&gt;free_item         = free_item;
@@ -362,7 +333,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L40"></a><a href="#L40">40</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">31</td>
       <td class="FCO Ctext">	sc-&gt;free_item_payload = free_item_payload;
@@ -370,7 +340,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L41"></a><a href="#L41">41</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">31</td>
       <td class="FCO Ctext">	GIT_REFCOUNT_INC(sc);
@@ -378,7 +347,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L42"></a><a href="#L42">42</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">32</td>
       <td class="FCO Ctext">	if (pathlen)
@@ -386,7 +354,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L43"></a><a href="#L43">43</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2656</td>
       <td class="FCO Cblocks" width="1%">33</td>
       <td class="FCO Ctext">		memcpy(sc-&gt;path, path, pathlen);
@@ -394,7 +361,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L44"></a><a href="#L44">44</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -402,7 +368,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L45"></a><a href="#L45">45</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">34</td>
       <td class="FCO Ctext">	*out = sc;
@@ -410,7 +375,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L46"></a><a href="#L46">46</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">34</td>
       <td class="FCO Ctext">	return 0;
@@ -418,7 +382,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L47"></a><a href="#L47">47</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -426,7 +389,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L48"></a><a href="#L48">48</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">fail:
@@ -434,7 +396,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L49"></a><a href="#L49">49</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">36</td>
       <td class="FUN Ctext">	git_strmap_free(sc-&gt;map);
@@ -442,7 +403,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L50"></a><a href="#L50">50</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">37</td>
       <td class="FUN Ctext">	git_vector_free(&amp;sc-&gt;items);
@@ -450,7 +410,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L51"></a><a href="#L51">51</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">38</td>
       <td class="FUN Ctext">	git_pool_clear(&amp;sc-&gt;pool);
@@ -458,7 +417,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L52"></a><a href="#L52">52</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">39</td>
       <td class="FUN Ctext">	git__free(sc);
@@ -466,7 +424,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L53"></a><a href="#L53">53</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">40</td>
       <td class="FUN Ctext">	return -1;
@@ -490,7 +447,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L56"></a><a href="#L56">56</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="4"><img width="12" height="77" src="flow2700.png"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">void git_sortedcache_incref(git_sortedcache *sc)
@@ -498,7 +455,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L57"></a><a href="#L57">57</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -506,7 +462,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L58"></a><a href="#L58">58</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">2</td>
       <td class="FUN Ctext">	GIT_REFCOUNT_INC(sc);
@@ -514,7 +469,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L59"></a><a href="#L59">59</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">3</td>
       <td class="FUN Ctext">}
@@ -530,7 +484,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L61"></a><a href="#L61">61</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow2699.png"></td>
       <td class="FCO Ccount" width="1%">64</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">const char *git_sortedcache_path(git_sortedcache *sc)
@@ -538,7 +492,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L62"></a><a href="#L62">62</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -546,7 +499,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L63"></a><a href="#L63">63</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">64</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	return sc-&gt;path;
@@ -570,7 +522,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L66"></a><a href="#L66">66</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="17"><img width="82" height="354" src="flow2698.png"></td>
       <td class="FCO Ccount" width="1%">16607</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static void sortedcache_clear(git_sortedcache *sc)
@@ -578,7 +530,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L67"></a><a href="#L67">67</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -586,7 +537,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L68"></a><a href="#L68">68</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16607</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	git_strmap_clear(sc-&gt;map);
@@ -594,7 +544,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L69"></a><a href="#L69">69</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -602,7 +551,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L70"></a><a href="#L70">70</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16607</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">	if (sc-&gt;free_item) {
@@ -610,7 +558,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L71"></a><a href="#L71">71</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">		size_t i;
@@ -618,7 +565,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L72"></a><a href="#L72">72</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">		void *item;
@@ -626,7 +572,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L73"></a><a href="#L73">73</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -634,7 +579,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L74"></a><a href="#L74">74</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">17</td>
       <td class="FCO Cblocks" width="1%">4,6-8</td>
       <td class="FCO Ctext">		git_vector_foreach(&amp;sc-&gt;items, i, item) {
@@ -642,7 +586,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L75"></a><a href="#L75">75</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">			sc-&gt;free_item(sc-&gt;free_item_payload, item);
@@ -650,7 +593,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L76"></a><a href="#L76">76</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">		}
@@ -658,7 +600,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L77"></a><a href="#L77">77</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -666,7 +607,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L78"></a><a href="#L78">78</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -674,7 +614,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L79"></a><a href="#L79">79</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16607</td>
       <td class="FCO Cblocks" width="1%">9</td>
       <td class="FCO Ctext">	git_vector_clear(&amp;sc-&gt;items);
@@ -682,7 +621,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L80"></a><a href="#L80">80</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -690,7 +628,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L81"></a><a href="#L81">81</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16607</td>
       <td class="FCO Cblocks" width="1%">10</td>
       <td class="FCO Ctext">	git_pool_clear(&amp;sc-&gt;pool);
@@ -698,7 +635,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L82"></a><a href="#L82">82</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16607</td>
       <td class="FCO Cblocks" width="1%">11</td>
       <td class="FCO Ctext">}
@@ -714,7 +650,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L84"></a><a href="#L84">84</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="34" height="98" src="flow2697.png"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static void sortedcache_free(git_sortedcache *sc)
@@ -722,7 +658,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L85"></a><a href="#L85">85</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -730,7 +665,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L86"></a><a href="#L86">86</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/* acquire write lock to make sure everyone else is done */
@@ -738,7 +672,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L87"></a><a href="#L87">87</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if (git_sortedcache_wlock(sc) &lt; 0)
@@ -746,7 +679,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L88"></a><a href="#L88">88</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">2658</td>
       <td class="FPC Cblocks" width="1%">4,11</td>
       <td class="FPC Ctext">		return;
@@ -842,7 +774,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L100"></a><a href="#L100">100</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="4"><img width="34" height="77" src="flow2696.png"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">void git_sortedcache_free(git_sortedcache *sc)
@@ -850,7 +782,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L101"></a><a href="#L101">101</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -858,7 +789,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L102"></a><a href="#L102">102</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2658</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	if (!sc)
@@ -866,7 +796,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L103"></a><a href="#L103">103</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">2658</td>
       <td class="FPC Cblocks" width="1%">3,8</td>
       <td class="FPC Ctext">		return;
@@ -898,7 +827,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L107"></a><a href="#L107">107</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="6"><img width="12" height="119" src="flow2695.png"></td>
       <td class="FCO Ccount" width="1%">2548</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static int sortedcache_copy_item(void *payload, void *tgt_item, void *src_item)
@@ -906,7 +835,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L108"></a><a href="#L108">108</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -914,7 +842,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L109"></a><a href="#L109">109</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2548</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	git_sortedcache *sc = payload;
@@ -922,7 +849,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L110"></a><a href="#L110">110</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/* path will already have been copied by upsert */
@@ -930,7 +856,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L111"></a><a href="#L111">111</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2548</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	memcpy(tgt_item, src_item, sc-&gt;item_path_offset);
@@ -938,7 +863,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L112"></a><a href="#L112">112</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2548</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	return 0;
@@ -970,7 +894,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L116"></a><a href="#L116">116</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="45"><img width="98" height="952" src="flow2694.png"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_copy(
@@ -978,7 +902,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L117"></a><a href="#L117">117</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_sortedcache **out,
@@ -986,7 +909,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L118"></a><a href="#L118">118</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_sortedcache *src,
@@ -994,7 +916,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L119"></a><a href="#L119">119</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	bool lock,
@@ -1002,7 +923,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L120"></a><a href="#L120">120</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	int (*copy_item)(void *payload, void *tgt_item, void *src_item),
@@ -1010,7 +930,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L121"></a><a href="#L121">121</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	void *payload)
@@ -1018,7 +937,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L122"></a><a href="#L122">122</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -1026,7 +944,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L123"></a><a href="#L123">123</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	int error = 0;
@@ -1034,7 +951,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L124"></a><a href="#L124">124</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	git_sortedcache *tgt;
@@ -1042,7 +958,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L125"></a><a href="#L125">125</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	size_t i;
@@ -1050,7 +965,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L126"></a><a href="#L126">126</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	void *src_item, *tgt_item;
@@ -1058,7 +972,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L127"></a><a href="#L127">127</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1066,7 +979,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L128"></a><a href="#L128">128</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/* just use memcpy if no special copy fn is passed in */
@@ -1074,7 +986,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L129"></a><a href="#L129">129</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	if (!copy_item) {
@@ -1082,7 +993,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L130"></a><a href="#L130">130</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">		copy_item = sortedcache_copy_item;
@@ -1090,7 +1000,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L131"></a><a href="#L131">131</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">		payload   = src;
@@ -1098,7 +1007,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L132"></a><a href="#L132">132</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1106,7 +1014,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L133"></a><a href="#L133">133</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1114,7 +1021,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L134"></a><a href="#L134">134</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">4,5</td>
       <td class="FCO Ctext">	if ((error = git_sortedcache_new(
@@ -1122,7 +1028,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L135"></a><a href="#L135">135</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">			&amp;tgt, src-&gt;item_path_offset,
@@ -1130,7 +1035,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L136"></a><a href="#L136">136</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">			src-&gt;free_item, src-&gt;free_item_payload,
@@ -1138,7 +1042,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L137"></a><a href="#L137">137</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">4</td>
       <td class="FCO Ctext">			src-&gt;items._cmp, src-&gt;path)) &lt; 0)
@@ -1146,7 +1049,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L138"></a><a href="#L138">138</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">6</td>
       <td class="FUN Ctext">		return error;
@@ -1154,7 +1056,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L139"></a><a href="#L139">139</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1162,7 +1063,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L140"></a><a href="#L140">140</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">7-9</td>
       <td class="FCO Ctext">	if (lock &amp;&amp; git_sortedcache_rlock(src) &lt; 0) {
@@ -1170,7 +1070,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L141"></a><a href="#L141">141</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">10</td>
       <td class="FUN Ctext">		git_sortedcache_free(tgt);
@@ -1178,7 +1077,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L142"></a><a href="#L142">142</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">11</td>
       <td class="FUN Ctext">		return -1;
@@ -1186,7 +1084,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L143"></a><a href="#L143">143</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1194,7 +1091,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L144"></a><a href="#L144">144</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1202,7 +1098,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L145"></a><a href="#L145">145</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">3035</td>
       <td class="FCO Cblocks" width="1%">12,17-19</td>
       <td class="FCO Ctext">	git_vector_foreach(&amp;src-&gt;items, i, src_item) {
@@ -1210,7 +1105,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L146"></a><a href="#L146">146</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2547</td>
       <td class="FCO Cblocks" width="1%">13</td>
       <td class="FCO Ctext">		char *path = ((char *)src_item) + src-&gt;item_path_offset;
@@ -1218,7 +1112,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L147"></a><a href="#L147">147</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1226,7 +1119,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L148"></a><a href="#L148">148</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2551</td>
       <td class="FCO Cblocks" width="1%">13-16</td>
       <td class="FCO Ctext">		if ((error = git_sortedcache_upsert(&amp;tgt_item, tgt, path)) &lt; 0 ||
@@ -1234,7 +1126,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L149"></a><a href="#L149">149</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">2495</td>
       <td class="FCO Cblocks" width="1%">15</td>
       <td class="FCO Ctext">			(error = copy_item(payload, tgt_item, src_item)) &lt; 0)
@@ -1242,7 +1133,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L150"></a><a href="#L150">150</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">			break;
@@ -1250,7 +1140,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L151"></a><a href="#L151">151</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1258,7 +1147,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L152"></a><a href="#L152">152</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1266,7 +1154,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L153"></a><a href="#L153">153</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">20</td>
       <td class="FCO Ctext">	if (lock)
@@ -1274,7 +1161,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L154"></a><a href="#L154">154</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">21</td>
       <td class="FCO Ctext">		git_sortedcache_runlock(src);
@@ -1282,7 +1168,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L155"></a><a href="#L155">155</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">22</td>
       <td class="FCO Ctext">	if (error)
@@ -1290,7 +1175,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L156"></a><a href="#L156">156</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">23</td>
       <td class="FUN Ctext">		git_sortedcache_free(tgt);
@@ -1298,7 +1182,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L157"></a><a href="#L157">157</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1306,7 +1189,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L158"></a><a href="#L158">158</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">488</td>
       <td class="FPC Cblocks" width="1%">24-26</td>
       <td class="FPC Ctext">	*out = !error ? tgt : NULL;
@@ -1314,7 +1196,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L159"></a><a href="#L159">159</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1322,7 +1203,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L160"></a><a href="#L160">160</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">488</td>
       <td class="FCO Cblocks" width="1%">27</td>
       <td class="FCO Ctext">	return error;
@@ -1354,7 +1234,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L164"></a><a href="#L164">164</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="9"><img width="34" height="183" src="flow2693.png"></td>
       <td class="FCO Ccount" width="1%">34479</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_wlock(git_sortedcache *sc)
@@ -1362,7 +1242,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L165"></a><a href="#L165">165</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -1370,7 +1249,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L166"></a><a href="#L166">166</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	GIT_UNUSED(sc); /* prevent warning when compiled w/o threads */
@@ -1378,7 +1256,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L167"></a><a href="#L167">167</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1386,7 +1263,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L168"></a><a href="#L168">168</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">34481</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if (git_rwlock_wrlock(&amp;sc-&gt;lock) &lt; 0) {
@@ -1394,7 +1270,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L169"></a><a href="#L169">169</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">4</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;unable to acquire write lock on cache&quot;);
@@ -1402,7 +1277,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L170"></a><a href="#L170">170</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">5</td>
       <td class="FUN Ctext">		return -1;
@@ -1410,7 +1284,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L171"></a><a href="#L171">171</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1418,7 +1291,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L172"></a><a href="#L172">172</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">34481</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">	return 0;
@@ -1450,7 +1322,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L176"></a><a href="#L176">176</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow2692.png"></td>
       <td class="FCO Ccount" width="1%">34481</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">void git_sortedcache_wunlock(git_sortedcache *sc)
@@ -1458,7 +1330,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L177"></a><a href="#L177">177</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -1466,7 +1337,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L178"></a><a href="#L178">178</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">34481</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	git_vector_sort(&amp;sc-&gt;items);
@@ -1474,7 +1344,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L179"></a><a href="#L179">179</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">34483</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">	git_rwlock_wrunlock(&amp;sc-&gt;lock);
@@ -1482,7 +1351,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L180"></a><a href="#L180">180</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">34483</td>
       <td class="FCO Cblocks" width="1%">4</td>
       <td class="FCO Ctext">}
@@ -1506,7 +1374,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L183"></a><a href="#L183">183</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="9"><img width="34" height="183" src="flow2691.png"></td>
       <td class="FCO Ccount" width="1%">16636</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_rlock(git_sortedcache *sc)
@@ -1514,7 +1382,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L184"></a><a href="#L184">184</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -1522,7 +1389,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L185"></a><a href="#L185">185</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	GIT_UNUSED(sc); /* prevent warning when compiled w/o threads */
@@ -1530,7 +1396,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L186"></a><a href="#L186">186</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1538,7 +1403,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L187"></a><a href="#L187">187</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16636</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if (git_rwlock_rdlock(&amp;sc-&gt;lock) &lt; 0) {
@@ -1546,7 +1410,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L188"></a><a href="#L188">188</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">4</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;unable to acquire read lock on cache&quot;);
@@ -1554,7 +1417,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L189"></a><a href="#L189">189</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">5</td>
       <td class="FUN Ctext">		return -1;
@@ -1562,7 +1424,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L190"></a><a href="#L190">190</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1570,7 +1431,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L191"></a><a href="#L191">191</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16636</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">	return 0;
@@ -1602,7 +1462,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L195"></a><a href="#L195">195</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow2690.png"></td>
       <td class="FCO Ccount" width="1%">16635</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">void git_sortedcache_runlock(git_sortedcache *sc)
@@ -1610,7 +1470,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L196"></a><a href="#L196">196</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -1618,7 +1477,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L197"></a><a href="#L197">197</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	GIT_UNUSED(sc); /* prevent warning when compiled w/o threads */
@@ -1626,7 +1484,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L198"></a><a href="#L198">198</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16635</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	git_rwlock_rdunlock(&amp;sc-&gt;lock);
@@ -1634,7 +1491,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L199"></a><a href="#L199">199</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">16635</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">}
@@ -1674,7 +1530,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L204"></a><a href="#L204">204</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="43"><img width="66" height="910" src="flow2689.png"></td>
       <td class="FCO Ccount" width="1%">17633</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_lockandload(git_sortedcache *sc, git_buf *buf)
@@ -1682,7 +1538,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L205"></a><a href="#L205">205</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -1690,7 +1545,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L206"></a><a href="#L206">206</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	int error, fd;
@@ -1698,7 +1552,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L207"></a><a href="#L207">207</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	struct stat st;
@@ -1706,7 +1559,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L208"></a><a href="#L208">208</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1714,7 +1566,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L209"></a><a href="#L209">209</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">17633</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if ((error = git_sortedcache_wlock(sc)) &lt; 0)
@@ -1722,7 +1573,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L210"></a><a href="#L210">210</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">4</td>
       <td class="FUN Ctext">		return error;
@@ -1730,7 +1580,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L211"></a><a href="#L211">211</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1738,7 +1587,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L212"></a><a href="#L212">212</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">17634</td>
       <td class="FCO Cblocks" width="1%">5,6</td>
       <td class="FCO Ctext">	if ((error = git_futils_filestamp_check(&amp;sc-&gt;stamp, sc-&gt;path)) &lt;= 0)
@@ -1746,7 +1594,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L213"></a><a href="#L213">213</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">17073</td>
       <td class="FCO Cblocks" width="1%">7</td>
       <td class="FCO Ctext">		goto unlock;
@@ -1754,7 +1601,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L214"></a><a href="#L214">214</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1762,7 +1608,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L215"></a><a href="#L215">215</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">8,9</td>
       <td class="FCO Ctext">	if ((fd = git_futils_open_ro(sc-&gt;path)) &lt; 0) {
@@ -1770,7 +1615,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L216"></a><a href="#L216">216</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">10</td>
       <td class="FUN Ctext">		error = fd;
@@ -1778,7 +1622,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L217"></a><a href="#L217">217</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">10</td>
       <td class="FUN Ctext">		goto unlock;
@@ -1786,7 +1629,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L218"></a><a href="#L218">218</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1794,7 +1636,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L219"></a><a href="#L219">219</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1802,7 +1643,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L220"></a><a href="#L220">220</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">11,12</td>
       <td class="FCO Ctext">	if (p_fstat(fd, &amp;st) &lt; 0) {
@@ -1810,7 +1650,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L221"></a><a href="#L221">221</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">13</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_OS, &quot;failed to stat file&quot;);
@@ -1818,7 +1657,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L222"></a><a href="#L222">222</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">14</td>
       <td class="FUN Ctext">		error = -1;
@@ -1826,7 +1664,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L223"></a><a href="#L223">223</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">14</td>
       <td class="FUN Ctext">		(void)p_close(fd);
@@ -1834,7 +1671,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L224"></a><a href="#L224">224</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">26</td>
       <td class="FUN Ctext">		goto unlock;
@@ -1842,7 +1678,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L225"></a><a href="#L225">225</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1850,7 +1685,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L226"></a><a href="#L226">226</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1858,7 +1692,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L227"></a><a href="#L227">227</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">15,16</td>
       <td class="FCO Ctext">	if (!git__is_sizet(st.st_size)) {
@@ -1866,7 +1699,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L228"></a><a href="#L228">228</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">17</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_INVALID, &quot;unable to load file larger than size_t&quot;);
@@ -1874,7 +1706,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L229"></a><a href="#L229">229</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">18</td>
       <td class="FUN Ctext">		error = -1;
@@ -1882,7 +1713,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L230"></a><a href="#L230">230</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">18</td>
       <td class="FUN Ctext">		(void)p_close(fd);
@@ -1890,7 +1720,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L231"></a><a href="#L231">231</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">19</td>
       <td class="FUN Ctext">		goto unlock;
@@ -1898,7 +1727,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L232"></a><a href="#L232">232</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -1906,7 +1734,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L233"></a><a href="#L233">233</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1914,7 +1741,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L234"></a><a href="#L234">234</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">20</td>
       <td class="FCO Ctext">	if (buf)
@@ -1922,7 +1748,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L235"></a><a href="#L235">235</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">21</td>
       <td class="FCO Ctext">		error = git_futils_readbuffer_fd(buf, fd, (size_t)st.st_size);
@@ -1930,7 +1755,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L236"></a><a href="#L236">236</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1938,7 +1762,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L237"></a><a href="#L237">237</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">22</td>
       <td class="FCO Ctext">	(void)p_close(fd);
@@ -1946,7 +1769,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L238"></a><a href="#L238">238</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1954,7 +1776,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L239"></a><a href="#L239">239</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">23</td>
       <td class="FCO Ctext">	if (error &lt; 0)
@@ -1962,7 +1783,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L240"></a><a href="#L240">240</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">24</td>
       <td class="FUN Ctext">		goto unlock;
@@ -1970,7 +1790,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L241"></a><a href="#L241">241</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1978,7 +1797,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L242"></a><a href="#L242">242</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">561</td>
       <td class="FCO Cblocks" width="1%">25</td>
       <td class="FCO Ctext">	return 1; /* return 1 -&gt; file needs reload and was successfully loaded */
@@ -1986,7 +1804,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L243"></a><a href="#L243">243</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -1994,7 +1811,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L244"></a><a href="#L244">244</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">unlock:
@@ -2002,7 +1818,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L245"></a><a href="#L245">245</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">17073</td>
       <td class="FCO Cblocks" width="1%">27</td>
       <td class="FCO Ctext">	git_sortedcache_wunlock(sc);
@@ -2010,7 +1825,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L246"></a><a href="#L246">246</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">17073</td>
       <td class="FCO Cblocks" width="1%">28</td>
       <td class="FCO Ctext">	return error;
@@ -2034,7 +1848,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L249"></a><a href="#L249">249</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow2688.png"></td>
       <td class="FCO Ccount" width="1%">38</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">void git_sortedcache_updated(git_sortedcache *sc)
@@ -2042,7 +1856,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L250"></a><a href="#L250">250</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2050,7 +1863,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L251"></a><a href="#L251">251</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/* update filestamp to latest value */
@@ -2058,7 +1870,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L252"></a><a href="#L252">252</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">38</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	git_futils_filestamp_check(&amp;sc-&gt;stamp, sc-&gt;path);
@@ -2066,7 +1877,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L253"></a><a href="#L253">253</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">38</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">}
@@ -2090,7 +1900,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L256"></a><a href="#L256">256</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="11"><img width="61" height="226" src="flow2687.png"></td>
       <td class="FCO Ccount" width="1%">13949</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_clear(git_sortedcache *sc, bool wlock)
@@ -2098,7 +1908,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L257"></a><a href="#L257">257</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2106,7 +1915,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L258"></a><a href="#L258">258</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">13949</td>
       <td class="FCO Cblocks" width="1%">2-4</td>
       <td class="FCO Ctext">	if (wlock &amp;&amp; git_sortedcache_wlock(sc) &lt; 0)
@@ -2114,7 +1922,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L259"></a><a href="#L259">259</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">5</td>
       <td class="FUN Ctext">		return -1;
@@ -2122,7 +1929,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L260"></a><a href="#L260">260</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2130,7 +1936,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L261"></a><a href="#L261">261</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">13949</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">	sortedcache_clear(sc);
@@ -2138,7 +1943,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L262"></a><a href="#L262">262</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2146,7 +1950,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L263"></a><a href="#L263">263</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">13949</td>
       <td class="FCO Cblocks" width="1%">7</td>
       <td class="FCO Ctext">	if (wlock)
@@ -2154,7 +1957,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L264"></a><a href="#L264">264</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">13388</td>
       <td class="FCO Cblocks" width="1%">8</td>
       <td class="FCO Ctext">		git_sortedcache_wunlock(sc);
@@ -2162,7 +1964,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L265"></a><a href="#L265">265</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2170,7 +1971,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L266"></a><a href="#L266">266</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">13949</td>
       <td class="FCO Cblocks" width="1%">9</td>
       <td class="FCO Ctext">	return 0;
@@ -2202,7 +2002,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L270"></a><a href="#L270">270</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="37"><img width="98" height="781" src="flow2686.png"></td>
       <td class="FCO Ccount" width="1%">12182</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_upsert(void **out, git_sortedcache *sc, const char *key)
@@ -2210,7 +2010,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L271"></a><a href="#L271">271</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2218,7 +2017,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L272"></a><a href="#L272">272</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	size_t keylen, itemlen;
@@ -2226,7 +2024,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L273"></a><a href="#L273">273</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12182</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	int error = 0;
@@ -2234,7 +2031,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L274"></a><a href="#L274">274</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	char *item_key;
@@ -2242,7 +2038,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L275"></a><a href="#L275">275</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	void *item;
@@ -2250,7 +2045,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L276"></a><a href="#L276">276</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2258,7 +2052,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L277"></a><a href="#L277">277</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">13055</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if ((item = git_strmap_get(sc-&gt;map, key)) != NULL)
@@ -2266,7 +2059,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L278"></a><a href="#L278">278</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">160</td>
       <td class="FCO Cblocks" width="1%">4</td>
       <td class="FCO Ctext">		goto done;
@@ -2274,7 +2066,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L279"></a><a href="#L279">279</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2282,7 +2073,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L280"></a><a href="#L280">280</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12895</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">	keylen  = strlen(key);
@@ -2290,7 +2080,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L281"></a><a href="#L281">281</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12895</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">	itemlen = sc-&gt;item_path_offset + keylen + 1;
@@ -2298,7 +2087,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L282"></a><a href="#L282">282</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12895</td>
       <td class="FCO Cblocks" width="1%">5</td>
       <td class="FCO Ctext">	itemlen = (itemlen + 7) &amp; ~7;
@@ -2306,7 +2094,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L283"></a><a href="#L283">283</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2314,7 +2101,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L284"></a><a href="#L284">284</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12895</td>
       <td class="FCO Cblocks" width="1%">5,6</td>
       <td class="FCO Ctext">	if ((item = git_pool_mallocz(&amp;sc-&gt;pool, itemlen)) == NULL) {
@@ -2322,7 +2108,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L285"></a><a href="#L285">285</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">		/* don&#39;t use GIT_ERROR_CHECK_ALLOC b/c of lock */
@@ -2330,7 +2115,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L286"></a><a href="#L286">286</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">7</td>
       <td class="FUN Ctext">		error = -1;
@@ -2338,7 +2122,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L287"></a><a href="#L287">287</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">7</td>
       <td class="FUN Ctext">		goto done;
@@ -2346,7 +2129,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L288"></a><a href="#L288">288</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -2354,7 +2136,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L289"></a><a href="#L289">289</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2362,7 +2143,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L290"></a><a href="#L290">290</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/* one strange thing is that even if the vector or hash table insert
@@ -2370,7 +2150,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L291"></a><a href="#L291">291</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	 * fail, there is no way to free the pool item so we just abandon it
@@ -2378,7 +2157,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L292"></a><a href="#L292">292</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	 */
@@ -2386,7 +2164,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L293"></a><a href="#L293">293</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2394,7 +2171,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L294"></a><a href="#L294">294</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12669</td>
       <td class="FCO Cblocks" width="1%">8</td>
       <td class="FCO Ctext">	item_key = ((char *)item) + sc-&gt;item_path_offset;
@@ -2402,7 +2178,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L295"></a><a href="#L295">295</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12669</td>
       <td class="FCO Cblocks" width="1%">8</td>
       <td class="FCO Ctext">	memcpy(item_key, key, keylen);
@@ -2410,7 +2185,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L296"></a><a href="#L296">296</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2418,7 +2192,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L297"></a><a href="#L297">297</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12902</td>
       <td class="FCO Cblocks" width="1%">8,9</td>
       <td class="FCO Ctext">	if ((error = git_strmap_set(sc-&gt;map, item_key, item)) &lt; 0)
@@ -2426,7 +2199,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L298"></a><a href="#L298">298</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">10</td>
       <td class="FUN Ctext">		goto done;
@@ -2434,7 +2206,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L299"></a><a href="#L299">299</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2442,7 +2213,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L300"></a><a href="#L300">300</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12902</td>
       <td class="FCO Cblocks" width="1%">11,12</td>
       <td class="FCO Ctext">	if ((error = git_vector_insert(&amp;sc-&gt;items, item)) &lt; 0)
@@ -2450,7 +2220,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L301"></a><a href="#L301">301</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">13</td>
       <td class="FUN Ctext">		git_strmap_delete(sc-&gt;map, item_key);
@@ -2458,7 +2227,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L302"></a><a href="#L302">302</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2466,7 +2234,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L303"></a><a href="#L303">303</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">done:
@@ -2474,7 +2241,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L304"></a><a href="#L304">304</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12993</td>
       <td class="FCO Cblocks" width="1%">14</td>
       <td class="FCO Ctext">	if (out)
@@ -2482,7 +2248,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FPC Clineno" width="1%"><a name="#L305"></a><a href="#L305">305</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FPC Ccount" width="1%">12984</td>
       <td class="FPC Cblocks" width="1%">15-18</td>
       <td class="FPC Ctext">		*out = !error ? item : NULL;
@@ -2490,7 +2255,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L306"></a><a href="#L306">306</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">12993</td>
       <td class="FCO Cblocks" width="1%">19</td>
       <td class="FCO Ctext">	return error;
@@ -2522,7 +2286,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L310"></a><a href="#L310">310</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow2685.png"></td>
       <td class="FCO Ccount" width="1%">19409</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">void *git_sortedcache_lookup(const git_sortedcache *sc, const char *key)
@@ -2530,7 +2294,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L311"></a><a href="#L311">311</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2538,7 +2301,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L312"></a><a href="#L312">312</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">19409</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	return git_strmap_get(sc-&gt;map, key);
@@ -2570,7 +2332,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L316"></a><a href="#L316">316</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="3"><img width="12" height="55" src="flow2684.png"></td>
       <td class="FCO Ccount" width="1%">14169</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">size_t git_sortedcache_entrycount(const git_sortedcache *sc)
@@ -2578,7 +2340,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L317"></a><a href="#L317">317</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2586,7 +2347,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L318"></a><a href="#L318">318</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">14169</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	return git_vector_length(&amp;sc-&gt;items);
@@ -2618,7 +2378,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L322"></a><a href="#L322">322</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="7"><img width="18" height="141" src="flow2683.png"></td>
       <td class="FCO Ccount" width="1%">11468</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">void *git_sortedcache_entry(git_sortedcache *sc, size_t pos)
@@ -2626,7 +2386,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L323"></a><a href="#L323">323</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2634,7 +2393,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L324"></a><a href="#L324">324</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/* make sure the items are sorted so this gets the correct item */
@@ -2642,7 +2400,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L325"></a><a href="#L325">325</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">11468</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	if (!git_vector_is_sorted(&amp;sc-&gt;items))
@@ -2650,7 +2407,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L326"></a><a href="#L326">326</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">216</td>
       <td class="FCO Cblocks" width="1%">3</td>
       <td class="FCO Ctext">		git_vector_sort(&amp;sc-&gt;items);
@@ -2658,7 +2414,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L327"></a><a href="#L327">327</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2666,7 +2421,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L328"></a><a href="#L328">328</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">11468</td>
       <td class="FCO Cblocks" width="1%">4</td>
       <td class="FCO Ctext">	return git_vector_get(&amp;sc-&gt;items, pos);
@@ -2738,7 +2492,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L337"></a><a href="#L337">337</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="5"><img width="12" height="98" src="flow2682.png"></td>
       <td class="FCO Ccount" width="1%">277</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">static int sortedcache_magic_cmp(const void *key, const void *value)
@@ -2746,7 +2500,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L338"></a><a href="#L338">338</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2754,7 +2507,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L339"></a><a href="#L339">339</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">277</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	const struct sortedcache_magic_key *magic = key;
@@ -2762,7 +2514,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L340"></a><a href="#L340">340</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">277</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	const char *value_key = ((const char *)value) + magic-&gt;offset;
@@ -2770,7 +2521,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L341"></a><a href="#L341">341</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">277</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	return strcmp(magic-&gt;key, value_key);
@@ -2802,7 +2552,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L345"></a><a href="#L345">345</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="9"><img width="12" height="183" src="flow2681.png"></td>
       <td class="FCO Ccount" width="1%">167</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_lookup_index(
@@ -2810,7 +2560,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L346"></a><a href="#L346">346</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	size_t *out, git_sortedcache *sc, const char *key)
@@ -2818,7 +2567,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L347"></a><a href="#L347">347</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2826,7 +2574,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L348"></a><a href="#L348">348</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	struct sortedcache_magic_key magic;
@@ -2834,7 +2581,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L349"></a><a href="#L349">349</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2842,7 +2588,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L350"></a><a href="#L350">350</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">167</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	magic.offset = sc-&gt;item_path_offset;
@@ -2850,7 +2595,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L351"></a><a href="#L351">351</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">167</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	magic.key    = key;
@@ -2858,7 +2602,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L352"></a><a href="#L352">352</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2866,7 +2609,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L353"></a><a href="#L353">353</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">167</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">	return git_vector_bsearch2(out, &amp;sc-&gt;items, sortedcache_magic_cmp, &amp;magic);
@@ -2898,7 +2640,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L357"></a><a href="#L357">357</a></td>
-      <td class="Cflow" width="1%"></td>
+      <td class="Cflow" width="1%" rowspan="22"><img width="39" height="461" src="flow2680.png"></td>
       <td class="FCO Ccount" width="1%">23</td>
       <td class="FCO Cblocks" width="1%">2</td>
       <td class="FCO Ctext">int git_sortedcache_remove(git_sortedcache *sc, size_t pos)
@@ -2906,7 +2648,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L358"></a><a href="#L358">358</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">{
@@ -2914,7 +2655,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L359"></a><a href="#L359">359</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	char *item;
@@ -2922,7 +2662,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L360"></a><a href="#L360">360</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2930,7 +2669,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L361"></a><a href="#L361">361</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	/*
@@ -2938,7 +2676,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L362"></a><a href="#L362">362</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	 * Because of pool allocation, this can&#39;t actually remove the item,
@@ -2946,7 +2683,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L363"></a><a href="#L363">363</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	 * but we can remove it from the items vector and the hash table.
@@ -2954,7 +2690,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L364"></a><a href="#L364">364</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	 */
@@ -2962,7 +2697,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L365"></a><a href="#L365">365</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -2970,7 +2704,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L366"></a><a href="#L366">366</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">23</td>
       <td class="FCO Cblocks" width="1%">2,3</td>
       <td class="FCO Ctext">	if ((item = git_vector_get(&amp;sc-&gt;items, pos)) == NULL) {
@@ -2978,7 +2711,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L367"></a><a href="#L367">367</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">4</td>
       <td class="FUN Ctext">		git_error_set(GIT_ERROR_INVALID, &quot;removing item out of range&quot;);
@@ -2986,7 +2718,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUN Clineno" width="1%"><a name="#L368"></a><a href="#L368">368</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUN Ccount" width="1%">#####</td>
       <td class="FUN Cblocks" width="1%">5</td>
       <td class="FUN Ctext">		return GIT_ENOTFOUND;
@@ -2994,7 +2725,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L369"></a><a href="#L369">369</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">	}
@@ -3002,7 +2732,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L370"></a><a href="#L370">370</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -3010,7 +2739,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L371"></a><a href="#L371">371</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">23</td>
       <td class="FCO Cblocks" width="1%">6</td>
       <td class="FCO Ctext">	(void)git_vector_remove(&amp;sc-&gt;items, pos);
@@ -3018,7 +2746,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L372"></a><a href="#L372">372</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -3026,7 +2753,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L373"></a><a href="#L373">373</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">23</td>
       <td class="FCO Cblocks" width="1%">7</td>
       <td class="FCO Ctext">	git_strmap_delete(sc-&gt;map, item + sc-&gt;item_path_offset);
@@ -3034,7 +2760,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L374"></a><a href="#L374">374</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -3042,7 +2767,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L375"></a><a href="#L375">375</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">23</td>
       <td class="FCO Cblocks" width="1%">8</td>
       <td class="FCO Ctext">	if (sc-&gt;free_item)
@@ -3050,7 +2774,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L376"></a><a href="#L376">376</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">3</td>
       <td class="FCO Cblocks" width="1%">9</td>
       <td class="FCO Ctext">		sc-&gt;free_item(sc-&gt;free_item_payload, item);
@@ -3058,7 +2781,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FUI Clineno" width="1%"><a name="#L377"></a><a href="#L377">377</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FUI Ccount" width="1%">-</td>
       <td class="FUI Cblocks" width="1%"></td>
       <td class="FUI Ctext">
@@ -3066,7 +2788,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </tr>
     <tr>
       <td class="FCO Clineno" width="1%"><a name="#L378"></a><a href="#L378">378</a></td>
-      <td class="Cflow" width="1%"></td>
       <td class="FCO Ccount" width="1%">23</td>
       <td class="FCO Cblocks" width="1%">10</td>
       <td class="FCO Ctext">	return 0;
