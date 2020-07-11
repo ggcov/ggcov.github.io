@@ -16,7 +16,7 @@
 	{
 	    /* relative url */
 	    loc = window.location;
-	    url = loc.protocol + '://' + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, '') + '/' + url;
+	    url = loc.protocol.replace(/:*$/, "://") + loc.hostname + loc.pathname.replace(/\/[^\/]+$/, '') + '/' + url;
 	}
 	return url;
     }
@@ -25,9 +25,7 @@
 	new Image().src = _absolute_url(url);
     }
     _preload("GitHub-Mark-32px.png");
-    _preload("goto-333x333.png");
     _preload("http://www.w3.org/Icons/valid-html40");
-    _preload("logo-ubuntu_cof-white_orange-hex.png");
   </script>
 </head>
 <body>
